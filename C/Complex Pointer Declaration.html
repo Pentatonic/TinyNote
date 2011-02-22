@@ -1,0 +1,250 @@
+<!-- page=Complex Pointer Declaration -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1264477561 -->
+<!-- ip=118.169.184.122 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<p><a target="_blank" href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx">http://www.codeproject.com/KB/cpp/complex_declarations.aspx</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2><a name="contents" id="contents">Contents</a></h2>
+<ul>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#intro">Introduction</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#basics">The basics</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#const">The const modifier</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#typedef">The subtleties of typedef</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#funct_ptrs">Function pointers</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#right_left_rule">The right-left rule</a> [Important]</li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#examples">Further examples</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#reading">Suggested reading</a></li>
+<li><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#credits">Credits</a></li>
+</ul>
+<h2><a name="intro" id="intro">Introduction</a></h2>
+<p>Ever came across a declaration like <code><span class="code-keyword">int</span> * (* (*fp1) (<span class="code-keyword">int</span>) ) [<span class="code-digit">10</span>];</code> or something similar that you couldn't fathom? This article will teach you to interpret C/C++ declarations, starting from mundane ones (<em>please</em> bear with me here) and moving on to very complex ones. We shall see examples of declarations that we come across in everyday life, then move on to the troublesome <code><span class="code-keyword">const</span></code> modifier and <code><span class="code-keyword">typedef</span></code>, conquer function pointers, and finally see the right-left rule, which will allow you to interpret any C/C++ declaration accurately. I would like to emphasize that it is not considered good practice to write messy code like this; I'm merely teaching you how to understand such declarations. <strong>Note</strong>: This article is best viewed with a minimum resolution of 1024x768, in order to ensure the comments don't run off into the next line.</p>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="basics" id="basics">The basics</a></h2>
+<p>Let me start with a very simple example. Consider the declaration:</p>
+<pre>
+<span class="code-keyword">int</span> n;
+</pre>
+<p>This should be interpreted as "declare <code>n</code> as an <code><span class="code-keyword">int</span></code>".</p>
+<p>Coming to the declaration of a pointer variable, it would be declared as something like:</p>
+<pre>
+<span class="code-keyword">int</span> *p;
+</pre>
+<p>This is to be interpreted as "declare <code>p</code> as an <code><span class="code-keyword">int</span> *</code> i.e., as a pointer to an <code><span class="code-keyword">int</span></code>". I'll need to make a small note here - it is always better to write a pointer (or reference) declaration with the <code>*</code> (or <code>&amp;</code>) preceding the variable rather than following the base type. This is to ensure there are no slip-ups when making declarations like:</p>
+<pre>
+<span class="code-keyword">int</span>* p,q;
+</pre>
+<p>At first sight, it looks like <code>p</code> and <code>q</code> have been declared to be of type <code><span class="code-keyword">int</span> *</code>, but actually, it is only <code>p</code> that is a pointer, <code>q</code> is a simple <code><span class="code-keyword">int</span></code>.</p>
+<p>We can have a pointer to a pointer, which can be declared as:</p>
+<pre>
+<span class="code-keyword">char</span> **argv;
+</pre>
+<p>In principle, there is no limit to this, which means you can have a pointer to a pointer to a pointer to a pointer to a <code><span class="code-keyword">float</span></code>, and so on.</p>
+<p>Consider the declarations:</p>
+<pre>
+<span class="code-keyword">int</span> RollNum[<span class="code-digit">30</span>][<span class="code-digit">4</span>];
+<span class="code-keyword">int</span> (*p)[<span class="code-digit">4</span>]=RollNum;
+<span class="code-keyword">int</span> *q[<span class="code-digit">5</span>];
+</pre>
+<p>Here, <code>p</code> is declared as a pointer to an array of 4 <code><span class="code-keyword">int</span></code>s, while <code>q</code> is declared as an array of 5 pointers to integers.</p>
+<p>We can have a mixed bag of <code>*</code>s and <code>&amp;</code>s in a single declaration, as explained below:</p>
+<pre>
+<span class="code-keyword">int</span> **p1;  <span class="code-comment">//</span><span class="code-comment">  p1 is a pointer   to a pointer   to an int.</span>
+<span class="code-keyword">int</span> *&amp;p2;  <span class="code-comment">//</span><span class="code-comment">  p2 is a reference to a pointer   to an int.</span>
+<span class="code-keyword">int</span> &amp;*p3;  <span class="code-comment">//</span><span class="code-comment">  ERROR: Pointer    to a reference is illegal.</span>
+<span class="code-keyword">int</span> &amp;&amp;p4;  <span class="code-comment">//</span><span class="code-comment">  ERROR: Reference  to a reference is illegal.</span>
+</pre>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="const" id="const">The const modifier</a></h2>
+<p>The <code><span class="code-keyword">const</span></code> keyword is used when you want to prevent a variable (oops, that's an oxymoron) from being modified. When you declare a <code><span class="code-keyword">const</span></code> variable, you need to initialize it, because you can't give it a value at any other time.</p>
+<pre>
+<span class="code-keyword">const</span> <span class="code-keyword">int</span> n=5;
+<span class="code-keyword">int</span> <span class="code-keyword">const</span> m=10;
+</pre>
+<p>The two variables <code>n</code> and <code>m</code> above are both of the same type - constant integers. This is because the C++ standard states that the <code><span class="code-keyword">const</span></code> keyword can be placed before the type or the variable name. Personally, I prefer using the former style, since it makes the <code><span class="code-keyword">const</span></code> modifier stand out more clearly.</p>
+<p><code><span class="code-keyword">const</span></code> is a bit more confusing when it comes to dealing with pointers. For instance, consider the two variables <code>p</code> and <code>q</code> in the declaration below:</p>
+<pre>
+<span class="code-keyword">const</span> <span class="code-keyword">int</span> *p;
+<span class="code-keyword">int</span> <span class="code-keyword">const</span> *q;
+</pre>
+<p>Which of them is a pointer to a <code><span class="code-keyword">const</span> <span class="code-keyword">int</span></code>, and which is a <code><span class="code-keyword">const</span></code> pointer to an <code><span class="code-keyword">int</span></code>? Actually, they're both pointers to <code><span class="code-keyword">const</span> <span class="code-keyword">int</span></code>s. A <code><span class="code-keyword">const</span></code> pointer to an <code><span class="code-keyword">int</span></code> would be declared as:</p>
+<pre>
+<span class="code-keyword">int</span> * <span class="code-keyword">const</span> r= &amp;n; <span class="code-comment">//</span><span class="code-comment"> n has been declared as an int</span>
+</pre>
+<p>Here, <code>p</code> and <code>q</code> are pointers to a <code><span class="code-keyword">const</span> <span class="code-keyword">int</span></code>, which means that you can't change the value of <code>*p</code>. <code>r</code> is a <code><span class="code-keyword">const</span></code> pointer, which means that once declared as above, an assignment like <code>r=&amp;m;</code> would be illegal (where <code>m</code> is another <code><span class="code-keyword">int</span></code>) but the value of <code>*r</code> can be changed.</p>
+<p>To combine these two declarations to declare a <code><span class="code-keyword">const</span></code> pointer to a <code><span class="code-keyword">const</span> <span class="code-keyword">int</span></code>, you would have to declare it as:</p>
+<pre>
+<span class="code-keyword">const</span> <span class="code-keyword">int</span> * <span class="code-keyword">const</span> p=&amp;n <span class="code-comment">//</span><span class="code-comment"> n has been declared as const int</span>
+</pre>
+<p>The following declarations should clear up any doubts over how <code><span class="code-keyword">const</span></code> is to be interpreted. Please note that some of the declarations will NOT compile as such unless they are assigned values during declaration itself. I have omitted them for clarity, and besides, adding that will require another two lines of code for each example.</p>
+<pre>
+<span class="code-keyword">char</span> ** p1;                    <span class="code-comment">//</span><span class="code-comment">        pointer to       pointer to       char</span>
+<span class="code-keyword">const</span> <span class="code-keyword">char</span> **p2;               <span class="code-comment">//</span><span class="code-comment">        pointer to       pointer to const char</span>
+<span class="code-keyword">char</span> * <span class="code-keyword">const</span> * p3;             <span class="code-comment">//</span><span class="code-comment">        pointer to const pointer to       char</span>
+<span class="code-keyword">const</span> <span class="code-keyword">char</span> * <span class="code-keyword">const</span> * p4;       <span class="code-comment">//</span><span class="code-comment">        pointer to const pointer to const char</span>
+<span class="code-keyword">char</span> ** <span class="code-keyword">const</span> p5;              <span class="code-comment">//</span><span class="code-comment">  const pointer to       pointer to       char</span>
+<span class="code-keyword">const</span> <span class="code-keyword">char</span> ** <span class="code-keyword">const</span> p6;        <span class="code-comment">//</span><span class="code-comment">  const pointer to       pointer to const char</span>
+<span class="code-keyword">char</span> * <span class="code-keyword">const</span> * <span class="code-keyword">const</span> p7;       <span class="code-comment">//</span><span class="code-comment">  const pointer to const pointer to       char</span>
+<span class="code-keyword">const</span> <span class="code-keyword">char</span> * <span class="code-keyword">const</span> * <span class="code-keyword">const</span> p8; <span class="code-comment">//</span><span class="code-comment">  const pointer to const pointer to const char</span>
+</pre>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="typedef" id="typedef">The subtleties of typedef</a></h2>
+<p><code><span class="code-keyword">typedef</span></code> allows you a way to overcome the *-applies-to-variable-not-type rule. If you use a <code><span class="code-keyword">typedef</span></code> like:</p>
+<pre>
+<span class="code-keyword">typedef</span> <span class="code-keyword">char</span> * PCHAR;
+PCHAR p,q;
+</pre>
+<p>both <code>p</code> and <code>q</code> become pointers. If the <code><span class="code-keyword">typedef</span></code> had not been used, <code>q</code> would be a <code><span class="code-keyword">char</span></code>, which is counter-intuitive.</p>
+<p>Here are a few declarations made using <code><span class="code-keyword">typedef</span></code>, along with the explanation:</p>
+<pre>
+<span class="code-keyword">typedef</span> <span class="code-keyword">char</span> * a;  <span class="code-comment">//</span><span class="code-comment"> a is a pointer to a char</span>
+<span class="code-keyword">typedef</span> a b();     <span class="code-comment">//</span><span class="code-comment"> b is a function that returns</span>
+                   <span class="code-comment">//</span><span class="code-comment"> a pointer to a char</span>
+<span class="code-keyword">typedef</span> b *c;      <span class="code-comment">//</span><span class="code-comment"> c is a pointer to a function</span>
+                   <span class="code-comment">//</span><span class="code-comment"> that returns a pointer to a char</span>
+<span class="code-keyword">typedef</span> c d();     <span class="code-comment">//</span><span class="code-comment"> d is a function returning</span>
+                   <span class="code-comment">//</span><span class="code-comment"> a pointer to a function</span>
+                   <span class="code-comment">//</span><span class="code-comment"> that returns a pointer to a char</span>
+<span class="code-keyword">typedef</span> d *e;      <span class="code-comment">//</span><span class="code-comment"> e is a pointer to a function </span>
+                   <span class="code-comment">//</span><span class="code-comment"> returning  a pointer to a </span>
+                   <span class="code-comment">//</span><span class="code-comment"> function that returns a </span>
+                   <span class="code-comment">//</span><span class="code-comment"> pointer to a char</span>
+e var[<span class="code-digit">10</span>];         <span class="code-comment">//</span><span class="code-comment"> var is an array of 10 pointers to </span>
+                   <span class="code-comment">//</span><span class="code-comment"> functions returning pointers to </span>
+                   <span class="code-comment">//</span><span class="code-comment"> functions returning pointers to chars.</span>
+</pre>
+<p><code><span class="code-keyword">typedef</span></code>s are usually used with structure declarations as shown below. The following structure declaration allows you to omit the <code><span class="code-keyword">struct</span></code> keyword when you create structure variables even in C, as is normally done in C++.</p>
+<pre>
+<span class="code-keyword">typedef</span> <span class="code-keyword">struct</span> tagPOINT
+{
+    <span class="code-keyword">int</span> x;
+    <span class="code-keyword">int</span> y;
+}POINT;
+POINT p; <span class="code-comment">/*</span><span class="code-comment"> Valid C code */</span>
+</pre>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="funct_ptrs" id="funct_ptrs">Function pointers</a></h2>
+<p>Function pointers are probably the greatest source of confusion when it comes to interpreting declarations. Function pointers were used in the old DOS days for writing TSRs; in the Win32 world and X-Windows, they are used in callback functions. There are lots of other places where function pointers are used: virtual function tables, some templates in STL, and Win NT/2K/XP system services. Let's see a simple example of a function pointer:</p>
+<pre>
+<span class="code-keyword">int</span> (*p)(<span class="code-keyword">char</span>);
+</pre>
+<p>This declares <code>p</code> as a pointer to a function that takes a <code><span class="code-keyword">char</span></code> argument and returns an <code><span class="code-keyword">int</span></code>.</p>
+<p>A pointer to a function that takes two <code><span class="code-keyword">float</span></code>s and returns a pointer to a pointer to a <code><span class="code-keyword">char</span></code> would be declared as:</p>
+<pre>
+<span class="code-keyword">char</span> ** (*p)(<span class="code-keyword">float</span>, <span class="code-keyword">float</span>);
+</pre>
+<p>How about an array of 5 pointers to functions that receive two <code><span class="code-keyword">const</span></code> pointers to <code><span class="code-keyword">char</span></code>s and return a <code><span class="code-keyword">void</span></code> pointer?</p>
+<pre>
+<span class="code-keyword">void</span> * (*a[<span class="code-digit">5</span>])(<span class="code-keyword">char</span> * <span class="code-keyword">const</span>, <span class="code-keyword">char</span> * <span class="code-keyword">const</span>);
+</pre>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="right_left_rule" id="right_left_rule">The right-left rule</a> [Important]</h2>
+<p>This is a simple rule that allows you to interpret any declaration. It runs as follows:</p>
+<p>Start reading the declaration from the innermost parentheses, go right, and then go left. When you encounter parentheses, the direction should be reversed. Once everything in the parentheses has been parsed, jump out of it. Continue till the whole declaration has been parsed.</p>
+<p>One small change to the right-left rule: When you start reading the declaration for the first time, you have to start from the identifier, and not the innermost parentheses.</p>
+<p>Take the example given in the introduction:</p>
+<pre>
+<span class="code-keyword">int</span> * (* (*fp1) (<span class="code-keyword">int</span>) ) [<span class="code-digit">10</span>];
+</pre>
+<p>This can be interpreted as follows:</p>
+<ol>
+<li>Start from the variable name -------------------------- <code>fp1</code></li>
+<li>Nothing to right but <code>)</code> so go left to find <code>*</code> -------------- is a pointer</li>
+<li>Jump out of parentheses and encounter (<code><span class="code-keyword">int</span></code>) --------- to a function that takes an <code><span class="code-keyword">int</span></code> as argument</li>
+<li>Go left, find <code>*</code> ---------------------------------------- and returns a pointer</li>
+<li>Jump put of parentheses, go right and hit <code>[<span class="code-digit">10</span>]</code> -------- to an array of 10</li>
+<li>Go left find <code>*</code> ----------------------------------------- pointers to</li>
+<li>Go left again, find <code><span class="code-keyword">int</span></code> -------------------------------- <code><span class="code-keyword">int</span></code>s.</li>
+</ol>
+<p>Here's another example:</p>
+<pre>
+<span class="code-keyword">int</span> *( *( *arr[<span class="code-digit">5</span>])())();
+</pre>
+<ol>
+<li>Start from the variable name --------------------- <code>arr</code></li>
+<li>Go right, find array subscript --------------------- is an array of 5</li>
+<li>Go left, find <code>*</code> ----------------------------------- pointers</li>
+<li>Jump out of parentheses, go right to find <code>()</code> ------ to functions</li>
+<li>Go left, encounter <code>*</code> ----------------------------- that return pointers</li>
+<li>Jump out, go right, find <code>()</code> ----------------------- to functions</li>
+<li>Go left, find <code>*</code> ----------------------------------- that return pointers</li>
+<li>Continue left, find <code><span class="code-keyword">int</span></code> ----------------------------- to <code><span class="code-keyword">int</span></code>s.</li>
+</ol>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="examples" id="examples">Further examples</a></h2>
+<p>The following examples should make it clear:</p>
+<pre>
+<span class="code-keyword">float</span> ( * ( *b()) [] )();              <span class="code-comment">//</span><span class="code-comment"> b is a function that returns a </span>
+                                       <span class="code-comment">//</span><span class="code-comment"> pointer to an array of pointers</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> to functions returning floats.</span>
+<span class="code-keyword">void</span> * ( *c) ( <span class="code-keyword">char</span>, <span class="code-keyword">int</span> (*)());       <span class="code-comment">//</span><span class="code-comment"> c is a pointer to a function that takes</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> two parameters:</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     a char and a pointer to a</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     function that takes no</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     parameters and returns</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     an int</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> and returns a pointer to void.</span>
+<span class="code-keyword">void</span> ** (*d) (<span class="code-keyword">int</span> &amp;, 
+  <span class="code-keyword">char</span> **(*)(<span class="code-keyword">char</span> *, <span class="code-keyword">char</span> **));        <span class="code-comment">//</span><span class="code-comment"> d is a pointer to a function that takes</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> two parameters:</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     a reference to an int and a pointer</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     to a function that takes two parameters:</span>
+                                       <span class="code-comment">//</span><span class="code-comment">        a pointer to a char and a pointer</span>
+                                       <span class="code-comment">//</span><span class="code-comment">        to a pointer to a char</span>
+                                       <span class="code-comment">//</span><span class="code-comment">     and returns a pointer to a pointer </span>
+                                       <span class="code-comment">//</span><span class="code-comment">     to a char</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> and returns a pointer to a pointer to void</span>
+<span class="code-keyword">float</span> ( * ( * e[<span class="code-digit">10</span>]) 
+    (<span class="code-keyword">int</span> &amp;) ) [<span class="code-digit">5</span>];                    <span class="code-comment">//</span><span class="code-comment"> e is an array of 10 pointers to </span>
+                                       <span class="code-comment">//</span><span class="code-comment"> functions that take a single</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> reference to an int as an argument </span>
+                                       <span class="code-comment">//</span><span class="code-comment"> and return pointers to</span>
+                                       <span class="code-comment">//</span><span class="code-comment"> an array of 5 floats.</span>
+</pre>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="reading" id="reading">Suggested reading</a></h2>
+<ul>
+<li><a href="http://www.codeproject.com/KB/cpp/pointerprelude.asp">A Prelude to pointers</a> by Nitron.</li>
+<li><code>cdecl</code> is an excellent utility that explains variable declarations and does much more. You can download the Windows port of cdecl from <a target="_blank" href="http://www.simtel.net/product.php?url_fb_product_page=41564">here</a>.</li>
+</ul>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+<h2><a name="credits" id="credits">Credits</a></h2>
+<p>I got the idea for this article after reading a thread posted by Jörgen Sigvardsson about a pointer declaration that he got in a mail, which has been reproduced in the introduction. Some of the examples were taken from the book "Test your C skills" by Yashvant Kanetkar. Some examples of function pointers were given by my cousin Madhukar M Rao. The idea of adding examples with mixed <code>*</code>s and <code>&amp;</code>s and <code><span class="code-keyword">typedef</span></code> with <code><span class="code-keyword">struct</span></code>s was given by my cousin Rajesh Ramachandran. Chris Hills came up with modifications to the right-left rule and the way in which some examples were interpreted.</p>
+<p><a href="http://www.codeproject.com/KB/cpp/complex_declarations.aspx?display=Print#contents">[Back to contents]</a></p>
+
+<div></div>
+<h2>License</h2>
+<div id="ctl00_LicenseTerms">
+<p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx">The Code Project Open License (CPOL)</a></p>
+</div>
+<h2>About the Author</h2>
+<table width="100%" cellspacing="5" cellpadding="0" border="0">
+<tbody>
+<tr valign="top">
+<td valign="top" style="width: 155px;" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable"><b><a href="http://www.codeproject.com/Members/Vikram-A-Punathambekar" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" name="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink">Vikram A Punathambekar</a></b><br>
+<br>
+<img style="border-width: 0px;" src="http://www.codeproject.com/script/Membership/ProfileImages/%7B8EB5CF9E-D8CD-4279-B443-038633A8C276%7D.gif" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" name="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto">
+<br>
+<span class="small-text" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span></td>
+<td>Vikram is a 20-something bloke working in Madras (aka Chennai), India. Vikram was born in Madras, brought up in Coimbatore, and is now back in Madras. He loves listening to music, reading and watching cricket. He hates cats.<br>
+<br>
+Vikram joined CP way back in 2002 when he was in college and had papers on Windows programming. When he started working, he languished around, roaming the wilderness of Solaris; but moved on to writing software for managing ATMs in .NET. He now works for an investment bank writing applications for structured products in .NET.<br>
+<br>
+He "loves everyone" for whatever that is worth. And he rather makes a big deal out of the fact that he's ambidextrous....<br>
+<table>
+<tbody>
+<tr id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_locationRow">
+<td class="small-text">Location:</td>
+<td width="100%"><span class="small-text" id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img width="16px" height="11px" alt="India" src="http://www.codeproject.com/script/Geo/Images/IN.gif"> India</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- pbraw=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 -->

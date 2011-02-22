@@ -1,0 +1,139 @@
+<!-- page=Macro -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1269329065 -->
+<!-- ip=118.169.185.97 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<h3><a href="http://en.wikipedia.org/wiki/C_preprocessor" target="_blank">http://en.wikipedia.org/wiki/C_preprocessor</a></h3>
+<p>&nbsp;</p>
+<h3><span class="mw-headline">Token concatenation</span></h3>
+<p>Token concatenation, also called token pasting, is one of the most subtle — and easy to abuse — features of the C macro preprocessor. Two arguments can be 'glued' together using <code>##</code> preprocessor operator; this allows two tokens to be concatenated in the preprocessed code. This can be used to construct elaborate macros which act like a crude version of <a title="C++" href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a> <a title="Template (programming)" href="http://en.wikipedia.org/wiki/Template_%28programming%29">templates</a>.</p>
+<p>For instance:</p>
+<div class="mw-geshi" style="text-align:left;" dir="ltr">
+<div class="text source-text" style="font-family:monospace;">
+<pre class="de1"><span style="font-family:'Courier New';">#define MYCASE(item,id) \
+case id: \
+  item##_##id = id;\
+break
+ 
+switch(x) {
+    MYCASE(widget,23);
+}</span>
+</pre>
+</div>
+</div>
+<p>The line <code>MYCASE(widget,23);</code> gets expanded here into</p>
+<div class="mw-geshi" style="text-align:left;" dir="ltr">
+<div class="text source-text" style="font-family:monospace;">
+<pre class="de1"><span style="font-family:'Courier New';">case 23:
+  widget_23 = 23;
+break;</span>
+</pre>
+</div>
+</div>
+<p>(The semicolon following the invocation of <code>MYCASE</code> becomes the semicolon that completes the break statement.)</p>
+<p>Only function-like parameters can be pasted in a macro, and the parameters are not parsed for macro replacement first, so the following somewhat non-intuitive behavior occurs:</p>
+<div class="mw-geshi" style="text-align:left;" dir="ltr">
+<div class="text source-text" style="font-family:monospace;">
+<pre class="de1"><span style="font-family:'Courier New';">enum {
+    OlderSmall = 0,
+    NewerLarge = 1
+};
+ 
+#define Older Newer
+#define Small Large
+ 
+#define _replace_1(Older, Small) Older##Small
+#define _replace_2(Older, Small) _replace_1(Older, Small)
+ 
+void printout( void )
+{
+        // _replace_1( Older, Small ) becomes OlderSmall (not NewerLarge),
+        // despite the #define calls above.
+    printf("Check 1: %d\n", _replace_1( Older, Small ) );
+ 
+        // The parameters to _replace_2 are substituted before the call
+        // to _replace_1, so we get NewerLarge.
+    printf("Check 2: %d\n", _replace_2( Older, Small ) );
+}</span>
+</pre>
+</div>
+</div>
+<p>results in</p>
+<div class="mw-geshi" style="text-align:left;" dir="ltr">
+<div class="text source-text" style="font-family:monospace;">
+<pre class="de1"><span style="font-family:'Courier New';">Check 1: 0
+Check 2: 1
+</span></pre>
+
+</div>
+</div>
+<hr /><pre>4)gcc預定義宏
+&nbsp;__BASE_FILE__&nbsp; 完整的源文件名路徑
+&nbsp;__cplusplus&nbsp;&nbsp; 測試c++程序
+&nbsp;__DATE__ 日期
+&nbsp;__FILE__&nbsp;&nbsp;&nbsp; 源文件名
+&nbsp;__func__&nbsp;&nbsp; 替代__FUNCTION__，__FUNCTION__以被GNU不推薦使用
+&nbsp;__TIME__ 日期
+&nbsp;__LINE__ 行數
+&nbsp;__VERSION__&nbsp;&nbsp;&nbsp; gcc版本
+
+
+綜合例子：
+#include&lt;stdio.h&gt;
+#include&lt;unistd.h&gt;
+#include&lt;math.h&gt;
+#define&nbsp; mydebug
+#ifdef&nbsp;&nbsp; mydebug
+#define debug_printf(argv,argv2...)&nbsp; printf("%s=%d\n",argv,argv2)//定參個數的宏
+#else
+&nbsp;&nbsp; #define debug_printf(argv...) &nbsp;
+#endif
+#define&nbsp; err(...)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr, __VA_ARGS__)//可變參數宏
+#define&nbsp; err1(...)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr, ##__VA_ARGS__)
+#define&nbsp; TEST(ARGTERM...)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("test=" #ARGTERM "\n")
+#define&nbsp; PASTE(a, b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a##b
+#define&nbsp; min(X,&nbsp; Y) \
+(__extension__ ({typeof (X) __x = (X), __y = (Y);&nbsp;&nbsp; \
+&nbsp;(__x &lt; __y) ? __x : __y; }))
+
+#define&nbsp;&nbsp; max(X,&nbsp; Y) \
+(__extension__ ({typeof (X) __x = (X), __y = (Y);&nbsp; \
+&nbsp;(__x &gt; __y) ? __x : __y; }))
+
+
+int main(int argc, char *argv[])
+{
+&nbsp;int i=10,j=20;
+&nbsp;char *PASTE(str,1) ="string";
+&nbsp;debug_printf(__FILE__,__LINE__);
+&nbsp;
+&nbsp;err ("i=%d\n", i);
+&nbsp;err("hello\n");
+&nbsp;err1("i=%d\n", i);
+&nbsp;err1("hello\n");
+&nbsp;
+&nbsp;TEST(123);
+&nbsp;TEST("123",456,789);
+
+&nbsp;printf("%d\n",max(i,j));
+&nbsp;printf("%d\n",min(i,j));
+&nbsp;
+&nbsp;printf("%s\n",PASTE(str,1));
+}
+
+輸出結果：
+[root@localhost 01rtspmaintest]# gcc -o test test.c -lm
+[root@localhost 01rtspmaintest]# ./test
+test.c=27
+i=10
+hello
+i=10
+hello
+test=123
+test="123",456,789
+20
+10
+string</pre>
+<!-- pbraw=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 -->

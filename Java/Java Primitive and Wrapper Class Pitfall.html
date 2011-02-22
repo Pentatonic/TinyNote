@@ -1,0 +1,38 @@
+<!-- page=Java Primitive and Wrapper Class Pitfall -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1263442904 -->
+<!-- ip=118.169.184.224 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table cellspacing="1" cellpadding="1" class="pbNotSortable" style="width: 645px; height: 240px;">
+<tbody>
+<tr>
+<td>
+<p><span style="font-family: Courier New;">long a = 1234;</span></p>
+<p><span style="font-family: Courier New;">Long b = null;</span></p>
+<p><span style="font-family: Courier New;">Long c = null;</span></p>
+<p><span style="font-family: Courier New;">b = a;</span></p>
+<p><span style="font-family: Courier New;">c = a;</span></p>
+<p><span style="font-family: Courier New;">System.out.println(b &gt; a || b != c);</span></p>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New;">Integer iReference = null;&nbsp;<br>
+int iPrimitive = iReference;</span></td>
+<td>NullPointerException!&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- pbraw=eJylU11vmzAUfedXuDxU2wMQiEcaEqJJ3SatmqJofdizMRfwZGzL3Hwg9cfP0NCu3TRVy4vRufY593B8bVgN2R07MLKzohUoDkCYKskPy4wBS24l6zqyE1gxKb29KLPZnFdJsZzzRVUVM56WaZpwYCmltCpTVhXAYFEuFx6KFrI4SeeUJssZ9YTJ4vgmjNNlGN/QMEmox7VCUBhgbyBDOGHUYCs9xRxz5zYYaiW4By0TMvupGxWap+rHeqiGXLfeQAoOwtZCZUp7QRCQTwwZ+aKl1MeOuIK3NptrVXRmtY7M5jVCVkggHKTsDONC1bkf+yM2rCyf8JBF7ptiq/Fe25Hkkw57Cbl/FCU2GUnpB3NakQZE3WBGEjpz0B9aFLrsh68dlnK0sHbd1CRQuSyCirVC9hm51XsrXPxbODq21KomjOQkTubUWR5om+k/3irybRApnIjaS3mRCL9QZDDB/pfMLyHf9x1CG+o9hsYKhVK9K8h1jSuX7sODS+cqJ/z9S/VovCy3oN3DGUWPt3i+yrd2/+qGvXZIfIcKLCgOU5DnWSycoHNFxPNbzH87/exrsrR15J12FLCfTxwMCq2upsH+i9MXW6/x49FoGtRonO8/nso/0C+kU2fJ -->

@@ -1,0 +1,18 @@
+<!-- page=GridBagLayout -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<!-- time=1260261115 -->
+<!-- ip=118.169.184.203 -->
+<!-- content-type=text/html -->
+<p><a href="http://java.sun.com/docs/books/tutorial/uiswing/layout/gridbag.html" target="_blank">http://java.sun.com/docs/books/tutorial/uiswing/layout/gridbag.html</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img alt="A snapshot of GridBagLayoutDemo" src="http://java.sun.com/docs/books/tutorial/figures/uiswing/layout/GridBagLayoutDemo.png"></p>
+<p>&nbsp;</p>
+<pre>
+<span style="font-family: Courier New;">JButton button;<br>pane.setLayout(new GridBagLayout());<br>GridBagConstraints c = new GridBagConstraints();<br>if (shouldFill) {<br>     //natural height, maximum width<br>     c.fill = GridBagConstraints.HORIZONTAL;<br>}<br><br>button = new JButton("Button 1");<br>if (shouldWeightX) {<br>     c.weightx = 0.5;<br>}<br>c.fill = GridBagConstraints.HORIZONTAL;<br>c.gridx = 0;<br>c.gridy = 0;<br>pane.add(button, c);<br><br>button = new JButton("Button 2");<br>c.fill = GridBagConstraints.HORIZONTAL;<br>c.weightx = 0.5;<br>c.gridx = 1;<br>c.gridy = 0;<br>pane.add(button, c);<br><br>button = new JButton("Button 3");<br>c.fill = GridBagConstraints.HORIZONTAL;<br>c.weightx = 0.5;<br>c.gridx = 2;<br>c.gridy = 0;<br>pane.add(button, c);<br><br>button = new JButton("Long-Named Button 4");<br>c.fill = GridBagConstraints.HORIZONTAL;<br>c.ipady = 40;      //make this component tall<br>c.weightx = 0.0;<br>c.gridwidth = 3;<br>c.gridx = 0;<br>c.gridy = 1;<br>pane.add(button, c);<br><br>button = new JButton("5");<br>c.fill = GridBagConstraints.HORIZONTAL;<br>c.ipady = 0;       //reset to default<br>c.weighty = 1.0;   //request any extra vertical space<br>c.anchor = GridBagConstraints.PAGE_END; //bottom of space<br>c.insets = new Insets(10,0,0,0);  //top padding<br>c.gridx = 1;       //aligned with button 2<br>c.gridwidth = 2;   //2 columns wide<br>c.gridy = 2;       //third row<br>pane.add(button, c);</span>
+</pre>
+<p>&nbsp;</p>
+
+<!-- pbraw=eJytlW1vmzAQx9/zKU68mFKpgUDSdCVptG5d96Cqq6ZJm/ZmOowBr8ZmtmkaTfvuOwhr06ZT99CggHw53/3+vuNSY8GTV0Zkz7E4xZVunNeILBmNWR6nB2O2n+fpiE2z6TRmHKeTySTPppinHPl+drDvKax4cs6VQ6eVYB6vUMjkqy5VUF9bnxWtNWC68pwg/yiejuJpFEV7nqiTKHoaRNODIHo6CeLR2CtdJYeXwhRCJUp7TCtHkYZuVfPE8SsXtg7ecDiEY3QIJ1pKvbRABm9eL+YIpeH5oV86Vydh+BUvMbCNarOHmWY2TLW+sKFrnDYCZdgIuxSqCGWnPizoLFIsgjaJDw5Nwd2h/yWVqC78xSMEnYe4mIf1ooV9olJbz+5fzUVVAEpKfgRWYW1L7UDncKtYx7zSPljD/lxvLorGcHsXcStsUKvCv5/UcLrbGhVYt5L80M+pRsMcKyFXCbzQjRHcwBlfzvzF2+eNoyaAtHvM5qlZ0EYeWO7WuQaKL2+LGuzsdH698YVW1hkUyllgcAgb/hs/DdZ7RA4DOqlGZidCyh343hqh/YShQtcYlFByUZRuFyq8ElVTwVJkrrz2Y0FOOynPdo7g9bv3bz6/O/twdNol+9He2u9aXM/WKx74vfLIv4v2sQP4tEnHgmVnvKIgo2DvJvxf4LCg7bMuwsZ6db3uzh2zbLDG3QW2BntQQdwr+CuWbT03fNHj8o0fmy9+JL5TrYrhGY3IDHrUyb+giho7jMloBn0vV3jBwZWCXgld1VrRhKRhJeW2ts1e6DqdrOMH+iX6R717/6PulzhSR/OJkx4NGc+xkW5TVccXdM6t47eGWweoVkB/DQbhkhsnGL3lNJ8YX29ExUpt7sc5P3r18svLs+MZRUs1yajaIbuxWShisb3SN91iEI12u2tn1kI4XQNpyGia3m3za0UoRaGoDZaCCtAfXrxdmHgtK6aqyqZStp1N/HZt4pugVH+TgdHL31YrbKc0DetwPbNvzfGfaL6lYA== -->

@@ -1,0 +1,36 @@
+<!-- page=Stop JTable Editing -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1260262283 -->
+<!-- ip=118.169.184.203 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<p>Usually user is finishing editing a cell by:</p>
+<div class="entrytext">
+<div class="snap_preview">
+<ul>
+<li>using the enter key</li>
+<li>tabbing to the next cell</li>
+<li>clicking on another cell with the mouse</li>
+</ul>
+<p>&nbsp;</p>
+<p>You would want the data to be saved automatically when the button is clicked. There are two options to solving this problem.</p>
+<p>Setting a property of the table:</p>
+<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JTable table = new JTable(...);</code></p>
+<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table.<strong><span style="color: rgb(255, 0, 0);">putClientProperty</span></strong>("<span style="color: rgb(255, 0, 0);"><strong>terminateEditOnFocusLost</strong></span>", Boolean.TRUE);</code></p>
+<p>Note that this solution will cause the table to stop editing when any component get focus. I believe this logic is limited to components on the current window.</p>
+<p>This solution will also not work when you click on the window buttons (ie, minimize or close).</p>
+<p>&nbsp;</p>
+<p>Maybe the above solution is too general, and you want to control which components should stop editing.</p>
+<p>In this second case, you would need to add some code to the ActionListener of your buttons, something like:</p>
+<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (table.isEditing())</code></p>
+<p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; table.getCellEditor().<strong><span style="color: rgb(255, 0, 0);">stopCellEditing</span></strong>();</code></p>
+<p>This approach is a little more work, but it does give you full control as to when editing should be stopped.</p>
+<p>It should be noted that clicking on a JTableHeader does not cause the table to lose focus.</p>
+<p>Therefore you will need to add a MouseListener to the table header and use the second approach to stop editing.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>from: <a target="_blank" href="http://tips4java.wordpress.com/2008/12/12/table-stop-editing/">http://tips4java.wordpress.com/2008/12/12/table-stop-editing/</a></p>
+
+<!-- pbraw=eJylVVFv2zYQfvevOPhhsAFbsh3XSVTb2Na1aId2K9b0YU8FJVEWa4pHiJQ97dfvjpKVpNmAZQMcOxB59919930nKw4y+eTRws93ItUSXufKK3MYNSpPFldZsUpvr7LrokgX2SbfbFaZFJv1el3kG1GkUsjr/PZ65FUlk+Vqs1htVqubq5GyyXJ5Ey03t9HyZh2tFlejDI2Xxs99a2Xi5R8+Ln2lR0ZQ5Ec6EB6NykayEkonX7E0kR2efn/gp1GG1YiD5idVH5RJDI7m8zn8JLyAN6g1nh3Qg9HW7j+7RmjdQuNkDcpBoYxyJfUFsusPBGRSa0jbZBvb/WibqxNkWji3GxNu3XKJ48fPnRH2i63lSckzHzWavrTaN44T+lICRRLeUbbbmJ6HQy/SNBxjuGEobUC+v5FplR35ChoQBulW3dV2Vr4MQRVSH31AHFDt/juTOvuyq93uf8cGztjoHM7C+BCUMy2Emkpw4iRzEI3HSniVBWbOpTThXtp4IplJCoXIPII7KkGCoD9/RkDrFRrHuRzqU9crXbc1kmCq6FLDJ+l7ZunEytq3gEWA8Kys5HJvm2Eu+/r/6bsXYwiEHbF27vU5iaJoSm2HHM/JGFJFW+drNIf91llhwPlWy904Q411AvUhnaxevJjBgj7Tl+O9bfwrrWimH/t+tjGHEWyfZTL+V3kuoKSNShnhJXvsV/MGs8a9R+eHfH3+8Qx+RNRSmOjut8+vn7T7C3qiphS+mwMNpeEJkV5INJkgrdyzHqbG9r7oPsxdmBbITRYNdQcH6aHgYiJ4R3Khlk+yS63xoDKWhlaV8qQhyjbEORYsA2VNXXOeszI5ngc93D0tTmiHQBInrdbHrpSWlBuEd8nWZell6WCi5AyINirgTwlI1tDo5HRAeeyDD6JNu+5FitTFAK9Yv0itGlkLPSMG8gDd2YW7ItMjea5UWfmwR1cGWz3kcMB+Z/oJSArPiXpHtbaDFY3sGBM5xWNFRNEUL4vgh4zreq+c55LYKRRYX9qehQAfNpZWx+eZRxUw6eSuXL/OJ9Ppf/BMJ6GI9PGK9hGnwnoyfZ6JmLhLNBXyxEJP1B1kIyztEEGT4P+JAe81r0HaSKycGdMEykOO0sFB0aCZ9aJh/feDFGFhBYldpN+PkhciFWVp0w2D9A8OSZ88N/bXo9Xcb6C3UuQ0sADNUv4bw7FCe0fdd0UrteAGgj7YDA/lIeAD7/hBDr1Iuoxlh8iSvUD1ihto+sblPWxML6/7n2+9UtRYJbCll4SoacS78ZdUC3McQ0mV7sal9zaJY6+sW38VJxER8zm9/ZzjF3G8Wixu4uWKP6HKOePPe/x4vP9f4dtYdHr4C6OL9ZU= -->

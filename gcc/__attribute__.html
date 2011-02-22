@@ -1,0 +1,82 @@
+<!-- page=__attribute__ -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1269336642 -->
+<!-- ip=118.169.185.97 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<p><a href="http://zylix666.blogspot.com/2007/10/cstruct.html">http://zylix666.blogspot.com/2007/10/cstruct.html</a></p>
+<p>&nbsp;</p>
+<p>通常在PC上寫程式時，很少會去管struct會佔掉多少記憶體。</p>
+<p>當要使用到時，也不會想去用手算到底佔掉多少，大多是直接使用sizeof來做 計算。</p>
+<p>然而sizeof計算出來的值往往不會如我們想的一樣。因為compiler為了效能考量，會自動地為我們</p>
+<p>做最佳化，也就是資料對 齊。為了這個目的，compiler會為struct多準備一些記憶體。</p>
+<p>我們可以看以下的code：</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">struct ABC {</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int index;</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;char name[6];</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int score;</span></p>
+<p><span style="font-family:'Courier New';">};</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">struct DEF{</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int att;</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;char name[3];</span></p>
+<p><span style="font-family:'Courier New';">};</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">int main(void)</span></p>
+<p><span style="font-family:'Courier New';">{</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;printf("sizeof(ABC) = %d\n", sizeof(struct ABC));</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;printf("sizeof(DEF) = %d\n", sizeof(struct DEF));</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;return 0;</span></p>
+<p><span style="font-family:'Courier New';">}</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>說明：</p>
+<p>1. 若我們直接去計算struct ABC和strcut DEF時，</p>
+<p>struct ABC = 4 + 6 + 4 = 14 (struct ABC用掉14個byte)</p>
+<p>strcut DEF = 4 +  3 = 7      (struct DEF用掉7個byte)</p>
+<p>2. 但真的是這樣嗎？程式執行出來的結果卻是，</p>
+<p>sizeof(ABC) = 16</p>
+<p>sizeof(DEF) = 8</p>
+<p>3.  這就是compiler為我們做了對齊的最佳化，將這二個的struct都調整成2的次方。這樣有利於運算。</p>
+<p>&nbsp;</p>
+<p>這樣的做法在 PC上通常沒有問題，但若是在嵌入式系統上，記憶體必需要錙珠必較時</p>
+<p>，我們就必須要考量到使用struct所佔掉的記憶體空間，上次和Tick討 論Linux kernel</p>
+<p>裡的List結構時，遇到了這個問題。他告訴我可以使用__attribute__((packed));這個關鍵 字，</p>
+<p>它的作用在於叫compiler不要為我們做對齊的最佳化，因此，計算的結果就會如同我們所想的一樣了。</p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">struct ABC {</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int index;</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;char name[6];</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int score;</span></p>
+<p><span style="font-family:'Courier New';">} <strong><span style="color:#ff0000;">__attribute__((packed))</span></strong>;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">struct DEF{</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;int att;</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;char name[3];</span></p>
+<p><span style="font-family:'Courier New';">} <span style="color:#ff0000;"><strong>__attribute__((packed))</strong></span>;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family:'Courier New';">int main(void)</span></p>
+<p><span style="font-family:'Courier New';">{</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;printf("sizeof(ABC) = %d\n", sizeof(struct ABC));</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;printf("sizeof(DEF) = %d\n", sizeof(struct DEF));</span></p>
+<p><span style="font-family:'Courier New';">&nbsp;&nbsp; &nbsp;return 0;</span></p>
+<p><span style="font-family:'Courier New';">}</span></p>
+<p>&nbsp;</p>
+<p>這 樣就會得到以下的結果了。</p>
+<p>&nbsp;</p>
+<p>sizeof(ABC) = 14</p>
+<p>sizeof(DEF) = 7</p>
+<p>&nbsp;</p>
+<p>這裡沒有哪一種用法比較好的 問題，端看在使用上的需求，</p>
+<p>要運算速度快，就需要資料對齊。要節省記憶體的使用，就取消對齊。</p>
+<p>&nbsp;</p>
+<hr /><p>&nbsp;</p>
+<dl><dt><a href="http://www.blogger.com/profile/10018636170269006036">Trimo</a> 提到... </dt> <dd>
+<p>packed  其實主要不是在節省記憶體，主要是用在某些情況下必須<span style="color:#ff0000;">把某個struct整個塞到某個register當中，或是把資料封裝成某種格式的packet進行傳送</span>。</p>
+<p>這些場合都需要把struct封裝成符合register或packet的格式(其中的特定位元所代表的意義和相對應的 struct member)和大小。</p>
+</dd></dl>
+<!-- pbraw=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 -->

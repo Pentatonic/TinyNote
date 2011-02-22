@@ -1,0 +1,150 @@
+<!-- page=const and volatile -->
+<!-- uid=03cf2b93c7ffb0c6d662cea6444fd6afbeae7d97 -->
+<!-- time=1260503311 -->
+<!-- ip=118.169.184.87 -->
+<!-- content-type=text/html -->
+<!-- name=Pentatonic -->
+<!-- email=john.pentatonic@gmail.com -->
+<h2><strong>Type <span style="color: rgb(255, 0, 0);">specifier</span></strong></h2>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: Courier New;">char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float&nbsp;&nbsp; short</span></strong></p>
+<p><strong><span style="font-family: Courier New;">&nbsp;&nbsp; signed&nbsp;&nbsp;&nbsp; double&nbsp;&nbsp;&nbsp; void&nbsp;&nbsp;&nbsp; int</span></strong></p>
+<p><strong><span style="font-family: Courier New;">&nbsp;&nbsp; unsigned</span></strong></p>
+<h2><strong>Type <span style="color: rgb(255, 0, 0);">qualifier</span></strong></h2>
+<p><strong>&nbsp;&nbsp;&nbsp; <span style="font-family: Courier New;">const&nbsp;&nbsp;&nbsp; volatile</span></strong></p>
+<hr>
+<h2><strong><span style="font-family: Courier New;">const</span></strong></h2>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp; const means that something is not modifiable, so a data object that is declared with const as a part of its type specification must not be assigned to in any way during the run of a program.</p>
+<p>&nbsp;</p>
+<ol>
+<li>Taking the address of a data object of a type which isn't <code>const</code> and putting it into a pointer to the <code>const</code>-qualified version of the same type is both safe and explicitly permitted; you will be able to use the pointer to inspect the object, but not modify it.</li>
+<li>Putting the address of a const type into a pointer to the unqualified type is much more dangerous and consequently prohibited (although you can get around this by using a cast)</li>
+</ol>
+<hr>
+<h2><span style="font-family: Courier New;">volatile</span></h2>
+<p>&nbsp;</p>
+<p>The reason for having this type qualifier is mainly to do with the problems that are encountered in real-time or embedded systems programming using C. Imagine that you are writing code that controls a hardware device by placing appropriate values in hardware registers at known absolute addresses.</p>
+<p>&nbsp;</p>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/* Standard C example but without const or volatile */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/*</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* Declare the device registers</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* Whether to use int or short</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* is implementation dependent</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">*/<br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">struct devregs{</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        unsigned short  csr;    /* control &amp; status */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        unsigned short  data;   /* data port */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">};</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/* bit patterns in the csr */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">#define ERROR   0x1</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">#define READY   0x2</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">#define RESET   0x4<br></span><span style="font-family: Courier New;"><br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/* absolute address of the device */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">#define DEVADDR ((struct devregs *)0xffff0004</span><span style="font-family: Courier New;"><br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/* number of such devices in system */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">#define NDEVS   4</span><span style="font-family: Courier New;"><br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">/*</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* Busy-wait function to read a byte from device n.</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* check range of device number.</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* Wait until READY or ERROR</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* if no error, read byte, return it</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">* otherwise reset error, return 0xffff</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">*/</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">unsigned int read_dev(unsigned devno){</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        struct devregs *dvp = DEVADDR + devno;</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        if(devno &gt;= NDEVS)</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">                return(0xffff);<br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        while((dvp-&gt;csr &amp; (READY | ERROR)) == 0)</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">                ; /* NULL - wait till done */</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        if(dvp-&gt;csr &amp; ERROR){</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">                dvp-&gt;csr = RESET;</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">                return(0xffff);</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        }</span><span style="font-family: Courier New;"><br></span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">        return((dvp-&gt;data) &amp; 0xff);</span>
+</pre>
+<pre style="text-align: left; margin-left: 40px;">
+<span style="font-family: Courier New;">}</span>
+</pre>
+<p>&nbsp;</p>
+<p>However, a major problem with previous C compilers would be in the while loop which tests the status register and waits for the <code>ERROR</code> or <code>READY</code> bit to come on. Any self-respecting optimizing compiler would notice that the loop tests the same memory address over and over again. It would almost certainly arrange to reference memory once only, and copy the value into a hardware register, thus speeding up the loop.</p>
+<p>&nbsp;</p>
+<pre>
+<span style="font-family: Courier New;">     struct devregs{<br>        unsigned short <span style="color: rgb(255, 0, 0);">volatile </span>csr;<br>        unsigned short <span style="color: rgb(255, 0, 0);">const volatile</span> data;<br>     };<br>or<br>     </span><span style="font-family: Courier New;"><span>struct devregs{<br>        unsigned short<span style="color: rgb(255, 0, 0);"> </span>csr;<br>        unsigned short data;<br>     }</span><span> </span>volatile v_decl<span>;</span></span><span style="font-family: Courier New;"><br></span><span style="font-family: Courier New;"><br><br></span>
+</pre>
+<p>The keyword <code>volatile</code> was introduced. It tells the compiler that the object is subject to sudden change for reasons which cannot be predicted from a study of the program itself, and forces every reference to such an object to be a genuine reference.</p>
+<p>&nbsp;</p>
+<p>reference:</p>
+<p><a href="http://publications.gbdirect.co.uk/c_book/chapter8/const_and_volatile.html">http://publications.gbdirect.co.uk/c_book/chapter8/const_and_volatile.html</a></p>
+
+<!-- pbraw=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 -->
