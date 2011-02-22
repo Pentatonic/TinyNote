@@ -16,4 +16,4 @@ pkg install print/filter/ghostscript
 		DefaultEncryption IfRequested (or Never)
 	
 	Disable authentication in web-page:
-		DefaultAuthType None
+		DefaultAuthType None 
