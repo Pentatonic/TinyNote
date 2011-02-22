@@ -13,7 +13,8 @@ pkg install print/filter/ghostscript
 	
 /etc/cups/cupsd.conf
 	Disable https:
-		DefaultEncryption IfRequested (or Never)
+		"DefaultEncryption IfRequested" (or "Never")
 	
-	Disable authentication in web-page:
-		DefaultAuthType None 
+	Disable pop-up authentication in web-page:
+		"DefaultAuthType None"
+		Remove the "Require" field in tag "Location" and "Limit"
