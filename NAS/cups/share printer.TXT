@@ -1,0 +1,19 @@
+pkg install print/cups
+pkg install print/cups/system-config-printer
+pkg install service/network/slp
+pkg install print/cups/filter/foomatic-db
+pkg install print/cups/filter/foomatic-db-engine
+pkg install print/filter/hplip
+pkg install print/filter/ghostscript
+
+
+1. svccfg -s smb/server setprop smb/print_enable=boolean: true
+2. need to set the correct hostname to be used by gethostname and gethostbyname
+
+	
+/etc/cups/cupsd.conf
+	Disable https:
+		DefaultEncryption IfRequested (or Never)
+	
+	Disable authentication in web-page:
+		DefaultAuthType None

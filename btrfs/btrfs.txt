@@ -1,0 +1,65 @@
+mkfs.btrfs
+	usage: mkfs.btrfs [options] dev [ dev ... ]
+	options:
+			 -A --alloc-start the offset to start the FS
+			 -b --byte-count total number of bytes in the FS
+			 -d --data data profile, raid0, raid1, raid10 or single
+			 -l --leafsize size of btree leaves
+			 -L --label set a label
+			 -m --metadata metadata profile, values like data profile
+			 -n --nodesize size of btree nodes
+			 -s --sectorsize min block allocation
+
+
+Btrfs official:
+	https://btrfs.wiki.kernel.org/index.php/Main_Page
+
+Btrfs, EXT4 & ZFS On A Solid-State Drive:
+	http://www.phoronix.com/scan.php?page=article&item=btrfs_zfs_ssd&num=1
+
+Benchmarks Of ZFS-FUSE On Linux Against EXT4, Btrfs:
+	http://www.phoronix.com/scan.php?page=article&item=zfs_fuse_performance&num=1
+
+BTRFS + Compression: A Lot Faster Than EXT4 [Ubuntu 10.10 Maverick Meerkat] <--- wrong
+	http://www.webupd8.org/2010/06/btrfs-compression-lot-faster-than-ext4.html	
+	
+iozone:
+	http://blog.cowbay.org/?p=1008
+
+boot on btrfs:
+	http://ubuntuforums.org/showthread.php?t=1389279
+	http://ubuntuforums.org/showthread.php?t=1223570
+	
+	
+Compression:
+	Edit /etc/fstab and add "compress" attribute.
+	[Test]
+	Label: none  uuid: 12756898-ead1-4bf2-aaf9-3a97d5e80f23
+        Total devices 1 FS bytes used 19.61MB
+        devid    1 size 178.72GB used 6.04GB path /dev/sda5
+		
+		Add file 734,760,960 ¦ì¤¸²Õ, xx.avi
+		
+		Label: none  uuid: 12756898-ead1-4bf2-aaf9-3a97d5e80f23
+        Total devices 1 FS bytes used 721.25MB
+        devid    1 size 178.72GB used 6.04GB path /dev/sda5
+		
+Don¡¦t trust btrfs-show:
+	http://glandium.org/blog/?p=1051
+	Note: use btrfs file sync or balance may fixed this issue.
+	
+Btrfs with small files:
+	http://kerneltrap.org/mailarchive/linux-btrfs/2010/9/9/6885451
+		200B ~ 2000B is really too small to the modern hard disks (some of them
+		already have 4KB-sectors instead of 512B).
+		Besides, currectly Btrfs doesn't play quite well with such small files, you may
+		need to read this thread:
+		http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05263.html
+		Fortunately Chris found this is caused by a plain old bug in Btrfs,
+		and he already
+		had a patch for it, IIRC. Here it is:
+		http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05292.html
+		I don't know whether it has been in the kernel you are using.
+		
+btrfs on LVM: Out of space
+	http://kerneltrap.org/mailarchive/linux-btrfs/2010/9/8/6885443

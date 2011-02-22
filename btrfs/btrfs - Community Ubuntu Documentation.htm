@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0039)https://help.ubuntu.com/community/btrfs -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="index,nofollow">
+
+<title>btrfs - Community Ubuntu Documentation</title>
+<script type="text/javascript" src="./btrfs - Community Ubuntu Documentation_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "搜尋";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="./btrfs - Community Ubuntu Documentation_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./btrfs - Community Ubuntu Documentation_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="./btrfs - Community Ubuntu Documentation_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="./btrfs - Community Ubuntu Documentation_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/htdocs/ubuntunew/css/msie.css">
+<![endif]-->
+
+
+
+<link rel="Start" href="https://help.ubuntu.com/community/UserDocumentation">
+<link rel="Alternate" title="Wiki 標記" href="https://help.ubuntu.com/community/btrfs?action=raw">
+<link rel="Alternate" media="print" title="檢視列印形" href="https://help.ubuntu.com/community/btrfs?action=print">
+<link rel="Appendix" title="btrfs_demo.sh" href="https://help.ubuntu.com/community/btrfs?action=AttachFile&do=view&target=btrfs_demo.sh">
+<link rel="Search" href="https://help.ubuntu.com/community/FindPage">
+<link rel="Index" href="https://help.ubuntu.com/community/TitleIndex">
+<link rel="Glossary" href="https://help.ubuntu.com/community/WordIndex">
+<link rel="Help" href="https://help.ubuntu.com/community/HelpOnFormatting">
+</head>
+
+<body lang="zh-tw" dir="ltr">
+
+<div id="round" class="roundme">
+<img id="topcap" alt="" src="./btrfs - Community Ubuntu Documentation_files/cap-top.png">
+<div id="layout" class="container clear-block">
+<div id="header">
+<div id="logo-floater">
+<h1><a href="http://help.ubuntu.com/" title="Ubuntu Documentation"><img alt="Ubuntu" id="logo" src="./btrfs - Community Ubuntu Documentation_files/logo.png"></a></h1>
+</div>
+
+<noscript>
+ &lt;form action="http://www.google.com/cse" id="cse-search-box"&gt;
+   &lt;div&gt;
+     &lt;input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" /&gt;
+     &lt;input type="hidden" name="ie" value="UTF-8" /&gt;
+     &lt;input type="text" name="q" size="27" /&gt;
+     &lt;input type="submit" name="sa" value="Search" /&gt;
+   &lt;/div&gt;
+ &lt;/form&gt;
+</noscript>
+
+<script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script><form action="https://help.ubuntu.com/search.html" id="cse-search-box">  <div>    <input type="hidden" name="cof" value="FORID:9">    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng">    <input type="hidden" name="ie" value="UTF-8">    <input type="text" name="q" size="27">    <input type="submit" name="sa" value="Search">  </div></form>
+
+<div id="sitename"><a href="https://help.ubuntu.com/community"><img src="./btrfs - Community Ubuntu Documentation_files/help-faq.png"><span>Community Documentation</span></a></div>
+</div> <!--header-->
+<ul id="loginbar"><li><a href="https://help.ubuntu.com/community/btrfs?action=login" id="login" rel="nofollow">Login to Edit</a></li></ul>
+
+
+<!--1-->
+<div id="page" lang="en" dir="ltr">
+
+<!--2-->
+
+<div id="breadcrumbs">
+<a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/community">Community Documentation</a> &gt; <a class="backlink" href="https://help.ubuntu.com/community/btrfs?action=fullsearch&context=180&value=linkto%3A%22btrfs%22" rel="nofollow" title="點一下，對本頁標題做全文檢索，以便找出引用本頁的頁面">btrfs</a>
+</div>
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="https://help.ubuntu.com/community/btrfs?action=fullsearch&context=180&value=linkto%3A%22btrfs%22" rel="nofollow" title="點一下，對本頁標題做全文檢索，以便找出引用本頁的頁面">btrfs</a></li>
+</ul>
+
+<!--3--><div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><div><table style="float:right;  font-size: 0.9em;  width:40%;  background:#F1F1ED;  margin: 0 0 1em 1em;"><tbody><tr>  <td style="padding:0.5em;"><p class="line891"><br>
+</p><div class="table-of-contents"><p class="table-of-contents-heading">目 錄</p><ol><li><a href="https://help.ubuntu.com/community/btrfs#What is btrfs?">What is btrfs?</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Stability">Stability</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Features">Features</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Fresh Install on 10.10 Maverick">Fresh Install on 10.10 Maverick</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Install as Root on versions prior to 10.10">Install as Root on versions prior to 10.10</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Installing on 8.10 Intrepid">Installing on 8.10 Intrepid</a><ol><li><a href="https://help.ubuntu.com/community/btrfs#PPA deb packages">PPA deb packages</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Compile from Source">Compile from Source</a><ol><li><a href="https://help.ubuntu.com/community/btrfs#Kernel Module Dependencies">Kernel Module Dependencies</a></li><li><a href="https://help.ubuntu.com/community/btrfs#btrfs progs dependencies">btrfs progs dependencies</a></li></ol></li></ol></li><li><a href="https://help.ubuntu.com/community/btrfs#Demo Script">Demo Script</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Snapshots & Subvolumes">Snapshots &amp; Subvolumes</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Adding Filesystem Compression">Adding Filesystem Compression</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Display Filesystem Information">Display Filesystem Information</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Validate Filesystem Integrity">Validate Filesystem Integrity</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Improve Filesystem Performance">Improve Filesystem Performance</a></li><li><a href="https://help.ubuntu.com/community/btrfs#How to use">How to use</a></li><li><a href="https://help.ubuntu.com/community/btrfs#Links">Links</a></li></ol></div></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-2"></span><p class="line867">
+</p><h1 id="What is btrfs?">What is btrfs?</h1>
+<span class="anchor" id="line-3"></span><p class="line874">The B-tree file system is a “copy-on-write (COW)” check-summed file system with multi-device support and writable snapshots. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line874">A snapshot is an image or copy of the file system at a point in time.  This feature facilitates system rollback and instant backup when combined with supporting software.  Since the snapshot is writable, it can be modified. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line874">A subvolume is like a directory - it has a name, there's nothing on it when it is created, and it can hold files and other directories. There's at least one subvolume in every Btrfs filesystem, the "default" subvolume.  <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span></p><p class="line874">The equivalent in Ext4 would be a filesystem. Each subvolume behaves as a individual filesystem. The difference is that in Ext4 you create each filesystem in a partition, in Btrfs however all the storage is in the 'pool', and subvolumes are created from the pool, you don't need to partition anything. You can create as many subvolumes as you want, as long as you have storage capacity.  <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p><p class="line862">Btrfs uses Rodeh's b-trees which are COW friendly.  <a class="nonexistent" href="https://help.ubuntu.com/community/%5Bhttp%3A//www.cs.tau.ac.il/~ohadrode/papers/btree_TOS.pdf">[http://www.cs.tau.ac.il/~ohadrode/papers/btree_TOS.pdf</a>] <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></p><p class="line874">Check-summing is a data integrity method. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p><p class="line874">Multi-device support is part of the subvolume structure btrfs uses to grow or shrink a file system. <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span></p><p class="line862">“A short history of btrfs” (LWN.NET July 22, 2009) by Valerie Aurora (formerly Henson) is available at <a class="http" href="http://lwn.net/Articles/342892/">http://lwn.net/Articles/342892/</a> <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><p class="line862">A 45 minute video "Btrfs: Filesystem Status and Future Plans" by Chris Mason of Oracle is available at <a class="nonexistent" href="https://help.ubuntu.com/community/%5Bhttp%3A//video.linuxfoundation.org/video/1608">[http://video.linuxfoundation.org/video/1608</a>] <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span></p><p class="line862">More Information on btrfs is available at <a class="https" href="https://btrfs.wiki.kernel.org/index.php/Main_Page">https://btrfs.wiki.kernel.org/index.php/Main_Page</a>, <a class="https" href="https://btrfs.wiki.kernel.org/index.php/Category:Documentation">https://btrfs.wiki.kernel.org/index.php/Category:Documentation</a> and <a class="http" href="http://en.wikipedia.org/wiki/Btrfs">http://en.wikipedia.org/wiki/Btrfs</a> <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span></p><p class="line862">Btrfs is under heavy development, but with Linux 2.6.31 the Btrfs disk format has been finalized and is not considered experimental any more.  <a class="nonexistent" href="https://help.ubuntu.com/community/%5Bhttp%3A//lkml.org/lkml/2010/6/12/66">[http://lkml.org/lkml/2010/6/12/66</a>] <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span></p><p class="line867">
+</p><h1 id="Stability">Stability</h1>
+<span class="anchor" id="line-26"></span><p class="line874">Btrfs does not yet have a fsck tool that can fix errors. While Btrfs is stable, it is currently possible to corrupt a filesystem irrecoverably if your machine crashes or loses power. <span class="anchor" id="line-27"></span><a class="http" href="http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05749.html">http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05749.html</a> <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p><p class="line862">"The main concern against BTRFS is not stability, but the lack of a functional fsck utility." <a class="http" href="http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg06277.html">http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg06277.html</a> <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></p><p class="line874">Chris Mason on August 26, 2010: <span class="anchor" id="line-32"></span>We're still actively developing it.  I don't have a release date planned <span class="anchor" id="line-33"></span>yet but we should have betas coming out over the next few months. <span class="anchor" id="line-34"></span><a class="http" href="http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05898.html">http://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg05898.html</a> <span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span></p><p class="line874">Canonical confirms btrfs won't happen until 11.04 <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p class="line874">robbie.w: I deferred this for completion in Natty, as we won't be able <span class="anchor" id="line-39"></span>to complete all the remainin work for Maverick.  <a class="https" href="https://blueprints.launchpad.net/ubuntu/+spec/foundations-m-btrfs-support">https://blueprints.launchpad.net/ubuntu/+spec/foundations-m-btrfs-support</a> <span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span></p><p class="line867">
+</p><h1 id="Features">Features</h1>
+<span class="anchor" id="line-42"></span><ul><li>Extent based file storage (2^64 max file size)  <span class="anchor" id="line-43"></span></li><li>Space efficient packing of small files  <span class="anchor" id="line-44"></span></li><li>Space efficient indexed directories  <span class="anchor" id="line-45"></span></li><li>Dynamic inode allocation  <span class="anchor" id="line-46"></span></li><li>Writable snapshots  <span class="anchor" id="line-47"></span></li><li>Subvolumes (separate internal filesystem roots)  <span class="anchor" id="line-48"></span></li><li>Object level mirroring and striping  <span class="anchor" id="line-49"></span></li><li>Checksums on data and metadata (multiple algorithms available)  <span class="anchor" id="line-50"></span></li><li>Compression  <span class="anchor" id="line-51"></span></li><li>Integrated multiple device support, with several raid algorithms  <span class="anchor" id="line-52"></span></li><li>Online filesystem check  <span class="anchor" id="line-53"></span></li><li>Very fast offline filesystem check  <span class="anchor" id="line-54"></span></li><li>Efficient incremental backup and FS mirroring  <span class="anchor" id="line-55"></span></li><li>Online filesystem defragmentation  <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></li></ul><p class="line867">
+</p><h1 id="Fresh Install on 10.10 Maverick">Fresh Install on 10.10 Maverick</h1>
+<span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><p class="line862">Obtain the latest install cd from <a class="http" href="http://cdimage.ubuntu.com/">http://cdimage.ubuntu.com/</a> <span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span></p><p class="line874">Do a regular installation except use manual partitioning to create:  <span class="anchor" id="line-62"></span></p><ul><li>a ext2 or ext3 partition of about 250MB for /boot <span class="anchor" id="line-63"></span></li><li>a btrfs partition for / <span class="anchor" id="line-64"></span></li><li>a linux swap partition large enough to allow for suspending to RAM (amount of ram plus 100MB is a good size) If you don't need suspend support then not more than 2GB is sufficent. <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></li></ul><p class="line867">
+</p><h1 id="Install as Root on versions prior to 10.10">Install as Root on versions prior to 10.10</h1>
+<span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><p class="line862">An excellent <a href="https://help.ubuntu.com/community/HowTo">HowTo</a> is available at <a class="http" href="http://ubuntuforums.org/showpost.php?p=8716089&postcount=1">http://ubuntuforums.org/showpost.php?p=8716089&amp;postcount=1</a> <span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span></p><p class="line867">
+</p><h1 id="Installing on 8.10 Intrepid">Installing on 8.10 Intrepid</h1>
+<span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><p class="line867">
+</p><h2 id="PPA deb packages">PPA deb packages</h2>
+<span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line874">The PPA specified in this community documentation is out of date, more recent packages can be found in the standard repositories. <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span></p><p class="line867"><a class="https" href="https://launchpad.net/~brcha/+archive/ppa">https://launchpad.net/~brcha/+archive/ppa</a> <span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span></p><p class="line874">Lines for sources.list.d: <span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span></p><pre>deb http://ppa.launchpad.net/brcha/ppa/ubuntu intrepid main
+deb-src http://ppa.launchpad.net/brcha/ppa/ubuntu intrepid main</pre><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><p class="line874">Add the GPG key: <span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span></p><pre>sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 17f547c39c5c4071e254d0a7313d312748a22a95</pre><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><p class="line874">Download module source and btrfs tools: <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span></p><pre>sudo apt-get install btrfs btrfs-progs module-assistant</pre><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><p class="line874">Build and install kernel module: <span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span></p><pre>sudo module-assistant auto-install btrfs
+sudo modprobe btrfs</pre><span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line867">
+</p><h2 id="Compile from Source">Compile from Source</h2>
+<span class="anchor" id="line-101"></span><p class="line867"><strong>NOT ACTUALLY WORKING YET</strong> <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span></p><p class="line867"><a class="http" href="http://btrfs.wiki.kernel.org/index.php/Getting_started">btrfs wiki getting started page</a> <span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span></p><p class="line867">
+</p><h3 id="Kernel Module Dependencies">Kernel Module Dependencies</h3>
+<span class="anchor" id="line-106"></span><p class="line874">8.10 Kernel 2.6.27-9-generic <span class="anchor" id="line-107"></span></p><ul><li>CONFIG_LIBCRC32C=m <span class="anchor" id="line-108"></span></li><li>CONFIG_ZLIB_INFLATE=y <span class="anchor" id="line-109"></span></li><li>CONFIG_ZLIB_DEFLATE=m <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span></li><li class="gap">build-essential: make, compiler, etc <span class="anchor" id="line-113"></span></li><li>linux-headers-2.6.27-9-generic: latest kernel headers <span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span></li></ul><p class="line867"><span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span></p><pre>sudo apt-get install build-essential linux-headers-2.6.27-9-generic</pre><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><p class="line862">Patch: <a class="http" href="http://permalink.gmane.org/gmane.comp.file-systems.btrfs/2562">http://permalink.gmane.org/gmane.comp.file-systems.btrfs/2562</a> <span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span></p><p class="line874">Download, patch and compile code: <span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></p><pre>wget http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/btrfs-0.17.tar.bz2
+tar -jxvf btrfs-0.17.tar.bz2
+cd btrfs-0.17
+#apply patch
+make</pre><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><p class="line867"><strong>Currently btrfs does not work with kernel 2.6.27</strong> <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span></p><p class="line874">Ensure modules are up and running, and insert btrfs module into kernel. <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span></p><pre>sudo modprobe libcrc32c zlib_inflate zlib_deflate
+sudo insmod btrfs.ko</pre><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><p class="line867">
+</p><h3 id="btrfs progs dependencies">btrfs progs dependencies</h3>
+<span class="anchor" id="line-139"></span><p class="line867"><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span></p><pre>sudo apt-get install e2fsprogs uuid-dev</pre><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><p class="line867"><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span></p><pre>wget http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/btrfs-progs-0.17.tar.bz2
+tar -jxvf btrfs-progs-0.17.tar.bz2
+make</pre><span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><p class="line867"><strong>btrfs-progs compile fine</strong> <span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span></p><p class="line867">
+</p><h1 id="Demo Script">Demo Script</h1>
+<span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><p class="line862">A demo of how to use btrfs features by Valerie Aurora (formerly Henson): <a class="attachment" href="https://help.ubuntu.com/community/btrfs?action=AttachFile&do=view&target=btrfs_demo.sh" title="attachment:btrfs_demo.sh">btrfs_demo.sh</a> <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span></p><p class="line867">
+</p><h1 id="Snapshots &amp; Subvolumes">Snapshots &amp; Subvolumes</h1>
+<span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><p class="line874">Create a subvolume: <span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span></p><pre>btrfs subvolume create test</pre><span class="anchor" id="line-161"></span><p class="line874">This creates a subvolume in your home area called test.  It appears to be a directory. <span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span></p><p class="line874">Do a snapshot copy of a subvolume: <span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span></p><pre>btrfs subvolume snapshot test snap-copy-one</pre><span class="anchor" id="line-167"></span><p class="line874">This creates a subvolume in your home area called snap-copy-one complete with all the data contained in test at the time of the snapshot.   <span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span></p><p class="line874">List your subvolume: <span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span></p><pre>sudo btrfs subvolume list test</pre><span class="anchor" id="line-173"></span><p class="line874">This lists your subvolumes.  Root privileges and the name of one of your subvolumes is required. <span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span></p><p class="line874">Sample Output: <span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span></p><pre>ID 264 top level 5 path home/myhome/test
+ID 265 top level 5 path home/myhome/snap-copy-one</pre><span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><p class="line874">Delete your subvolume: <span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span></p><pre>sudo btrfs subvolume delete test</pre><span class="anchor" id="line-185"></span><p class="line874">Root privileges are required to delete subvolumes. <span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span></p><p class="line867">
+</p><h1 id="Adding Filesystem Compression">Adding Filesystem Compression</h1>
+<span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><p class="line874">Edit /etc/fstab: <span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span><span class="anchor" id="line-199"></span></p><pre># &lt;file system&gt;                      &lt;mount point&gt;    &lt;type&gt;  &lt;options&gt;          &lt;dump&gt;  &lt;pass&gt;
+proc                                        /proc  proc    nodev,noexec,nosuid   0  0
+# / was on /dev/sda2 during installation
+UUID=07e198ed-18a3-41ed-9e48-bde82ead65fc   /      btrfs   defaults, compress    0  1
+# /boot was on /dev/sda1 during installation
+UUID=90983817-83f8-464f-a50c-39cd02317447   /boot  ext2    defaults              0  2
+# swap was on /dev/sda5 during installation
+UUID=a3da3212-876f-4350-94b3-4b5b5040c871   none   swap    sw                    0  0</pre><span class="anchor" id="line-200"></span><p class="line874">The compress option was added.  Remount the filesystem using "sudo mount -o remount /" or simply reboot. <span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span></p><p class="line867">
+</p><h1 id="Display Filesystem Information">Display Filesystem Information</h1>
+<span class="anchor" id="line-203"></span><span class="anchor" id="line-204"></span><p class="line874">Show a device: <span class="anchor" id="line-205"></span><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span></p><pre>sudo btrfs filesystem show /dev/sda2</pre><span class="anchor" id="line-208"></span><p class="line874">Displays information about device /dev/sda2. <span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span></p><p class="line874">Sample Output: <span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span><span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span></p><pre>failed to read /dev/sr0
+Label: none  uuid: 07e198ed-18a3-41ed-9e48-bde82ead65fc
+        Total devices 1 FS bytes used 26.80GB
+        devid    1 size 912.20GB used 28.27GB path /dev/sda2
+
+Btrfs Btrfs v0.19</pre><span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span><p class="line874">Show Filesystem Information for a path: <span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span></p><pre>btrfs filesystem df /home/myhome</pre><span class="anchor" id="line-224"></span><p class="line874">Displays information about path /home/myhome. <span class="anchor" id="line-225"></span><span class="anchor" id="line-226"></span></p><p class="line874">Sample Output: <span class="anchor" id="line-227"></span><span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></p><pre>Metadata: total=640.00MB, used=265.57MB
+Data: total=27.00GB, used=26.54GB
+System: total=12.00MB, used=12.00KB</pre><span class="anchor" id="line-232"></span><p class="line867">
+</p><h1 id="Validate Filesystem Integrity">Validate Filesystem Integrity</h1>
+<span class="anchor" id="line-233"></span><span class="anchor" id="line-234"></span><p class="line874">Fsck a device: <span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span></p><pre>sudo btrfsck /dev/sda2</pre><span class="anchor" id="line-238"></span><p class="line874">Does online filesystem check of device /dev/sda2. <span class="anchor" id="line-239"></span><span class="anchor" id="line-240"></span></p><p class="line874">Sample Output: <span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span></p><pre>found 28752076800 bytes used err is 0
+total csum bytes: 27806792
+total tree bytes: 277921792
+total fs tree bytes: 233484288
+btree space waste bytes: 76057148
+file data blocks allocated: 35377807360
+ referenced 28362235904
+Btrfs Btrfs v0.19</pre><span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span><p class="line874">Scrub a directory: <span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span></p><p class="line862">Install btrfs-scrub using instructions at <a class="http" href="http://xercestech.com/how-to-scrub-btrfs.geek">http://xercestech.com/how-to-scrub-btrfs.geek</a> <span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span></p><pre>btrfs-scrub Videos</pre><span class="anchor" id="line-258"></span><p class="line874">The btrfs-scrub routine reads every file in the directory Videos.  Use dmesg to view errors. <span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span></p><p class="line867">
+</p><h1 id="Improve Filesystem Performance">Improve Filesystem Performance</h1>
+<span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span><p class="line874">Balance the B-Tree: <span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span></p><pre>btrfs filesystem balance /home/myhome</pre><span class="anchor" id="line-266"></span><p class="line874">In this case the Rodeh b-trees in path /home/myhome are being balanced.  This could take some time. <span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span></p><p class="line874">Defragment a directory: <span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span></p><pre>sudo btrfs filesystem defragment Videos</pre><span class="anchor" id="line-272"></span><p class="line874">All the files in the Videos directory are defragmented.  Sudo is required to get ioctl access to the files. <span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span></p><p class="line867">
+</p><h1 id="How to use">How to use</h1>
+<span class="anchor" id="line-275"></span><ul><li>How to format disk as btrfs <span class="anchor" id="line-276"></span></li><li>How to grow/shrink file system <span class="anchor" id="line-277"></span></li><li>How to create snapshots <span class="anchor" id="line-278"></span></li><li>How to access snapshots <span class="anchor" id="line-279"></span></li><li>How to convert ext2/3(/4?) partitions to btrfs <span class="anchor" id="line-280"></span></li><li>How to create an image of a btrfs file system <span class="anchor" id="line-281"></span></li><li>How to restore from an image of a btrfs file system <span class="anchor" id="line-282"></span></li><li>How to recover from a failed device <span class="anchor" id="line-283"></span></li><li>How to add another device to file system <span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span></li></ul><p class="line867"><a class="http" href="http://btrfs.wiki.kernel.org/index.php/Category:Documentation">btrfs wiki documentation category</a> <span class="anchor" id="line-286"></span><span class="anchor" id="line-287"></span></p><p class="line867">
+</p><h1 id="Links">Links</h1>
+<span class="anchor" id="line-288"></span><ul><li><p class="line891"><a class="http" href="http://btrfs.wiki.kernel.org/">btrfs home page</a> <span class="anchor" id="line-289"></span></p></li><li><p class="line891"><a class="http" href="http://en.wikipedia.org/wiki/Btrfs">btrfs wikipedia page</a> <span class="anchor" id="line-290"></span></p></li><li><p class="line891"><a class="http" href="http://geb.german-elite.net/blog.php?b=113">Installation BTRFS 0.18 on Ubuntu Intrepid(german)</a> <span class="anchor" id="line-291"></span></p></li></ul><span class="anchor" id="bottom"></span></div><p id="pageinfo" class="info" lang="zh-tw" dir="ltr">btrfs  (上次是 <span title="https://login.launchpad.net/+id/BzWrPPk @ wnpgmb1308w-ad04-234-11.dynamic.mts.net[205.200.234.11]"><a class="interwiki" href="https://launchpad.net/~lindeblm" title="https://login.launchpad.net/+id/BzWrPPk @ wnpgmb1308w-ad04-234-11.dynamic.mts.net[205.200.234.11]">mlindeblom</a></span> 在 2010-10-08 04:52:27 編輯的)</p>
+
+<ul class="pagelinks">
+<li><a class="nbinfo" href="https://help.ubuntu.com/community/btrfs?action=info" rel="nofollow">Page History</a></li>
+</ul>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<hr width="550px">
+
+  <div id="ubuntulinks">
+	<p>
+	      The material on this wiki is available under a free license, see <a href="https://help.ubuntu.com/community/License">Copyright / License</a> for details<br><b>You</b> can contribute to this wiki, see <a href="https://help.ubuntu.com/community/WikiGuide">Wiki Guide</a> for details
+	</p><br>
+  </div>
+<script src="./btrfs - Community Ubuntu Documentation_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1018242-7";
+urchinTracker();
+__utmSetVar('UbuntuWiki');
+</script>
+<script type="text/javascript">
+function togglebar() {
+    obj = document.getElementById('editbar');
+    obj2 = document.getElementById('showbarspan');
+    obj3 = document.getElementById('showbar');
+    if (obj.style.position == 'fixed') {
+        obj.style.position = 'static';
+	obj3.style.bottom = '0';
+        obj2.innerHTML = 'Show';
+    } else {
+        obj.style.position = 'fixed';
+        obj2.innerHTML = 'Hide';
+        obj3.style.bottom = '25px';
+    }
+    return false;
+}
+</script>
+
+
+</div> <!-- footer -->
+</div> <!-- layout -->
+<img id="bottomcap" alt="" src="./btrfs - Community Ubuntu Documentation_files/cap-bottom.png">
+</div> <!-- round -->
+
+
+
+<div style="background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 191); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; color: rgb(0, 0, 0); margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; height: auto; line-height: normal; text-align: left; width: auto; direction: ltr; z-index: 99995; background-position: initial initial; background-repeat: initial initial; "></div><div style="background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 191); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; color: rgb(0, 0, 0); margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; height: auto; line-height: normal; text-align: left; width: auto; direction: ltr; z-index: 99995; background-position: initial initial; background-repeat: initial initial; "></div></body></html>
