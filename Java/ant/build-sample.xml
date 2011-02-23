@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<project name="FatJar output.jar (experimental)" default="pack" basedir=".">
+    <!-- this file was created by Fat-Jar Eclipse Plug-in -->
+    <!-- the ANT-Export is in a very early stage, so this -->
+    <!-- is only experimental, ANT 1.6 or above is        -->
+    <!-- required, feedback is always welcome:            -->
+    <!--       http://sourceforge.net/projects/fjep       -->
+    <!-- uncomment the following lines if using ANT outside Eclipse -->
+    <!--
+	<property name="fjepPath" value="reference:file:fatjar.jar"/>
+	
+	<property name="fjepPath" value="reference:file:plugins\net.sf.fjep.fatjar_0.0.31.jarfatjar.jar"/>
+	
+	<taskdef name="fatjar.build" classname="net.sf.fjep.anttask.FJBuildTask" classpath="${fjepPath}"/>
+	<typedef name="fatjar.manifest" classname="net.sf.fjep.anttask.FJManifestType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.exclude" classname="net.sf.fjep.anttask.FJExcludeType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.jarsource" classname="net.sf.fjep.anttask.FJJarSourceType" classpath="${fjepPath}"/>
+	<typedef name="fatjar.filesource" classname="net.sf.fjep.anttask.FJFileSourceType" classpath="${fjepPath}"/>
+    -->
+    <!-- uncomment the above lines to use ANT outside of Eclipse -->
+	<property name="version" value="1"></property>
+	<property name="revision" value="0"></property>
+	<property name="buildnumber" value="a.01"></property>
+	<property name="fullversion" value="${version}.${revision}.${buildnumber}"/>
+	<property name="cvsServer" value=":pserver:pentatonic@1.1.1.1:/home/cvs"/>
+	<property name="FolderA" value="../FolderA"/>
+	<property name="FolderB" value="../FolderB"/>
+	<property name="FolderC" value="../FolderC"/>
+	<property name="FolderD" value="../FolderD"/>
+	<property name="outfolder" value="v${fullversion}"/>
+	<property name="tempfolder" value="Temp"></property>
+	<property name="jarname" value="output.jar"/>
+	<property name="metaData" value="metaData"/>
+	
+	<target name="init">
+		<delete dir="${tempfolder}" verbose="true"></delete>
+		<mkdir dir="${outfolder}"/>
+		<mkdir dir="${outfolder}\${metaData}"/>
+		<cvs cvsRoot="${cvsServer}" package="metaData_cvs" dest="${tempfolder}"/>
+		
+		<copy todir="${outfolder}\${metaData}">
+			<fileset dir="${tempfolder}\metaData_cvs" includes="*.def"/>
+			<fileset dir="${tempfolder}\metaData_cvs" includes="*.sets"/>
+		</copy>
+		
+		<delete file="${FolderA}/src/def.sets"/>
+		<delete file="${FolderA}/bin/def.sets"/>
+		<delete file="_default.sets"/>
+		
+		<copy file="def.sets" tofile="_def.sets" >
+			<filterchain>
+				<replacetokens>
+					<token key="version" value="${version}"/>
+					<token key="revision" value="${revision}"/>
+					<token key="buildnumber" value="${buildnumber}"/>
+				</replacetokens>
+			</filterchain>
+		</copy>
+		<copy file="_def.sets" tofile="${FolderA}/src/def.sets"/>
+		<copy file="_def.sets" tofile="${FolderA}/bin/def.sets"/>
+		
+	</target>
+    
+	<target name="main" depends="init">
+        <fatjar.build output="${jarname}">
+            <fatjar.manifest mergemanifests="false" mainclass="com.lib.pentatonic.cow"/>
+            <fatjar.filesource path="${FolderA}\bin" relpath="">
+                <fatjar.exclude relpath="com/lib/pentatonic/.cvsignore"/>
+                <fatjar.exclude relpath="CVS/"/>
+            </fatjar.filesource>
+            <fatjar.filesource path="${FolderB}\bin" relpath="">
+                <fatjar.exclude relpath="xxx/.cvsignore"/>
+                <fatjar.exclude relpath="CVS/"/>
+            </fatjar.filesource>
+        	<!--
+            <fatjar.jarsource file="${FolderC}\log4j.jar" relpath=""/>
+            -->
+            <fatjar.jarsource file="${FolderD}\yyy.jar" relpath=""/>
+            <fatjar.jarsource file="${FolderB}\lib\zzz.jar" relpath=""/>
+        </fatjar.build>
+    </target>
+	
+	<target name="pack" depends="main">
+		<exec dir="." executable="cmd" os="Windows XP">
+			<arg line="/c xcopy /E /Y /I .\data .\${outfolder}"/>
+		</exec>
+		<exec dir="." executable="cmd" os="Windows XP">
+			<arg line="/c copy ${jarname} .\${outfolder}"/>
+		</exec>
+		
+		<!--
+		<copy file="${jarname}" todir="${outfolder}\${metaData}"/>
+		-->
+		
+		<!-- <delete file="${jarname}"/> -->
+		
+		<zip destfile="${outfolder}.zip" basedir="${outfolder}"/>
+	
+	</target>
+	
+	
+</project>
