@@ -2,11 +2,7 @@
 	Python call C library
 '''
 
-import sys
-sys.path.append("/root")
-import termios # In linux's python lib
-import os
-import commands
+
 from ctypes import *
 
 '''
@@ -46,3 +42,25 @@ if ret == 0 and size.value > 0:
 else:
 	return []
 
+	
+
+	
+# -------------------------------------------------------
+
+
+POINTER(type)	# reuturn a pointer-type
+pointer(obj)	# return the address of obj
+byref(obj)		# return the address of obj with less overhead
+
+
+# -------------------------------------------------------
+
+
+# pass pointer to pointer to c functions
+libcups = CDLL("/usr/lib/libcups.so")
+#cupsGetDests.argtypes = [POINTER(POINTER(cups_dest_s))]
+cups_dests = POINTER(cups_dest_s)()	# a pointer to cups_dest_s object
+#cups_dests = POINTER(POINTER(c_char_p))()
+numDests = libcups.cupsGetDests(pointer(cups_dests))	# pass the address of pointer cups_dests
+print str(cups_dests[0].name)
+print 'num of dest:' + str(numDests)
