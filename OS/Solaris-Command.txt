@@ -1,0 +1,65 @@
+- Configure iSCSI initiator
+	- iscsiadm list discovery
+	- iscsiadm list target
+
+	- iscsiadm modify discovery -t enable/disable
+	- iscsiadm modify discovery --sendtargets enable/disable
+	- iscsiadm modify discovery --iSNS enable/disable
+	- iscsiadm modify discovery --static enable/disable
+
+	- iscsiadm add discovery-address xxx.xxx.xxx.xxx:3260
+	- iscsiadm remove discovery-address xxx.xxx.xxx.xxx:3260
+
+- Configure MPxIO
+	- /kernel/drv/fp.conf (Fibre)
+	- /kernel/drv/iscsi.conf (iSCSI)
+	- /kernel/drv/mpt.conf (SAS)
+	- /kernel/drv/scsi_vhci.conf
+
+	- stmsboot -e (before update 7)
+	- stmsboot -u (after update 7)
+	- stmsboot -d
+
+- mpathadm show lu /dev/rdsk/c5t600D02310000B3342503B8B03C2F6815d0s2
+
+- Configure runtime link enviroment
+    crle
+    
+- list dynamic dependencies of executable file or shared objects
+    ldd
+- zfs command
+    zfs list -t snapshot -r rpool
+    zfs set snapdir=visible kisspool
+    zfs rollback pool/data@now
+
+- rescan disk
+    cfgadm -al
+    devfsadm -C
+
+sharemgr share
+sharemgr unshare
+share
+mount -F nfs -o rw 172.18.8.107:/Pool1/v1 /mnt_nfs/    
+
+ls -dv /Pool1/vv1/
+chmod A+user:60001:execute/list_directory/read_data/read_attributes/read_xattr/read_acl/synchronize:file_inherit/dir_inherit:allow "/Pool1/vv1"
+chmod A+user:60001::file_inherit/dir_inherit:deny "/Pool1/vv1"
+
+http://sunblog.mbrannigan.com/2006/10/configuring-mpxio-in-solaris-10.html
+http://www.petertribble.co.uk/Solaris/mpxio.html
+http://www.chinaunix.net/jh/6/1220339.html
+http://www.5dlinux.com/article/11/2008/linux_20333.html
+
+
+- DNS server configuration
+	/etc/resolv.conf
+		nameserver 192.168.1.22
+		
+	/etc/nsswitch.conf
+		host: files dns
+
+- SFTP
+	Please edit /etc/ssh/sshd_config
+	#Subsystem       sftp    internal-sftp
+	Remove ¡§#¡¨ and then execute ¡§svcadm restart ssh¡¨
+
