@@ -18,7 +18,7 @@ print a
 
 # ---------------------- work around ------------------------
 
-class reaStr(object):
+class utf8Str(object):
 	'''
 	super real string
 	'''
@@ -30,6 +30,6 @@ class reaStr(object):
 		return "'" + self.ss.replace('\\', '/').replace("'", "\\'") + "'"
 
 b = {}
-b['a'] = reaStr("C:\Documents and Settings\john.liu\My Documents\FinePrint ÀÉ®×")
+b['a'] = utf8Str("C:\Documents and Settings\john.liu\My Documents\FinePrint ÀÉ®×")
 print b
 #output: {'a': 'C:/Documents and Settings/john.liu/My Documents/FinePrint ÀÉ®×'}
