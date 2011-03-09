@@ -32,3 +32,11 @@ ssh-keygen -t rsa -C "jxxxxxxxxxxxxxxc@gmail.com"
 
 sudo apt-get install xclip //Downloads and installs xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
+
+=====================================
+// edit commit message with vim
+// in ~/.gitconfig
+[core]
+	editor = vim
+//or 
+git config --global core.editor "vim"
