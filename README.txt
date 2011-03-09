@@ -23,3 +23,9 @@ git pull origin master
 git mv
 git rm
 
+=====================================
+ubuntu set-up
+
+apt-get install git-core git-gui git-doc
+cd ~/.ssh
+ssh-keygen -t rsa -C "jxxxxxxxxxxxxxxc@gmail.com"
