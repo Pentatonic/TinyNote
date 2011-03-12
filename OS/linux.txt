@@ -1,0 +1,4 @@
+[backup system]
+sudo tar -cvpzfP /backup/backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/mnt --exclude=/sys --exclude=/media /
+[recover system]
+tar -xvpzfP /backup/backup.tgz -C /
