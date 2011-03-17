@@ -18,6 +18,8 @@ Existing Git Repo?
   cd existing_git_repo
   git remote add origin git@github.com:Pentatonic/XXX.git
   git push -u origin master
+
+kk
   
 git pull origin master
 git mv
