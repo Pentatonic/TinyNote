@@ -18,6 +18,7 @@ Existing Git Repo?
   cd existing_git_repo
   git remote add origin git@github.com:Pentatonic/XXX.git
   git push -u origin master
+
   
 git pull origin master
 git mv
@@ -41,4 +42,4 @@ xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 //or 
 git config --global core.editor "vim"
 
-jj
+
