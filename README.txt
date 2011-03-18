@@ -26,19 +26,29 @@ git rm
 
 =====================================
 ubuntu set-up
-
-apt-get install git-core git-gui git-doc
-cd ~/.ssh
-ssh-keygen -t rsa -C "jxxxxxxxxxxxxxxc@gmail.com"
-
-sudo apt-get install xclip //Downloads and installs xclip
-xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
+	apt-get install git-core git-gui git-doc
+	cd ~/.ssh
+	ssh-keygen -t rsa -C "jxxxxxxxxxxxxxxc@gmail.com"
+	
+	sudo apt-get install xclip //Downloads and installs xclip
+	xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 
 =====================================
+
 // edit commit message with vim
 // in ~/.gitconfig
 [core]
 	editor = vim
 //or 
 git config --global core.editor "vim"
+
+=====================================
+
+// create/delete branch
+git branch branchX
+git branch -d branchX
+git branch -D branchX // ignore merge status
+
+// switch branch
+git checkout branchX
 
