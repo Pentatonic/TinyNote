@@ -56,7 +56,7 @@ git add *
 git commit -a
 
 // delete branch
-git -d b1 // use "-D" to discard unmerged changed
+git branch -d b1 // use "-D" to discard unmerged changed
 git push origin :b1 // delete branch on server
 
 
