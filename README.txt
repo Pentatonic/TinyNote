@@ -41,3 +41,5 @@ xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 	editor = vim
 //or 
 git config --global core.editor "vim"
+
+xx
