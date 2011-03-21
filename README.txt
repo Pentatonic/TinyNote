@@ -42,3 +42,11 @@ xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 //or 
 git config --global core.editor "vim"
 
+
+=====================================
+// merge branch
+git merge branch1
+// if conflict, resolve conflict
+git add *
+git commit -a
+
