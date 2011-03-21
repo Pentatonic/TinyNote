@@ -25,7 +25,7 @@ git mv
 git rm
 
 =====================================
-ubuntu set-up
+/* ubuntu set-up */
 
 apt-get install git-core git-gui git-doc
 cd ~/.ssh
@@ -35,7 +35,7 @@ sudo apt-get install xclip //Downloads and installs xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 
 =====================================
-// edit commit message with vim
+/* edit commit message with vim */
 // in ~/.gitconfig
 [core]
 	editor = vim
@@ -44,9 +44,18 @@ git config --global core.editor "vim"
 
 
 =====================================
+/* git branch */
+// create branch
+git branch b1
+
+
 // merge branch
-git merge branch1
-// if conflict, resolve conflict
+git merge b1 // if conflict, resolve conflict in files
 git add *
 git commit -a
+
+// delete branch
+git -d b1 // use "-D" to discard unmerged changed
+git push origin :b1 // delete branch on server
+
 
