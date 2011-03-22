@@ -48,6 +48,8 @@ git config --global core.editor "vim"
 /* git branch */
 // create branch
 git branch b1
+// push all changes to server, including unmodified new branches.
+// git push --all 
 
 
 // merge branch
