@@ -61,7 +61,7 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
 - SFTP
 	Please edit /etc/ssh/sshd_config
 	#Subsystem       sftp    internal-sftp
-	Remove ¡§#¡¨ and then execute ¡§svcadm restart ssh¡¨
+	Remove # and then execute "svcadm restart ssh"
 
 - replace strings in file
     gsed -i 's/^Subsystem\\tsftp/# Subsystem\\tsftp/g' /etc/ssh/sshd_config
