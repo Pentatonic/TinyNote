@@ -64,22 +64,27 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
     Remove # and then execute "svcadm restart ssh"
 
 - replace strings in file
-    gsed -i 's/^Subsystem\\tsftp/# Subsystem\\tsftp/g' /etc/ssh/sshd_config
+    gsed -i 's/^Subsystem\tsftp/# Subsystem\tsftp/g' /etc/ssh/sshd_config
     
 - config gateway
+    // add
     route add default 172.18.8.254
-    route add 192.168.200.200 172.18.8.254
+    route add 192.168.200.200 172.18.8.254 // host
     // destination is network
     route -p add -net 192.168.0.0 172.18.8.254
+    route -p add -net 192.168.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+    // destination is host
+    route -p add -host 192.168.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
     // -p: persistent
     route -p add -net 1.1.1.0 -gateway 172.18.8.1
     // specify a interface
     route add -ifp yge1 default 172.18.8.254
-    route delete default 172.18.8.254
+    
+    // delete
     route -p delete default 172.18.8.254
     
     // config file
-    /etc/inet/static_routes
+        /etc/inet/static_routes
     
 - show network interfaces
     dladm show-link
