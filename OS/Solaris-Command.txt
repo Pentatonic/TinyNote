@@ -1,24 +1,24 @@
 - Configure iSCSI initiator
-	- iscsiadm list discovery
-	- iscsiadm list target
+    - iscsiadm list discovery
+    - iscsiadm list target
 
-	- iscsiadm modify discovery -t enable/disable
-	- iscsiadm modify discovery --sendtargets enable/disable
-	- iscsiadm modify discovery --iSNS enable/disable
-	- iscsiadm modify discovery --static enable/disable
+    - iscsiadm modify discovery -t enable/disable
+    - iscsiadm modify discovery --sendtargets enable/disable
+    - iscsiadm modify discovery --iSNS enable/disable
+    - iscsiadm modify discovery --static enable/disable
 
-	- iscsiadm add discovery-address xxx.xxx.xxx.xxx:3260
-	- iscsiadm remove discovery-address xxx.xxx.xxx.xxx:3260
+    - iscsiadm add discovery-address xxx.xxx.xxx.xxx:3260
+    - iscsiadm remove discovery-address xxx.xxx.xxx.xxx:3260
 
 - Configure MPxIO
-	- /kernel/drv/fp.conf (Fibre)
-	- /kernel/drv/iscsi.conf (iSCSI)
-	- /kernel/drv/mpt.conf (SAS)
-	- /kernel/drv/scsi_vhci.conf
+    - /kernel/drv/fp.conf (Fibre)
+    - /kernel/drv/iscsi.conf (iSCSI)
+    - /kernel/drv/mpt.conf (SAS)
+    - /kernel/drv/scsi_vhci.conf
 
-	- stmsboot -e (before update 7)
-	- stmsboot -u (after update 7)
-	- stmsboot -d
+    - stmsboot -e (before update 7)
+    - stmsboot -u (after update 7)
+    - stmsboot -d
 
 - mpathadm show lu /dev/rdsk/c5t600D02310000B3342503B8B03C2F6815d0s2
 
@@ -52,16 +52,36 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
 
 
 - DNS server configuration
-	/etc/resolv.conf
-		nameserver 192.168.1.22
-		
-	/etc/nsswitch.conf
-		host: files dns
+    /etc/resolv.conf
+        nameserver 192.168.1.22
+        
+    /etc/nsswitch.conf
+        host: files dns
 
 - SFTP
-	Please edit /etc/ssh/sshd_config
-	#Subsystem       sftp    internal-sftp
-	Remove # and then execute "svcadm restart ssh"
+    Please edit /etc/ssh/sshd_config
+    #Subsystem       sftp    internal-sftp
+    Remove # and then execute "svcadm restart ssh"
 
 - replace strings in file
     gsed -i 's/^Subsystem\\tsftp/# Subsystem\\tsftp/g' /etc/ssh/sshd_config
+    
+- config gateway
+    route add default 172.18.8.254
+    route add 192.168.200.200 172.18.8.254
+    // destination is network
+    route -p add -net 192.168.0.0 172.18.8.254
+    // -p: persistent
+    route -p add -net 1.1.1.0 -gateway 172.18.8.1
+    // specify a interface
+    route add -ifp yge1 default 172.18.8.254
+    route delete default 172.18.8.254
+    route -p delete default 172.18.8.254
+    
+    // config file
+    /etc/inet/static_routes
+    
+- show network interfaces
+    dladm show-link
+
+
