@@ -4,10 +4,10 @@
 	socket
 	thread
 '''
+
+
 from threading import Thread
 import socket
-
-
 
 rcvSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 rcvSocket.bind(("", 12345))
@@ -40,3 +40,8 @@ def handleRcvMsg():
 				continue
 		except:
 			pass
+            
+# =============================================================
+''' set socket default timeout '''
+socket.setdefaulttimeout(10.0)
+

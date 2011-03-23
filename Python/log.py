@@ -30,3 +30,16 @@ if __name__ == '__main__':
   
   
 # ===================================================================
+''' rotate log, split log files when size limit is reached '''
+
+logLevel = logging.DEBUG
+lcdLogger = logging.getLogger('lcd')    
+lcdLogger.setLevel(logLevel)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+rfh = logging.handlers.RotatingFileHandler('lcd.log',
+                                           maxBytes=1024*1024,
+                                           backupCount=2)
+rfh.setFormatter(formatter)
+lcdLogger.addHandler(rfh)
+
+
