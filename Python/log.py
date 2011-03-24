@@ -35,10 +35,12 @@ if __name__ == '__main__':
 logLevel = logging.DEBUG
 lcdLogger = logging.getLogger('lcd')    
 lcdLogger.setLevel(logLevel)
-formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-rfh = logging.handlers.RotatingFileHandler('lcd.log',
-                                           maxBytes=1024*1024,
-                                           backupCount=2)
+formatter = logging.Formatter(
+    "%(asctime)s-%(name)s-%(levelname)s-%(pathname)s(%(funcName)s): %(message)s")
+rfh = logging.handlers.RotatingFileHandler(
+    'lcd.log',
+    maxBytes=1024*1024,
+    backupCount=2)
 rfh.setFormatter(formatter)
 lcdLogger.addHandler(rfh)
 

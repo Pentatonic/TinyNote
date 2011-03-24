@@ -90,3 +90,6 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
     dladm show-link
 
 
+- date
+     date [-u] mmddHHMM[[cc]yy][.SS]
+     date 033011112011 // 2011.03.30 11:11
