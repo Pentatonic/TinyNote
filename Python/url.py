@@ -1,7 +1,7 @@
 '''
-	open url
-	send data
-	submit form
+    open url
+    send data
+    submit form
 '''
 
 import urllib
@@ -12,13 +12,13 @@ f = urllib.urlopen('http://127.0.0.1/admin', params)
 lines = f.readlines()
 
 for line in lines:
-	pass
-	
+    pass
+    
 # ------------------------------------------------------------------------------------
 '''
-	submit form
-	multipart
-	multi part post
+    submit form
+    multipart
+    multi part post
 '''
 
 # test_client.py

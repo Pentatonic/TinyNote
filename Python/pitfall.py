@@ -1,10 +1,10 @@
 #-*- coding:utf-8 -*-
 '''
-	issue, problem, error ?
-	when using __str__
-	to string
-	
-	a convenient way to ouput json object
+    issue, problem, error ?
+    when using __str__
+    to string
+    
+    a convenient way to ouput json object
 '''
 
 # in the __str__ function, it actually calls __repr__
@@ -19,15 +19,15 @@ print a
 # ---------------------- work around ------------------------
 
 class utf8Str(object):
-	'''
-	super real string
-	'''
-	ss = ""
-	def __init__(self, s):
-		#super(object, self).__init__()
-		self.ss = s
-	def __repr__(self):
-		return "'" + self.ss.replace('\\', '/').replace("'", "\\'") + "'"
+    '''
+    super real string
+    '''
+    ss = ""
+    def __init__(self, s):
+        #super(object, self).__init__()
+        self.ss = s
+    def __repr__(self):
+        return "'" + self.ss.replace('\\', '/').replace("'", "\\'") + "'"
 
 b = {}
 b['a'] = utf8Str("C:\Documents and Settings\john.liu\My Documents\FinePrint ÀÉ®×")
