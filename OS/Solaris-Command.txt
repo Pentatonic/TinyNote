@@ -56,7 +56,7 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
         nameserver 192.168.1.22
         
     /etc/nsswitch.conf
-        host: files dns
+        hosts: files dns
 
 - SFTP
     Please edit /etc/ssh/sshd_config
@@ -67,6 +67,7 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
     gsed -i 's/^Subsystem\tsftp/# Subsystem\tsftp/g' /etc/ssh/sshd_config
     
 - config gateway
+    If the -netmask argument appears, then -host and -net are the same.
     // add
     route add default 172.18.8.254
     route add 192.168.200.200 172.18.8.254 // host
@@ -86,9 +87,34 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
     // config file
         /etc/inet/static_routes
     
+    - Example
+        // Add default route, the followings are equal
+        route add -net 0.0.0.0 -gateway 172.18.8.254
+        route add -net 0.0.0.0 -netmask 0.0.0.0 -gateway 172.18.8.254
+        route add -host 0.0.0.0 -netmask 0.0.0.0 -gateway 172.18.8.254
+        
+        // 0.0.0.0 treat as IP
+        route add -host 0.0.0.0 -gateway 172.18.8.254
+        
+        // 0.0.0.0 treat as a network
+        route add -net 0.0.0.0 -gateway 172.18.8.254
+        
+        // The following are the same
+        route delete -net 0.0.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+        route delete -host 0.0.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+        
+        // The following are the same
+        route add -host 172.18.1.0 -gateway 172.18.8.254
+        route add -host 172.18.1.0 -netmask 255.255.255.255 -gateway 172.18.8.254
+        route add -net 172.18.1.0 -netmask 255.255.255.255 -gateway 172.18.8.254
+        
+        // The following are the same
+        route add -net 172.18.1.0 -gateway 172.18.8.254
+        route add -net 172.18.1.0 -netmask 255.255.255.0 -gateway 172.18.8.254
+        route add -host 172.18.1.0 -netmask 255.255.255.0 -gateway 172.18.8.254
+        
 - show network interfaces
     dladm show-link
-
 
 - date
      date [-u] mmddHHMM[[cc]yy][.SS]
