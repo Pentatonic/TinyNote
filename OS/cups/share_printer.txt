@@ -19,3 +19,6 @@ pkg install print/filter/ghostscript
 		"DefaultAuthType None"
 		Remove the "Require" field in tag "Location" and "Limit"
 		Check all "Allow" and "Deny" attribute, should be no user restriction
+
+- add share group (only once) before add new printer
+    sharemgr add-share -r print$ -s /tmp smb
