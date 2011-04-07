@@ -1,6 +1,6 @@
 '''
 '''
-
+# Reference: http://www.ibm.com/developerworks/cn/linux/l-cppeak3.html
 wget -q http://peak.telecommunity.com/dist/ez_setup.py
 python ez_setup.py
 easy_install poster
