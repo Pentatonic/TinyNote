@@ -35,7 +35,7 @@ register_openers()
 
 # headers contains the necessary Content-Type and Content-Length
 # datagen is a generator object that yields the encoded parameters
-datagen, headers = multipart_encode({"image1": open("DSC0001.jpg")})
+datagen, headers = multipart_encode({"image1": open("DSC0001.jpg"), "lala": "qq"})
 
 # Create the Request object
 request = urllib2.Request("http://localhost:5000/upload_image", datagen, headers)
