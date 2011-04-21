@@ -122,8 +122,21 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
 - date
      date [-u] mmddHHMM[[cc]yy][.SS]
      date 033011112011 // 2011.03.30 11:11
-     
+
+    
+- pstatck (show process stack)
+    pstack -F {pid} // running process's stack
+    pstack core     // core dump
+        e.g.
+        core 'core' of 598:     python test.py
+        fed69c04 PyImport_GetModuleDict (8047550, feebf209, 4, 8047594, fe56cc08, fedce804) + 1c
+        fed6a3d9 PyImport_AddModule (fedb4524, 0, 8047594, fed76ffb) + 1d
+        fed77011 PyRun_SimpleStringFlags (fe5754e8, 0) + 25
+        fe528f23 callPython_get (fe56cec4, fe56cef8, fe56cf0c, 804770c, 1, 8047708) + 113
+
+
 - mdb
     mdb core
     ::stack
     ::exit
+    fed77011::dis   // show assembly code of addr fed77011
