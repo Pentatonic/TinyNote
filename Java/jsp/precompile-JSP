@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd"> 
+
+
+<web-app> 
+
+
+    <servlet> 
+        <servlet-name>preCompile</servlet-name> 
+        <servlet-class>com.j2eegeek.servlet.util.PreCompileServlet</servlet-class> 
+        <init-param> 
+            <param-name>jsp.delimiter</param-name> 
+            <param-value>;</param-value> 
+        </init-param> 
+        <init-param> 
+            <param-name>jsp.file.list</param-name> 
+            <param-value>index.jsp;login.jsp;mainmenu.jsp;include/stuff.jsp¡K.</param-value> 
+        </init-param> 
+        <init-param> 
+            <param-name>jsp.server.url</param-name> 
+            <param-value>http://localhost:8080/myapp/</param-value> 
+        </init-param> 
+        <load-on-startup>9</load-on-startup> 
+    </servlet> 
+
+
+    <servlet-mapping> 
+        <servlet-name>preCompile</servlet-name> 
+        <url-pattern>/preCompile</url-pattern> 
+    </servlet-mapping> 
+
+
+</web-app>
+
+
+// -----------------------------------------------------------------------------
+
+/** 
+ * Called by the servlet container to indicate to a servlet that 
+ * the servlet is being placed into service. 
+ * 
+ * @param javax.servlet.ServletConfig config 
+ * @throws javax.servlet.ServletException ServletException 
+ */ 
+public void init(ServletConfig config) throws ServletException { 
+
+    log.info("Starting init() in " + CLASS_NAME); 
+    String server_url = config.getInitParameter(SERVER_PREFIX); 
+    String jsp_delim = config.getInitParameter(JSP_DELIMITER); 
+    String jsps = config.getInitParameter(JSP_FILE_LIST); 
+
+
+    if ((jsps != null) && (StringUtils.isNotBlank(jsps))) { 
+        StringTokenizer st = new StringTokenizer(jsps, jsp_delim); 
+        while (st.hasMoreTokens()) { 
+            String jsp = st.nextToken(); 
+            log.info("Starting precompile for " + jsp); 
+            connect(server_url + jsp + JSP_PRECOMPILE_DIRECTIVE); 
+        } 
+        log.info("Precompiling JSP¡¦s complete"); 
+    } 
+}
