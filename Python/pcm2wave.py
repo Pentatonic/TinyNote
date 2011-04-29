@@ -1,5 +1,6 @@
 '''
     transfer PCM file to WAVE file
+    add header, transfer data to little endian
 '''
 
 import array

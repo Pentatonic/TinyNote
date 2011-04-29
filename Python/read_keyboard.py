@@ -1,5 +1,5 @@
 '''
-    Read keyboard in linux enviroment
+    Read keyboard input in linux enviroment
 '''
 
 import sys

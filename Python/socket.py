@@ -42,6 +42,8 @@ def handleRcvMsg():
             pass
             
 # =============================================================
-''' set socket default timeout '''
+''' 
+    set socket default timeout
+'''
 socket.setdefaulttimeout(10.0)
 
