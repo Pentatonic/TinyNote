@@ -41,9 +41,21 @@ def handleRcvMsg():
         except:
             pass
             
-# =============================================================
+# ==============================================================================
 ''' 
     set socket default timeout
 '''
 socket.setdefaulttimeout(10.0)
+
+# ==============================================================================
+'''
+    IP address to byte
+    bytes 
+    array
+'''
+socket.ntohl(struct.unpack("I",socket.inet_aton('225.1.2.255'))[0])
+# 4278256383L
+
+socket.inet_ntoa(struct.pack('I',socket.htonl(4278256383L)))
+# '225.1.2.255'
 
