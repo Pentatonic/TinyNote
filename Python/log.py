@@ -17,7 +17,7 @@ def main():
   logging.basicConfig(level=logging_level,
                       filename=options.logging_file,
                       format='%(asctime)s %(levelname)s: %(message)s',
-                      datefmt='%Y-%m-%d %H:%M:%S'
+                      datefmt='%Y-%m-%d %H:%M:%S',
                       # will clear previous log content
                       filemode='w')
                       
@@ -44,4 +44,13 @@ rfh = logging.handlers.RotatingFileHandler(
 rfh.setFormatter(formatter)
 lcdLogger.addHandler(rfh)
 
+# ====================================================================
+import logger 
+logger = logging.getLogger('stock')
+hdlr = logging.FileHandler('stock.log')
+formatter = logging.Formatter('%(asctime)s-%(levelname)s:%(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr) 
+logger.setLevel(logging.DEBUG)
 
+logget.debug('123 error')
