@@ -1,0 +1,45 @@
+is it possible to treat .js file as .jsp file using web.xml configuration?
+
+Yes:
+
+<servlet>
+    <servlet-name>scriptjsp</servlet-name>
+    <jsp-file>/script.jsp</jsp-file> 
+</servlet>
+<servlet-mapping>
+    <servlet-name>scriptjsp</servlet-name>
+    <url-pattern>/script.js</url-pattern>
+</servlet-mapping>
+But, there is no actual advantage in doing this, because JavaScript files do not
+ have to have URLs ending in ．.js・. What determines whether a file is a
+ JavaScript file is what MIME media type it is served as. You can set this from JSP using:
+
+<%@ page contentType="text/javascript" %>
+at the top. Then you can link directly to:
+
+<script type="text/javascript" src="/script.jsp"></script>
+(Aside: in current browsers, scripts linked to with the <script> tag will work
+even without having the Content-Type properly set, but that's probably not something to rely on.)
+
+I want to use JSTL's fmt tag in javascript
+
+This is probably not a good idea. The fmt tag deals with HTML-escaping for
+characters, but what you want is JavaScript string literal escaping, for example
+to backslash-escape quote characters. JSTL doesn't provide this capability. You'll
+get unexpectedly-escaped ．&amp;・ characters showing up in your JavaScript strings,
+and use of apostrophe or double quote in messages will break the whole script.
+
+Also, serving commonly-included scripts from JSP risks poor performance and
+cacheing.
+
+I'd suggest an independent language lookup system in JavaScript. For example, include
+a per-language external script:
+
+<script type="text/javascript" src="/script/lang/en.js"></script>
+(changing 'en' to match whichever language you want), and in that file define a lookup like:
+
+var msg= {
+    messageName: 'Message in English',
+    ...
+};
+Then look up msg.messageName for each localisable string in the script.
