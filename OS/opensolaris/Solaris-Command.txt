@@ -1,0 +1,142 @@
+- Configure iSCSI initiator
+    - iscsiadm list discovery
+    - iscsiadm list target
+
+    - iscsiadm modify discovery -t enable/disable
+    - iscsiadm modify discovery --sendtargets enable/disable
+    - iscsiadm modify discovery --iSNS enable/disable
+    - iscsiadm modify discovery --static enable/disable
+
+    - iscsiadm add discovery-address xxx.xxx.xxx.xxx:3260
+    - iscsiadm remove discovery-address xxx.xxx.xxx.xxx:3260
+
+- Configure MPxIO
+    - /kernel/drv/fp.conf (Fibre)
+    - /kernel/drv/iscsi.conf (iSCSI)
+    - /kernel/drv/mpt.conf (SAS)
+    - /kernel/drv/scsi_vhci.conf
+
+    - stmsboot -e (before update 7)
+    - stmsboot -u (after update 7)
+    - stmsboot -d
+
+- mpathadm show lu /dev/rdsk/c5t600D02310000B3342503B8B03C2F6815d0s2
+
+- Configure runtime link enviroment
+    crle
+    
+- list dynamic dependencies of executable file or shared objects
+    ldd
+- zfs command
+    zfs list -t snapshot -r rpool
+    zfs set snapdir=visible kisspool
+    zfs rollback pool/data@now
+
+- rescan disk
+    cfgadm -al
+    devfsadm -C
+
+sharemgr share
+sharemgr unshare
+share
+mount -F nfs -o rw 172.18.8.107:/Pool1/v1 /mnt_nfs/    
+
+ls -dv /Pool1/vv1/
+chmod A+user:60001:execute/list_directory/read_data/read_attributes/read_xattr/read_acl/synchronize:file_inherit/dir_inherit:allow "/Pool1/vv1"
+chmod A+user:60001::file_inherit/dir_inherit:deny "/Pool1/vv1"
+
+http://sunblog.mbrannigan.com/2006/10/configuring-mpxio-in-solaris-10.html
+http://www.petertribble.co.uk/Solaris/mpxio.html
+http://www.chinaunix.net/jh/6/1220339.html
+http://www.5dlinux.com/article/11/2008/linux_20333.html
+
+
+- DNS server configuration
+    /etc/resolv.conf
+        nameserver 192.168.1.22
+        
+    /etc/nsswitch.conf
+        hosts: files dns
+
+- SFTP
+    Please edit /etc/ssh/sshd_config
+    #Subsystem       sftp    internal-sftp
+    Remove # and then execute "svcadm restart ssh"
+
+- replace strings in file
+    gsed -i 's/^Subsystem\tsftp/# Subsystem\tsftp/g' /etc/ssh/sshd_config
+- show gateway
+    // -r: route, -v: verbose, -n: show numeric IP
+    netstat -rvn
+
+- config gateway
+    If the -netmask argument appears, then -host and -net are the same.
+    // add
+    route add default 172.18.8.254
+    route add 192.168.200.200 172.18.8.254 // host
+    // destination is network
+    route -p add -net 192.168.0.0 172.18.8.254
+    route -p add -net 192.168.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+    // destination is host
+    route -p add -host 192.168.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+    // -p: persistent
+    route -p add -net 1.1.1.0 -gateway 172.18.8.1
+    // specify a interface
+    route add -ifp yge1 default 172.18.8.254
+    
+    // delete
+    route -p delete default 172.18.8.254
+    
+    // config file
+        /etc/inet/static_routes
+    
+    - Example
+        // Add default route, the followings are equal
+        route add -net 0.0.0.0 -gateway 172.18.8.254
+        route add -net 0.0.0.0 -netmask 0.0.0.0 -gateway 172.18.8.254
+        route add -host 0.0.0.0 -netmask 0.0.0.0 -gateway 172.18.8.254
+        
+        // 0.0.0.0 treat as IP
+        route add -host 0.0.0.0 -gateway 172.18.8.254
+        
+        // 0.0.0.0 treat as a network
+        route add -net 0.0.0.0 -gateway 172.18.8.254
+        
+        // The following are the same
+        route delete -net 0.0.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+        route delete -host 0.0.0.0 -netmask 255.255.0.0 -gateway 172.18.8.254
+        
+        // The following are the same
+        route add -host 172.18.1.0 -gateway 172.18.8.254
+        route add -host 172.18.1.0 -netmask 255.255.255.255 -gateway 172.18.8.254
+        route add -net 172.18.1.0 -netmask 255.255.255.255 -gateway 172.18.8.254
+        
+        // The following are the same
+        route add -net 172.18.1.0 -gateway 172.18.8.254
+        route add -net 172.18.1.0 -netmask 255.255.255.0 -gateway 172.18.8.254
+        route add -host 172.18.1.0 -netmask 255.255.255.0 -gateway 172.18.8.254
+        
+- show network interfaces
+    dladm show-link
+
+- date
+     date [-u] mmddHHMM[[cc]yy][.SS]
+     date 033011112011 // 2011.03.30 11:11
+
+    
+- pstatck (show process stack)
+    pstack -F {pid} // running process's stack
+    pstack core     // core dump
+        e.g.
+        core 'core' of 598:     python test.py
+        fed69c04 PyImport_GetModuleDict (8047550, feebf209, 4, 8047594, fe56cc08, fedce804) + 1c
+        fed6a3d9 PyImport_AddModule (fedb4524, 0, 8047594, fed76ffb) + 1d
+        fed77011 PyRun_SimpleStringFlags (fe5754e8, 0) + 25
+        fe528f23 callPython_get (fe56cec4, fe56cef8, fe56cf0c, 804770c, 1, 8047708) + 113
+
+
+- mdb
+    mdb core
+    ::stack
+    ::exit
+    fed77011::dis   // show assembly code of addr fed77011
