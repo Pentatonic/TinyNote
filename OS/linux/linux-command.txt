@@ -3,3 +3,9 @@ sudo tar -cvpzfP /backup/backup.tgz --exclude=/proc --exclude=/lost+found --excl
 
 [recover system]
 tar -xvpzfP /backup/backup.tgz -C /
+
+[adsl]
+sudo pppoeconf
+plog  // history
+pon dsl-provider // connect by config dsl-provider
+poff
