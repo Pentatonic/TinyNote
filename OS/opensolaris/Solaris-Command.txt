@@ -138,5 +138,5 @@ http://www.5dlinux.com/article/11/2008/linux_20333.html
 - mdb
     mdb core
     ::stack
-    ::exit
+    ::quit
     fed77011::dis   // show assembly code of addr fed77011
