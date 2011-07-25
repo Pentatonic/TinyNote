@@ -40,7 +40,18 @@ def handleRcvMsg():
                 continue
         except:
             pass
-            
+
+# ==============================================================================
+
+import json
+import socket
+#msg = json.dumps({"cmd": "popmsg", "data": ['asdf','456']}, sort_keys=False)
+msg = json.dumps({"type": "cat", "data": ["10cm", "10years"]}, sort_keys=False)
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect(("127.0.0.1", 22468))
+sendbts = sock.send(msg)
+sock.close()
+
 # ==============================================================================
 ''' 
     set socket default timeout
@@ -58,4 +69,6 @@ socket.ntohl(struct.unpack("I",socket.inet_aton('225.1.2.255'))[0])
 
 socket.inet_ntoa(struct.pack('I',socket.htonl(4278256383L)))
 # '225.1.2.255'
+
+
 
