@@ -1,0 +1,38 @@
+IRQ (Hardware)
+    For X86 system, it has two 8259 pics (programmable interrupt controller),
+    each could handle 8 IRQs. But the slave 8259 pic is attached to master
+    8259's pin 2 (IRQ2). So there are 15 IRQs available.
+    
+    0: Timer
+    1: Keyboard
+    2:
+    3:
+    8: Real Timer
+    
+IRQL (Interrupt Request Level)
+    Software IRQL:
+        0: PASSIVE_LEVEL_IRQL, LOW_LEVEL
+        1: APC_LEVEL
+        2: DISPATCH_LEVEL
+    Hardware IRQL:
+        3 - 26: device ISR
+        27:
+        28:
+        29:
+        30:
+        31:
+        
+    IRQL only exists in kernel space. For user space, it's meaningless.
+    All user threads are running at PASSIVE_LEVEL
+
+Ring (x86 CPU)
+    Windows:
+        0: Kernel
+        1: x
+        2: x
+        3: User routine
+     
+Thread priority
+    0 - 15: normal
+    16 - 31: Real-time
+
