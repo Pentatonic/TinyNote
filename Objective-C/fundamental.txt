@@ -1,0 +1,10 @@
+
+The following are equivalent:
+    [[obj alloc] init]
+    [obj new]
+
+Reasons to use alloc-int:
+    - "new" doesn't support custom initializers (like initWithString)
+    - alloc-init is more explicit than new
+--------------------------------------------------------------------------------
+
