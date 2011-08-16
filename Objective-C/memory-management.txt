@@ -1,1 +1,82 @@
-[obj alloc][obj dealloc][obj retain][obj release][obj retainCount]--------------------------------------------------------------------------------In every "set" method, we must follow this sequence:    1. retain    2. release    3. assign    -(void) setEmail: (NSString*) e {        [e retain];        [email release];        email = e;    }    In case we pass in the original object, e.g. [self setEmail: email]--------------------------------------------------------------------------------// Auto release pool// With autorelease poolNSString *str2 = [NSString stringWithString: @"string managed by the pool"];// No autorelease poolNSString *str3 = [[NSString alloc] initWithString: @"self managed string"];--------------------------------------------------------------------------------// How to use autorelease poolFraction.h    ...    +(Fraction*) fractionWithNumerator: (int) n denominator: (int) d;    ...Fraction.m    ...    +(Fraction*) fractionWithNumerator: (int) n denominator: (int) d {        Fraction *ret = [[Fraction alloc] initWithNumerator: n denominator: d];        [ret autorelease];        return ret;    }    ...main.m    #import <Foundation/NSAutoreleasePool.h>    #import "Fraction.h"    #import <stdio.h>    int main( int argc, const char *argv[] ) {        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];        Fraction *frac1 = [Fraction fractionWithNumerator: 2 denominator: 5];        Fraction *frac2 = [Fraction fractionWithNumerator: 1 denominator: 3];        // print frac 1        printf( "Fraction 1: " );        [frac1 print];        printf( "\n" );        // print frac 2        printf( "Fraction 2: " );        [frac2 print];        printf( "\n" );        // this causes a segmentation fault        //[frac1 release];        // release the pool and all objects in it        [pool release];        return 0;    }--------------------------------------------------------------------------------[pool drain] is the same as [pool release]The only difference is that "drain" will hint the system to do garbage collection.This only support systems which support garbage collection.--------------------------------------------------------------------------------
+[obj alloc]
+[obj dealloc]
+[obj retain]
+[obj release]
+[obj retainCount]
+
+--------------------------------------------------------------------------------
+In every "set" method, we must follow this sequence:
+    1. retain
+    2. release
+    3. assign
+
+    -(void) setEmail: (NSString*) e {
+        [e retain];
+        [email release];
+        email = e;
+    }
+
+    In case we pass in the original object, e.g. [self setEmail: email]
+
+--------------------------------------------------------------------------------
+// Auto release pool
+
+// With autorelease pool
+NSString *str2 = [NSString stringWithString: @"string managed by the pool"];
+// No autorelease pool
+NSString *str3 = [[NSString alloc] initWithString: @"self managed string"];
+
+--------------------------------------------------------------------------------
+// How to use autorelease pool
+
+Fraction.h
+    ...
+    +(Fraction*) fractionWithNumerator: (int) n denominator: (int) d;
+    ...
+
+
+Fraction.m
+    ...
+    +(Fraction*) fractionWithNumerator: (int) n denominator: (int) d {
+        Fraction *ret = [[Fraction alloc] initWithNumerator: n denominator: d];
+        [ret autorelease];
+
+        return ret;
+    }
+    ...
+
+
+main.m
+    #import <Foundation/NSAutoreleasePool.h>
+    #import "Fraction.h"
+    #import <stdio.h>
+
+    int main( int argc, const char *argv[] ) {
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        Fraction *frac1 = [Fraction fractionWithNumerator: 2 denominator: 5];
+        Fraction *frac2 = [Fraction fractionWithNumerator: 1 denominator: 3];
+
+        // print frac 1
+        printf( "Fraction 1: " );
+        [frac1 print];
+        printf( "\n" );
+
+        // print frac 2
+        printf( "Fraction 2: " );
+        [frac2 print];
+        printf( "\n" );
+
+        // this causes a segmentation fault
+        //[frac1 release];
+
+        // release the pool and all objects in it
+        [pool release];
+        return 0;
+    }
+
+--------------------------------------------------------------------------------
+[pool drain] is the same as [pool release]
+The only difference is that "drain" will hint the system to do garbage collection.
+This only support systems which support garbage collection.
+
+--------------------------------------------------------------------------------
