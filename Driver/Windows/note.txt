@@ -36,3 +36,15 @@ Thread priority
     0 - 15: normal
     16 - 31: Real-time
 
+
+Spinlock will raise IRQL to Dispatch Level, which stops the scheduler preempt
+
+--------------------------------------------------------------------------------
+
+
+FailOverGroup
+    Contains only one path now, like a wrapper.
+
+DsmSendDeviceIoControlSynchronous()
+    Register DSM to MPIO
+
