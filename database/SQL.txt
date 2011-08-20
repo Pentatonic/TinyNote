@@ -1,0 +1,2 @@
+DELETE FROM InvitationKeyPool WHERE Key >= '111'
+INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
