@@ -1,2 +1,7 @@
+
 DELETE FROM InvitationKeyPool WHERE Key >= '111'
+
 INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
+
+// get result row count, where key equals to "sunny day"
+SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
