@@ -11,7 +11,7 @@ ALTER TABLE UserData ADD PlayerSN VARCHAR
 // Default to 'QQ'
 ALTER TABLE UserData ADD PlayerSN2 VARCHAR DEFAULT 'QQ' NOT NULL
 
-
+// select rows with some column equals to null
 SELECT COUNT(*) FROM UserData WHERE PlaySN is null or PlaySN = ''
 
 Select null columns:
