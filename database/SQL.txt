@@ -5,3 +5,20 @@ INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
 
 // get result row count, where key equals to "sunny day"
 SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
+
+// Add a "clolumn" to table "UserData"
+ALTER TABLE UserData ADD PlayerSN VARCHAR
+// Default to 'QQ'
+ALTER TABLE UserData ADD PlayerSN2 VARCHAR DEFAULT 'QQ' NOT NULL
+
+
+SELECT COUNT(*) FROM UserData WHERE PlaySN is null or PlaySN = ''
+
+Select null columns:
+    where some_column is null or some_column = ''
+    or
+    where ifnull(some_column, '') = ''
+    or
+    where coalesce(some_column, '') = ''
+    or
+    where ifnull(length(some_column), 0) = 0
