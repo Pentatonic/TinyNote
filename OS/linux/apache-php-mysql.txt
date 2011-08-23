@@ -1,0 +1,22 @@
+// install apache server
+sudo apt-get install apache2
+// test
+http://localhost/
+
+// intall php
+sudo apt-get install php5
+// link php to apache
+sudo apt-get install libapache2-mod-php5
+// restart apache server
+sudo /etc/init.d/apache2 restart
+// the web home directory
+/var/www
+
+// install mysql
+sudo apt-get install mysql-server
+// let apache and php support mysql
+sudo apt-get install libapache2-mod-auth-mysql
+sudo apt-get install php5-mysqlsudo /etc/init.d/apache2 restart
+
+//apache2+php 5.2.4.2+mysql5.0.51 install complete
+
