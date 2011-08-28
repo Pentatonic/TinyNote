@@ -1,20 +1,29 @@
+- Delete Entry
+	DELETE FROM InvitationKeyPool WHERE Key >= '111'
+- Insert Entry
+	INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
 
-DELETE FROM InvitationKeyPool WHERE Key >= '111'
+- Get result row count, where key equals to "sunny day"
+	SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
 
-INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
+- Add a "clolumn" to table "UserData"
+	ALTER TABLE UserData ADD PlayerSN VARCHAR
+- Default to 'QQ'
+	ALTER TABLE UserData ADD PlayerSN2 VARCHAR DEFAULT 'QQ' NOT NULL
 
-// get result row count, where key equals to "sunny day"
-SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
+- Delete column
+	BEGIN TRANSACTION;
+	CREATE TEMPORARY TABLE t1_backup(a,b);
+	INSERT INTO t1_backup SELECT a,b FROM t1;
+	DROP TABLE t1;
+	CREATE TABLE t1(a,b);
+	INSERT INTO t1 SELECT a,b FROM t1_backup;
+	DROP TABLE t1_backup;
+	COMMIT;
 
-// Add a "clolumn" to table "UserData"
-ALTER TABLE UserData ADD PlayerSN VARCHAR
-// Default to 'QQ'
-ALTER TABLE UserData ADD PlayerSN2 VARCHAR DEFAULT 'QQ' NOT NULL
-
-// select rows with some column equals to null
-SELECT COUNT(*) FROM UserData WHERE PlaySN is null or PlaySN = ''
-
-Select null columns:
+- select rows with some column equals to null
+	SELECT COUNT(*) FROM UserData WHERE PlaySN is null or PlaySN = ''
+- Select null columns:
     where some_column is null or some_column = ''
     or
     where ifnull(some_column, '') = ''
@@ -22,3 +31,8 @@ Select null columns:
     where coalesce(some_column, '') = ''
     or
     where ifnull(length(some_column), 0) = 0
+
+- show table column names
+	PRAGMA table_info(table_name);
+	
+	
