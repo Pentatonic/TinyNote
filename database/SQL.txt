@@ -1,8 +1,23 @@
+- Create table
+	CREATE TABLE orders (
+		id INTEGER PRIMARY KEY,
+		customer_id INTEGER,
+		salesperson_id INTEGER,
+		FOREIGN KEY(customer_id) REFERENCES customers(id),
+		FOREIGN KEY(salesperson_id) REFERENCES salespeople(id)
+	);
 - Delete Entry
 	DELETE FROM InvitationKeyPool WHERE Key >= '111'
 - Insert Entry
 	INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
-
+	
+	// Avoid dupliacte entry inserted, EventTypName should be unique
+	INSERT OR IGNORE INTO EVENTTYPE (EventTypeName) VALUES 'ANI Received'
+	
+	- INSERT INTO EVENTTYPE (EventTypeName)
+	  SELECT 'ANI Received'
+	  WHERE NOT EXISTS (SELECT 1 FROM EVENTTYPE WHERE EventTypeName = 'ANI Received');
+	
 - Get result row count, where key equals to "sunny day"
 	SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
 
@@ -22,7 +37,7 @@
 	COMMIT;
 
 - select rows with some column equals to null
-	SELECT COUNT(*) FROM UserData WHERE PlaySN is null or PlaySN = ''
+	SELECT COUNT(*) FROM UserData WHERE PlaySN is null OR PlaySN = ''
 - Select null columns:
     where some_column is null or some_column = ''
     or
@@ -34,5 +49,5 @@
 
 - show table column names
 	PRAGMA table_info(table_name);
-	
+
 	
