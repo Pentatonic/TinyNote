@@ -51,3 +51,7 @@
 	PRAGMA table_info(table_name);
 
 	
+	SELECT UserData.UNumber, UserData.NickName
+	FROM Friends LEFT JOIN UserData ON Friends.GuestUNumber = UserData.UNumber
+	WHERE Friends.UNumber='123' AND UserData.UNumber != ''	
+	
