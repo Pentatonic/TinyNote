@@ -6,6 +6,10 @@
 		FOREIGN KEY(customer_id) REFERENCES customers(id),
 		FOREIGN KEY(salesperson_id) REFERENCES salespeople(id)
 	);
+    
+- Delete table
+    DROP TABLE orders
+
 - Delete Entry
 	DELETE FROM InvitationKeyPool WHERE Key >= '111'
 - Insert Entry
