@@ -121,3 +121,4 @@ From ssh://gitosis@example.com:22/projectname
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 Ta-da!
+
