@@ -122,3 +122,10 @@ git pull origin master
     Already up-to-date.
 // Ta-da!
 
+================================================================================
+// Use mergetool to resolve all conflicts
+git mergetool
+
+// Merge is done
+git commit
+
