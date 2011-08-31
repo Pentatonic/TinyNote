@@ -3,3 +3,4 @@
 *.pyc
 src/django
 .settings/
+.qqq
