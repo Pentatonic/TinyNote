@@ -65,5 +65,5 @@ git push origin :b1 // delete branch on server
 git checkout branchX
 
 =====================================
-// find "ssh" and "key" in files
+// find "ssh" and "key" in filess
 git grep -in -e ssh --and -e key
