@@ -117,7 +117,7 @@ git commit -m "using theirs"
 // And then we try a final time
 
 git pull origin master
-From ssh://gitosis@example.com:22/projectname
+From ssh://gitosis@example.com:22/projectnames
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 Ta-da!
