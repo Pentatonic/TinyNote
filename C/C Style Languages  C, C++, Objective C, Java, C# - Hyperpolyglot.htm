@@ -1,0 +1,3361 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+ 	<title>C Style Languages: C, C++, Objective C, Java, C# - Hyperpolyglot</title>
+ 	
+    	<script type="text/javascript" src="http://www.wikidot.com/default__flow/login__CustomDomainScript?site_id=143855"></script>
+
+ 		
+ 	<script type="text/javascript" src="http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3/common--javascript/init.combined.js"></script>
+ 	<script  type="text/javascript">
+ 		var URL_HOST = 'www.wikidot.com';
+		var URL_DOMAIN = 'wikidot.com';
+		var USE_SSL =  true ;
+		var URL_STATIC = 'http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3';
+ 		// global request information
+ 		
+ 		var WIKIREQUEST = {};
+ 		WIKIREQUEST.info = {};
+ 		
+ 		WIKIREQUEST.info.domain = "hyperpolyglot.org";
+ 		WIKIREQUEST.info.siteId = 143855;
+ 		WIKIREQUEST.info.categoryId = 799202;
+ 		WIKIREQUEST.info.themeId = 20638;
+ 		WIKIREQUEST.info.requestPageName = "c";
+ 		OZONE.request.timestamp = 1314843999;
+ 		OZONE.request.date = new Date();
+ 		WIKIREQUEST.info.lang = 'en';
+ 		 		WIKIREQUEST.info.pageUnixName = "c";
+ 		WIKIREQUEST.info.pageId = 4559116;
+ 				 		WIKIREQUEST.info.lang = "en";
+ 		OZONE.lang = "en";
+// 		window.onload = WikidotInit();
+ 	</script>
+ 	
+ 	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        	 		 		<meta name="google-site-verification" content="On-Wdixlcxk0xhc48yAp8GZt5mBF0CvIIUelO_cjOJs"/>
+	 			 	 	 	<meta http-equiv="content-language" content="en"/>
+	<script type="text/javascript" src="http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3/common--javascript/WIKIDOT.combined.js"></script>
+	
+   	<style type="text/css" id="internal-style">
+
+        /* modules */
+@import url(http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3/common--modules/css/monetize/textlinkads/MonetizeTextLinkAdsModule.css);
+
+
+
+        /* theme */
+   		   			@import url(http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3/common--theme/base/css/style.css);
+   		   			@import url(http://d3g0gp89917ko0.cloudfront.net/v--e1d1de6875c3/common--theme/clean/css/style.css);
+   		   			@import url(/local--theme/custom-clean/style.css);
+   		
+    </style>
+    
+    <link rel="shortcut icon" href="/local--favicon/favicon.gif"/>
+    <link rel="icon" type="image/gif" href="/local--favicon/favicon.gif"/>
+    
+            <link rel="alternate" type="application/wiki" title="Edit this page" href="javascript:WIKIDOT.page.listeners.editClick()"/>
+    
+    <script type="text/javascript">
+      window.google_analytics_uacct = 'UA-18234656-1';
+      window.google_analytics_domain_name = 'none';
+    </script>
+</head>
+
+  <body id="html-body">
+  <!--INFOLINKS_OFF-->
+  <a name="page-top"></a>
+  
+  <div id="container-wrap-wrap">
+	<div id="container-wrap">
+		<div id="container">
+		  	<div id="header">
+		  	  <h1><a href="/"><span>Hyperpolyglot</span></a></h1>
+		  				  		
+		  		<!-- google_ad_section_start(weight=ignore) -->
+		  		
+		  		<div id="search-top-box">
+		  			<form id="search-top-box-form" action="dummy">
+			  			<input id="search-top-box-input" class="text empty" type="text" size="15" name="query" value="Search this site" onfocus="if(YAHOO.util.Dom.hasClass(this, 'empty')){YAHOO.util.Dom.removeClass(this,'empty'); this.value='';}"/><input class="button" type="submit" name="search" value="Search"/>
+				 	</form>
+	  			</div>
+		  		
+		  				  		<div id="login-status"><a href="javascript:;" onclick="WIKIDOT.page.listeners.createAccount(event)" class="login-status-create-account">Create account</a> <span>or</span> <a href="javascript:;" onclick="WIKIDOT.page.listeners.loginClick(event)" class="login-status-sign-in">Sign in</a> </div>
+		  		<div id="header-extra-div-1"><span></span></div><div id="header-extra-div-2"><span></span></div><div id="header-extra-div-3"><span></span></div>
+		  	</div>
+		  	
+			<div id="content-wrap">
+								
+				<!-- google_ad_section_end -->
+				
+				<div id="main-content">
+					<div id="action-area-top"></div>
+					
+					<!-- google_ad_section_start -->
+					    					    					<div id="page-title">
+    					C Style Languages: C, C++, Objective C, Java, C#    					</div>
+    					    					                    
+					
+    					    					
+
+    										
+    					<div id="page-content">
+						    
+    						    						<!--INFOLINKS_ON-->
+    						
+
+<p><a name="top"></a><em>a side-by-side reference sheet</em></p>
+<p><a href="#primitive-types">primitive types</a> | <a href="#arith">arithmetic and logic</a> | <a href="#str">strings</a> | <a href="#containers">containers</a> | <a href="#func">functions</a> | <a href="#exec-control">execution control</a> | <a href="#env-io">environment and i/o</a> | <a href="#lib-namesp">libraries and namespaces</a> | <a href="#obj">objects</a> | <a href="#generics">generic types</a> | <a href="#reflection">reflection</a> | <a href="#history">history</a> | <a href="/hide-language">hide language</a> | <a href="/contact">contact</a> | <a class="wiki-standalone-button" style="background-color: #EFEFEF; padding-bottom: 1px; padding-left: 5px; padding-right: 5px;" href="javascript:;" onclick="WIKIDOT.page.listeners.editClick(event)">edit</a></p>
+<table class="wiki-content-table">
+<tr>
+<th><a name="general"></a></th>
+<th><a href="#c">c</a> (1972)</th>
+<th><a href="#c-plus-plus">c++</a> (1983)</th>
+<th><a href="#objective-c">objective c</a> (1986)</th>
+<th><a href="#java">java</a> (1995)</th>
+<th><a href="#c-sharp">c#</a> (2001)</th>
+</tr>
+<tr>
+<td><a name="hello-world"></a><a href="#hello-world-notes">hello word</a></td>
+<td>$ cat hello.c<br />
+#include &lt;stdio.h&gt;<br />
+int main(int argc, char <span style="white-space: pre-wrap;">**</span>argv) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>printf(&quot;Hello, World!\n&quot;);<br />
+}<br />
+$ gcc hello.c<br />
+$ ./a.out<br />
+Hello, World!</td>
+<td>$ cat hello.cpp<br />
+#include &lt;iostream&gt;<br />
+using namespace std;<br />
+int main(int argc, char<span style="white-space: pre-wrap;">**</span>arg) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>cout <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;Hello, World!&quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;<br />
+}<br />
+$ g++ hello.cpp<br />
+$ ./a.out<br />
+Hello, World!</td>
+<td>$ cat hello.m<br />
+#include &lt;stdio.h&gt;<br />
+int main(int argc, char <span style="white-space: pre-wrap;">**</span>argv) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>printf(&quot;Hello, World!\n&quot;);<br />
+}<br />
+$ gcc hello.m<br />
+$ ./a.out<br />
+Hello, World!</td>
+<td>$ cat Hello.java<br />
+public class Hello {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static void main(String[] args) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>System.out.println(&quot;Hello, World!&quot;);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}<br />
+$ javac Hello.java<br />
+$ java Hello<br />
+Hello, World!</td>
+<td>$ cat hello.cs<br />
+using System.Console;<br />
+public class Hello {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static void Main() {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>WriteLine(&quot;Hello, World!&quot;);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}<br />
+$ mcs hello.cs<br />
+$ mono hello.exe<br />
+Hello, World!</td>
+</tr>
+<tr>
+<td><a name="version-used"></a><a href="#version-used-notes">version used</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>gcc 4.2.1</em></span></td>
+<td><span style="color: gray"><em>g++ 4.2.1</em></span></td>
+<td><span style="color: gray"><em>gcc 4.2.1</em></span></td>
+<td><span style="color: gray"><em>java 1.6.0</em></span></td>
+<td><span style="color: gray"><em>mono 2.6.1</em></span></td>
+</tr>
+<tr>
+<td><a name="version"></a><a href="#version-notes">version</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>$ gcc &#8212;version</td>
+<td>$ g++ &#8212;version</td>
+<td>$ gcc &#8212;version</td>
+<td>$ javac -version</td>
+<td>$ mcs &#8212;version</td>
+</tr>
+<tr>
+<td><a name="lib-used"></a><a href="#lib-used-notes">libraries used</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>C standard library</em></span></td>
+<td><span style="color: gray"><em>STL and Boost</em></span></td>
+<td><span style="color: gray"><em>Foundation Framework</em></span></td>
+<td><span style="color: gray"><em>Java API</em></span></td>
+<td><span style="color: gray"><em>Base Class Library</em></span></td>
+</tr>
+<tr>
+<td><a name="file-suffix"></a><a href="#file-suffix-notes">source, header, object file suffix</a></td>
+<td>.c .h .o</td>
+<td>.cpp .hpp .o</td>
+<td>.m .h .o</td>
+<td>.java <span style="color: gray"><em>none</em></span> .class</td>
+<td>.cs <span style="color: gray"><em>none</em></span> .exe <span style="color: gray"><em>or</em></span>.dll</td>
+</tr>
+<tr>
+<td><a name="null"></a><a href="#null-notes">null</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>NULL</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td><a name="printf"></a><a href="#printf-notes">printf</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>printf(&quot;count: %d\n&quot;, 7);</td>
+<td>cout <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;count: &quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> 7 <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td>printf(&quot;count: %d\n&quot;, 7);</td>
+<td>System.out.printf(&quot;count: %d&quot;, 7);</td>
+<td>System.Console.WriteLine(&quot;count: {0}&quot;, 7);</td>
+</tr>
+<tr>
+<td><a name="case-underscore-name"></a><a href="#case-underscore-name-notes">case and underscores in names</a></td>
+<td>A_MACRO_NAME<br />
+a_method_name()<br />
+a_variable_name</td>
+<td>A_MACRO_NAME<br />
+AClassName<br />
+AMethodName() <span style="color: gray"><em>or</em></span> a_method_name()<br />
+a_variable_name</td>
+<td>A_MACRO_NAME<br />
+AClassName<br />
+[<span style="color: gray"><em>obj</em></span> aMsgName:<span style="color: gray"><em>arg</em></span> aLabelName:<span style="color: gray"><em>arg</em></span>]<br />
+aVariableName</td>
+<td>AClassName<br />
+aMethodName()<br />
+aVariableName</td>
+<td>AClassName<br />
+AMethodName()<br />
+aVariableName</td>
+</tr>
+<tr>
+<td><a name="coalesce"></a><a href="#coalesce-notes">coalesce</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>char *s1 = s2 <span style="white-space: pre-wrap;">||</span> &quot;was null&quot;;</td>
+<td>string s1 = s2 <span style="white-space: pre-wrap;">||</span> &quot;was null&quot;;</td>
+<td>NSString *s1 = s2 <span style="white-space: pre-wrap;">||</span> @&quot;was null&quot;;</td>
+<td>String s1 = s2 == null ? &quot;was null&quot; : s2;</td>
+<td>string s1 = s2 ?? &quot;was null&quot;;</td>
+</tr>
+<tr>
+<th colspan="6"><a name="primitive-types"></a><a href="#primitive-types-notes">primitive types</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a name="primitive-type-stack"></a><a href="#primitive-type-stack-notes">declare primitive type on stack</a></td>
+<td>int i;<br />
+int j = 3;</td>
+<td>int i;<br />
+int j = 3;<br />
+int k(7);</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>int i;<br />
+int j = 3;</td>
+<td>int i;<br />
+int j = 3;</td>
+</tr>
+<tr>
+<td><a name="allocate"></a><a href="#allocate-notes">allocate primitive type on heap</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+int *ip = malloc(sizeof(int));</td>
+<td>int *ip = new int;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>primitive types are always stack allocated. Use a wrapper class to store on the heap:</em></span><br />
+Integer i = new Integer(0);</td>
+<td>object i = 0;</td>
+</tr>
+<tr>
+<td><a name="free"></a><a href="#free-notes">free primitive type on heap</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+free(ip);</td>
+<td>delete i;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>garbage collected</em></span></td>
+<td><span style="color: gray"><em>garbage collected</em></span></td>
+</tr>
+<tr>
+<td><a name="unitialized-val"></a><a href="#unitialized-val-notes">value of uninitialized primitive types</a></td>
+<td><span style="color: gray"><em>stack variables and heap variables allocated with</em> malloc <em>have indeterminate values. Global and static variables and heap variables allocated with</em> calloc <em>are zero-initialized.</em></span></td>
+<td><span style="color: gray"><em>same as C. However, C++ provides a no-argument constructor for each primitive type which zero-initializes it.</em></span></td>
+<td><span style="color: gray"><em>same as C</em></span></td>
+<td><span style="color: gray"><em>zero-initialized</em></span></td>
+<td><span style="color: gray"><em>compiler prevents use of uninitialized variables in some circumstances, and zero-initializes in others</em></span></td>
+</tr>
+<tr>
+<td><a name="boolean"></a><a href="#boolean-notes">boolean types</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>bool</td>
+<td>BOOL</td>
+<td>boolean</td>
+<td>bool</td>
+</tr>
+<tr>
+<td><a name="signed-int"></a><a href="#signed-int-notes">signed integer types</a></td>
+<td>signed char <span style="color: gray"><em>1+ byte</em></span><br />
+short int <span style="color: gray"><em>2+ bytes</em></span><br />
+int <span style="color: gray"><em>2+ bytes</em></span><br />
+long int <span style="color: gray"><em>4+ bytes</em></span><br />
+long long int <span style="color: gray"><em>4+ bytes</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>byte <span style="color: gray"><em>1 byte</em></span><br />
+short <span style="color: gray"><em>2 bytes</em></span><br />
+int <span style="color: gray"><em>4 bytes</em></span><br />
+long <span style="color: gray"><em>8 bytes</em></span></td>
+<td>sbyte <span style="color: gray"><em>1 byte</em></span><br />
+short <span style="color: gray"><em>2 bytes</em></span><br />
+int <span style="color: gray"><em>4 bytes</em></span><br />
+long <span style="color: gray"><em>8 bytes</em></span></td>
+</tr>
+<tr>
+<td><a name="unsigned-int"></a><a href="#unsigned-int-notes">unsigned integer types</a></td>
+<td>unsigned char: 8+<br />
+unsigned short int <span style="color: gray"><em>2 bytes+</em></span><br />
+unsigned int <span style="color: gray"><em>2 bytes+</em></span><br />
+unsigned long int <span style="color: gray"><em>4+ bytes</em></span><br />
+unsigned long long int <span style="color: gray"><em>4+ bytes</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>char <span style="color: gray"><em>2 bytes</em></span></td>
+<td>byte <span style="color: gray"><em>1 byte</em></span><br />
+ushort <span style="color: gray"><em>2 bytes</em></span><br />
+uint <span style="color: gray"><em>4 bytes</em></span><br />
+ulong <span style="color: gray"><em>8 bytes</em></span></td>
+</tr>
+<tr>
+<td><a name="floats"></a><a href="#floats-notes">floating point and decimal types</a></td>
+<td>float<br />
+double<br />
+long double</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>float <span style="color: gray"><em>4 bytes</em></span><br />
+double <span style="color: gray"><em>8 bytes</em></span></td>
+<td>float <span style="color: gray"><em>4 bytes</em></span><br />
+double <span style="color: gray"><em>8 bytes</em></span><br />
+decimal <span style="color: gray"><em>12 bytes</em></span></td>
+</tr>
+<tr>
+<td><a name="typedef"></a><a href="#typedef-notes">typedef</a></td>
+<td>typedef int customer_id;<br />
+customer_id cid = 3;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a name="enum"></a><a href="#enum-notes">enum</a></td>
+<td>enum day_of_week { mon, tue, wed, thu, fri, sat, sun };<br />
+enum day_of_week d = tue;</td>
+<td>enum day_of_week { mon, tue, wed, thu, fri, sat, sun };<br />
+day_of_week d = tue;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>public enum DayOfWeek { MON, TUE, WED, THU, FRI, SAT, SUN };<br />
+DayOfWeek d = DayOfWeek.TUE;</td>
+<td>public enum DayOfWeek { MON, TUE, WED, THU, FRI, SAT, SUN };<br />
+DayOfWeek d = DayOfWeek.TUE;</td>
+</tr>
+<tr>
+<th colspan="6"><a name="arith"></a><a href="#arith-notes">arithmetic and logic</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#true-false">true and false</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>true false</td>
+<td>YES NO</td>
+<td>true false</td>
+<td>true false</td>
+</tr>
+<tr>
+<td><a href="#falsehoods">falsehoods</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>0&#160;0.0 NULL</td>
+<td>false 0&#160;0.0 NULL</td>
+<td>0&#160;0.0 NULL</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td><a href="#logical-operators">logical operators</a></td>
+<td>&amp;&amp; <span style="white-space: pre-wrap;">||</span> !</td>
+<td>&amp;&amp; <span style="white-space: pre-wrap;">||</span> !<br />
+and or not</td>
+<td>&amp;&amp; <span style="white-space: pre-wrap;">||</span> !</td>
+<td>&amp;&amp; <span style="white-space: pre-wrap;">||</span> !</td>
+<td>&amp;&amp; <span style="white-space: pre-wrap;">||</span> !</td>
+</tr>
+<tr>
+<td><a href="#relational-operators">relational operators</a></td>
+<td>== != &lt; &gt; &lt;= &gt;=</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>== != &lt; &gt; &lt;= &gt;=</td>
+<td>== != &lt; &gt; &lt;= &gt;=</td>
+</tr>
+<tr>
+<td><a href="#arithmetic-operators">operators</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="white-space: pre-wrap;">+</span> - * / %</td>
+<td>+ - * / %</td>
+<td>+ - * / %</td>
+<td>+ - * / %</td>
+<td>+ - * / %</td>
+</tr>
+<tr>
+<td><a href="#power">power</a></td>
+<td>#include &lt;math.h&gt;<br />
+pow(2.0,3.0);</td>
+<td>#include &lt;boost/math/special_functions.hpp&gt;<br />
+boost::math::powm1&lt;double&gt;(2.0,3.0)+1</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>Math.pow(2.0,3.0);</td>
+<td>System.Math.Pow(2.0,3.0);</td>
+</tr>
+<tr>
+<td><a href="#absolute-value">absolute value</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+int i = -7;<br />
+abs(i);<br />
+#include &lt;math.h&gt;<br />
+float x = -7.77;<br />
+fabs(x)</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>Math.abs(-7)<br />
+Math.abs(-7.77)</td>
+<td>System.Math.Abs(-7)<br />
+System.Math.Abs(-7.77)</td>
+</tr>
+<tr>
+<td><a href="#transcendental-functions">transcendental functions</a></td>
+<td><span style="color: gray"><em>defined in</em> &lt;math.h&gt;:</span><br />
+sqrt exp log log2 log10 sin cos tan asin acos atan atan2</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>Math.sqrt Math.exp Math.log <span style="color: gray"><em>none</em></span> Math.log10 Math.sin Math.cos Math.tan Math.asin Math.acos Math.atan Math.atan2</td>
+<td>using System;<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+Math.Sqrt Math.Exp Math.Log <span style="color: gray"><em>none</em></span> Math.Log10 Math.Sin Math.Cos Math.Tan Math.Asin Math.Acos Math.Atan Math.Atan2</td>
+</tr>
+<tr>
+<td><a href="#arithmetic-truncation">arithmetic truncation</a></td>
+<td>#include &lt;math.h&gt;<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+double d = 3.77;<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+long trunc = (long)d;<br />
+long rnd = round(d);<br />
+long flr = floorl(d);<br />
+long cl = ceill(d);</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>(long)3.77<br />
+Math.round(3.77)<br />
+(long)Math.floor(3.77)<br />
+(long)Math.ceil(3.77)</td>
+<td>using System;<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+(long)3.77<br />
+Math.Round(3.77)<br />
+Math.Floor(3.77)<br />
+Math.Ceiling(3.77)</td>
+</tr>
+<tr>
+<td><a href="#closure-integers-division">closure of integers under division</a></td>
+<td><span style="color: gray"><em>integers</em></span></td>
+<td><span style="color: gray"><em>integers</em></span></td>
+<td><span style="color: gray"><em>integers</em></span></td>
+<td><span style="color: gray"><em>integers</em></span></td>
+<td><span style="color: gray"><em>integers</em></span></td>
+</tr>
+<tr>
+<td><a href="#division-by-zero">division by zero</a></td>
+<td><span style="color: gray"><em>process sent a</em></span> SIGFPE <span style="color: gray"><em>signal</em></span></td>
+<td><span style="color: gray"><em>process sent a</em></span> SIGFPE <span style="color: gray"><em>signal</em></span></td>
+<td><span style="color: gray"><em>process sent a</em></span> SIGFPE <span style="color: gray"><em>signal</em></span></td>
+<td><span style="color: gray"><em>throws</em></span> java.lang.ArithmeticException</td>
+<td><span style="color: gray"><em>throws</em></span> System.DivideByZeroException</td>
+</tr>
+<tr>
+<td><a href="#random-integer">random integer</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+int i = rand();</td>
+<td>#include &lt;boost/random.hpp&gt;<br />
+using namespace boost;<br />
+mt19937 rng;<br />
+uniform_int&lt;&gt; ui(0,RAND_MAX);<br />
+variate_generator&lt;mt19937&amp;, uniform_int&lt;&gt; &gt; brand(rng, ui);<br />
+int i = brand()</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>java.util.Random r = new java.util.Random();<br />
+int i = r.nextInt();</td>
+<td>System.Random r = new System.Random();<br />
+int i = r.Next();</td>
+</tr>
+<tr>
+<td><a href="#bit-operators">bit operators</a></td>
+<td><span style="white-space: pre-wrap;">&#32;&lt;&lt;&#32;&gt;&gt;&#32;&amp;&#32;|&#32;^&#32;~&#32;</span></td>
+<td><span style="white-space: pre-wrap;">&#32;&lt;&lt;&#32;&gt;&gt;&#32;&amp;&#32;|&#32;^&#32;~&#32;</span><br />
+bitand bitor comp</td>
+<td><span style="white-space: pre-wrap;">&#32;&lt;&lt;&#32;&gt;&gt;&#32;&amp;&#32;|&#32;^&#32;~&#32;</span></td>
+<td><span style="white-space: pre-wrap;">&#32;&lt;&lt;&#32;&gt;&gt;&#32;&amp;&#32;|&#32;^&#32;~&#32;</span></td>
+<td><span style="white-space: pre-wrap;">&#32;&lt;&lt;&#32;&gt;&gt;&#32;&amp;&#32;|&#32;^&#32;~&#32;</span></td>
+</tr>
+<tr>
+<th colspan="6"><a name="str"></a><a href="#str-notes">strings</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#string-type">string type</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>char *</td>
+<td>std::string</td>
+<td>NSString</td>
+<td>java.lang.String</td>
+<td>string</td>
+</tr>
+<tr>
+<td><a href="#string-literal">literal</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>&quot;hello&quot;</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>@&quot;hello&quot;</td>
+<td>&quot;hello&quot;</td>
+<td>&quot;hello&quot;</td>
+</tr>
+<tr>
+<td><a href="#allocate-string">allocate string</a></td>
+<td>#include &lt;string.h&gt;<br />
+char *s = strdup(&quot;hello&quot;);</td>
+<td>string *s = new string(&quot;hello&quot;);</td>
+<td>NSString *s = @&quot;hello&quot;;</td>
+<td>String s = &quot;hello&quot;;<br />
+String t = new String(s);</td>
+<td>string s = &quot;hello&quot;;<br />
+string t = string.Copy(s);</td>
+</tr>
+<tr>
+<td><a href="#string-length">length</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>strlen(&quot;hello&quot;)</td>
+<td>s-&gt;length()</td>
+<td>[s length]</td>
+<td>s.length()</td>
+<td>s.Length</td>
+</tr>
+<tr>
+<td><a href="#string-comparison">comparison</a></td>
+<td>strcmp(&quot;hello&quot;, &quot;world&quot;)</td>
+<td>string *s1 = new string(&quot;hello&quot;);<br />
+string *s2 = new stringt(&quot;world&quot;);<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> s1-&gt;compare(*s2) <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td>[@&quot;hello&quot; compare:@&quot;hello&quot;]</td>
+<td>&quot;hello&quot;.compareTo(&quot;world&quot;)</td>
+<td>&quot;hello&quot;.CompareTo(&quot;world&quot;)</td>
+</tr>
+<tr>
+<td><a href="#string-equal">semantics of ==</a></td>
+<td><span style="color: gray"><em>object identity comparison</em></span></td>
+<td><span style="color: gray"><em>value comparison</em></span></td>
+<td><span style="color: gray"><em>object identity comparison</em></span></td>
+<td><span style="color: gray"><em>object identity comparison</em></span></td>
+<td><span style="color: gray"><em>value comparison</em></span></td>
+</tr>
+<tr>
+<td><a href="#to-c-string">to C string</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>a challenge for the reader</em></span></td>
+<td>s-&gt;c_str()</td>
+<td>[s UTF8String]</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#string-to-number">numeric conversion</a></td>
+<td>strtoimax strtol strtoll<br />
+strtoumax strtoul strtoull<br />
+strtof strtod strtold</td>
+<td>#include &lt;sstream&gt;<br />
+stringstream ss(&quot;7&#160;14.3&#160;12&quot;);<br />
+int i;<br />
+double d;<br />
+long l;<br />
+ss <span style="white-space: pre-wrap;">&gt;&gt;</span> i <span style="white-space: pre-wrap;">&gt;&gt;</span> d <span style="white-space: pre-wrap;">&gt;&gt;</span> l;</td>
+<td>[@&quot;14&quot; integerValue]<br />
+[@&quot;14&quot; longLongvalue]<br />
+[@&quot;14.7&quot; floatValue]<br />
+[@&quot;14.7&quot; doubleValue]</td>
+<td>Byte.parseByte(&quot;14&quot;)<br />
+Short.parseShort(&quot;14&quot;)<br />
+Integer.parseInt(&quot;14&quot;)<br />
+Long.parseLong(&quot;14&quot;)<br />
+Float.parseFloat(&quot;14.7&quot;)<br />
+Double.parseDouble(&quot;14.7&quot;)</td>
+<td>byte.Parse(&quot;14&quot;)<br />
+short.Parse(&quot;14&quot;)<br />
+int.Parse(&quot;14&quot;)<br />
+long.Parse(&quot;14&quot;)<br />
+float.Parse(&quot;14&quot;)<br />
+double.Parse(&quot;14&quot;)<br />
+decimal.Parse(&quot;14&quot;)</td>
+</tr>
+<tr>
+<td><a href="#split">split</a></td>
+<td></td>
+<td>#include &lt;boost/algorithm/string.hpp&gt;<br />
+#include &lt;vector&gt;<br />
+string s(&quot;Bob Amy Ned&quot;);<br />
+vector&lt;string&gt; vec;<br />
+boost::split(vec, s, boost::is_any_of(&quot; &quot;));</td>
+<td>[@&quot;Bob Ned Amy&quot; componentsSeparatedByString:@&quot; &quot;]</td>
+<td>&quot;Bob Ned Amy&quot;.split(&quot; &quot;)</td>
+<td>string[] names = &quot;Bob Ned Amy&quot;.Split(' ');</td>
+</tr>
+<tr>
+<td><a href="#join">join</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>System.String.Join(&quot;, &quot;, names)</td>
+</tr>
+<tr>
+<td><a href="#string-concatenate">concatenate</a></td>
+<td>char *s1 = &quot;hello&quot;;<br />
+char *s2 = &quot; world&quot;;<br />
+char *s3 = (char *)calloc(strlen(s1) + strlen(s2) + 1,sizeof(char));<br />
+strcpy(s3,s1);<br />
+strcat(s3,s2);</td>
+<td>string *s1 = new string(&quot;hello&quot;);<br />
+string *s2 = new string(&quot; world&quot;);<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> *s1 + *s2 <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td>NSString *s1 = @&quot;hello&quot;;<br />
+NSString *s2 = @&quot; world&quot;;<br />
+NSString *s3 = [s1 stringByAppendingString:s2];</td>
+<td>&quot;hello&quot; + &quot; world&quot;</td>
+<td>&quot;hello&quot; + &quot; world&quot;</td>
+</tr>
+<tr>
+<td><a href="#substring">substring</a></td>
+<td>char target[3];<br />
+char *source = &quot;hello&quot;;<br />
+strncpy(target, source+2, 2);</td>
+<td>string(&quot;hello&quot;).substr(2,2)</td>
+<td>[@&quot;hello&quot; substringWithRange:NSMakeRange(2,2)]</td>
+<td>&quot;hello&quot;.substring(2,4)</td>
+<td>&quot;hello&quot;.Substring(2,2)</td>
+</tr>
+<tr>
+<td><a href="#index">index</a></td>
+<td>const char *s = &quot;hello&quot;;<br />
+const char *p = strstr(&quot;hello&quot;, &quot;ll&quot;);<br />
+p ? p - s : -1;</td>
+<td>string(&quot;hello&quot;).find(&quot;ll&quot;)</td>
+<td>[@&quot;hello&quot; rangeOfString:@&quot;ll&quot;].location</td>
+<td>&quot;hello&quot;.indexOf(&quot;ll&quot;)</td>
+<td>&quot;hello&quot;.IndexOf(&quot;ll&quot;)</td>
+</tr>
+<tr>
+<td><a href="#sprintf">sprintf</a></td>
+<td>char buf[100];<br />
+snprintf(buf, 100, &quot;%s: %d&quot;, &quot;Spain&quot;, 7);</td>
+<td>#include &lt;sstream&gt;<br />
+ostringstream o('');<br />
+o <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;Spain&quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;: &quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> 7;<br />
+o.str();</td>
+<td>[NSString stringWithFormat:@&quot;%@: %d&quot;, @&quot;Spain&quot;, 7]</td>
+<td>String.format(&quot;%s: %d&quot;, &quot;Spain&quot;, 7)</td>
+<td>string.Format(&quot;{0}: {1}&quot;, &quot;Spain&quot;, 7)</td>
+</tr>
+<tr>
+<td><a href="#uppercase">uppercase</a></td>
+<td>char *s = strdup(&quot;hello&quot;);<br />
+int i;<br />
+for (i=0; i&lt;strlen(s); i++) {<br />
+s[i] = toupper(s[i]);<br />
+}</td>
+<td>#include &lt;boost/algorithm/string.hpp&gt;<br />
+string s(&quot;hello&quot;);<br />
+boost::to_upper(s);</td>
+<td>[@&quot;hello&quot; uppercaseString]</td>
+<td>&quot;hello&quot;.toUpperCase()</td>
+<td>&quot;hello&quot;.ToUpper()</td>
+</tr>
+<tr>
+<td><a href="#lowercase">lowercase</a></td>
+<td>char *s = strdup(&quot;HELLO&quot;);<br />
+int i;<br />
+for (i=0; i&lt;strlen(s); i++) {<br />
+s[i] = tolower(s[i]);<br />
+}</td>
+<td>#include &lt;boost/algorithm/string.hpp&gt;<br />
+string s(&quot;HELLO&quot;);<br />
+boost::to_upper(s);</td>
+<td>[@&quot;HELLO&quot; lowercaseString]</td>
+<td>&quot;HELLO&quot;.toLowerCase()</td>
+<td>&quot;HELLO&quot;.ToLower()</td>
+</tr>
+<tr>
+<td><a href="#trim">trim</a></td>
+<td></td>
+<td>#include &lt;boost/algorithm/string.hpp&gt;<br />
+string s(&quot; hello &quot;);<br />
+boost::trim(s);</td>
+<td>[@&quot; hello &quot; stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]]</td>
+<td>&quot; hello &quot;.trim()</td>
+<td>&quot; hello &quot;.Trim()</td>
+</tr>
+<tr>
+<td><a href="#pad">pad on right</a></td>
+<td>char buf[100];<br />
+snprintf(buf, 100, &quot;%-10s&quot;, &quot;hello&quot;);</td>
+<td></td>
+<td>[@&quot;hello&quot; stringByPaddingToLength:10 withString:@&quot; &quot; startingAtIndex:0]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#regex-match">regex match</a></td>
+<td>#include &lt;regex.h&gt;<br />
+regex_t re;<br />
+if (regcomp(&amp;re, &quot;ll&quot;, REG_EXTENDED)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}<br />
+int is_match = (regexec(&amp;re, &quot;hello&quot;, (size_t) 0, NULL, 0) == 0);<br />
+regfree(&amp;re);</td>
+<td>#include &lt;boost/xpressive/xpressive.hpp&gt;<br />
+using namespace boost::xpressive;<br />
+sregex re = sregex::compile(&quot;.*ll.*&quot;);<br />
+smatch matches;<br />
+string s(&quot;hello&quot;);<br />
+bool is_match = regex_match(s, matches, re);</td>
+<td>NSPredicate *pred = [NSPredicate predicateWithFormat:@&quot;SELF MATCHES %@&quot;, @&quot;.*ll.*&quot;];<br />
+BOOL is_match = [pred evaluateWithObject:@&quot;hello&quot;];</td>
+<td>boolean isMatch = &quot;hello&quot;.matches(&quot;.*ll.*&quot;);</td>
+<td>using System.Text.RegularExpressions;<br />
+Regex regex = new Regex(&quot;ll&quot;);<br />
+bool isMatch = regex.IsMatch(&quot;hello&quot;);</td>
+</tr>
+<tr>
+<td><a href="#regex-substitute">regex substitute</a></td>
+<td></td>
+<td>#include &lt;boost/xpressive/xpressive.hpp&gt;<br />
+using namespace boost::xpressive;<br />
+string s(&quot;hello&quot;);<br />
+sregex re1 = as_xpr(&quot;ll&quot;);<br />
+string format1(&quot;LL&quot;);<br />
+string result1 = regex_replace(s, re1, format1, regex_constants::format_first_only);<br />
+sregex re2 = as_xpr(&quot;l&quot;);<br />
+string format2(&quot;L&quot;);<br />
+string result2 = regex_replace(s, re2, format2);</td>
+<td></td>
+<td>String s1 = &quot;hello&quot;.replace(&quot;ll&quot;,&quot;LL&quot;);<br />
+String s2 = &quot;hello&quot;.replaceAll(&quot;l&quot;,&quot;L&quot;);</td>
+<td>using System.Text.RegularExpressions;<br />
+Regex r1 = new Regex(&quot;ll&quot;);<br />
+String s1 = r1.Replace(&quot;hello&quot;, &quot;LL&quot;, 1);<br />
+Regex r2 = new Regex(&quot;l&quot;);<br />
+String s2 = r2.Replace(&quot;hello&quot;, &quot;L&quot;);</td>
+</tr>
+<tr>
+<th colspan="6"><a name="containers"></a><a href="#containers-notes">containers</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#array-stack">allocate array on stack</a></td>
+<td>int a[10];</td>
+<td>int a[10];</td>
+<td>int a[10];</td>
+<td><span style="color: gray"><em>arrays must be allocated on heap</em></span></td>
+<td><span style="color: gray"><em>arrays must be allocated on heap</em></span></td>
+</tr>
+<tr>
+<td><a href="#allocate">allocate array on heap</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+int *a = calloc(10, sizeof(int));</td>
+<td>int *a = new int[10];</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>int[] a = new int[10];</td>
+<td>int[] a = new int[10];</td>
+</tr>
+<tr>
+<td><a href="#free">free array on heap</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+free(a);</td>
+<td>delete[] a;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>garbage collected</em></span></td>
+<td><span style="color: gray"><em>garbage collected</em></span></td>
+</tr>
+<tr>
+<td><a href="#array-literal">array literal</a></td>
+<td>int a[] = {1,2,3};</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>NSArray *a = [NSArray arrayWithObjects:@&quot;hello&quot;, @&quot;goodbye&quot;, nil];</td>
+<td>int[] a = {1,2,3};</td>
+<td>int[] a = {1,2,3};</td>
+</tr>
+<tr>
+<td><a href="#array-access">array access</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>a[0]</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>[a objectAtIndex:0]</td>
+<td>a[0]</td>
+<td>a[0]</td>
+</tr>
+<tr>
+<td><a href="#array-length">length</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>[a count]</td>
+<td>a.length</td>
+<td>a.Length</td>
+</tr>
+<tr>
+<td><a href="#array-out-of-bounds">array out-of-bounds result</a></td>
+<td><span style="color: gray"><em>undefined, possible SIGSEGV</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>raises</em></span> NSRangeException exception</td>
+<td>ArrayIndexOutOfBoundsException</td>
+<td>IndexOutOfRangeException</td>
+</tr>
+<tr>
+<td><a href="#array-iteration">array iteration</a></td>
+<td>int a[10];<br />
+for (i=0; i&lt;10; i++ ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with a[i]</em></span><br />
+}</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>NSEnumerator *i = [a objectEnumerator];<br />
+id o;<br />
+while (o = [i nextObject]) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with o</em></span><br />
+}</td>
+<td>for (String name : names) {</td>
+<td>foreach (string name in names) {</td>
+</tr>
+<tr>
+<td><a href="#struct-definition">struct definition</a></td>
+<td>struct medal_count {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>const char* country;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int gold;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int silver;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int bronze;<br />
+};</td>
+<td>class MedalCount {<br />
+public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>const char *country;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int gold;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int silver;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int bronze;<br />
+};</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>public class MedalCount {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public String country;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int gold;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int silver;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int bronze;<br />
+}</td>
+<td>public class MedalCount {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public string country;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int gold;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int silver;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int bronze;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#struct-declaration">struct declaration</a></td>
+<td>struct medal_count spain;</td>
+<td>MedalCount spain;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>MedalCount spain = new MedalCount();</td>
+<td>MedalCount spain = new MedalCount();</td>
+</tr>
+<tr>
+<td><a href="#struct-initialization">struct initialization</a></td>
+<td>struct medal_count spain = { &quot;Spain&quot;, 3, 7, 4};<br />
+struct medal_count france = { .gold = 8, .silver = 7, .bronze = 9, .country = &quot;France&quot; };</td>
+<td>MedalCount spain = { &quot;Spain&quot;, 3, 7, 4 };</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>no object literal syntax; define a constructor</em></span></td>
+<td><span style="color: gray"><em>no object literal syntax; define a constructor</em></span></td>
+</tr>
+<tr>
+<td><a href="#struct-member-assignment">struct member assignment</a></td>
+<td>spain.country = &quot;Spain&quot;;<br />
+spain.gold = 3;<br />
+spain.silver = 7;<br />
+spain.bronze = 4;</td>
+<td>spain.country = &quot;Spain&quot;;<br />
+spain.gold = 3;<br />
+spain.silver = 7;<br />
+spain.bronze = 4;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>spain.country = &quot;Spain&quot;;<br />
+spain.gold = 3;<br />
+spain.silver = 7;<br />
+spain.bronze = 4;</td>
+<td>spain.country = &quot;Spain&quot;;<br />
+spain.gold = 3;<br />
+spain.silver = 7;<br />
+spain.bronze = 4;</td>
+</tr>
+<tr>
+<td><a href="#struct-member-access">struct member access</a></td>
+<td>int spain_total = spain.gold + spain.silver + spain.bronze;</td>
+<td>int spain_total = spain.gold + spain.silver + spain.bronze;</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>int spain_total = spain.gold + spain.silver + spain.bronze;</td>
+<td>int spain_total = spain.gold + spain.silver + spain.bronze;</td>
+</tr>
+<tr>
+<td><a href="#union-definition">union definition</a></td>
+<td>union perl_scalar {<br />
+char *string;<br />
+long integer;<br />
+double number;<br />
+void *reference;<br />
+}</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#union-declaration">union declaration</a></td>
+<td>union perl_scalar x;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#union-access">union access</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td>x.integer = 7;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#vector">vector declaration</a></td>
+<td></td>
+<td>#include &lt;vector&gt;<br />
+vector &lt;int&gt; vec;</td>
+<td>NSMutableArray *a = [NSMutableArray arrayWithCapacity:10];</td>
+<td>java.util.Vector&lt;String&gt; vec = new java.util.Vector&lt;String&gt;();</td>
+<td>using System.Collections.Generic;<br />
+List&lt;string&gt; l = new List&lt;string&gt;();</td>
+</tr>
+<tr>
+<td><a href="#vector-push">vector push</a></td>
+<td></td>
+<td>vec.push_back(7);</td>
+<td>[a addObject:@&quot;hello&quot;];</td>
+<td>vec.add(&quot;hello&quot;);<br />
+<span style="color: gray"><em>or</em></span><br />
+vec.add(vec.size(), &quot;hello&quot;)</td>
+<td>l.Add(&quot;hello&quot;);</td>
+</tr>
+<tr>
+<td><a href="#vector-pop">vector pop</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td>vec.pop_back();</td>
+<td>[a removeLastObject];</td>
+<td>vec.removeElementAt(vec.size()-1);</td>
+<td>l.RemoveAt(l.Count - 1);</td>
+</tr>
+<tr>
+<td><a href="#vector-size">vector size</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td>vec.size()</td>
+<td>[a count]</td>
+<td>vec.size()</td>
+<td>l.Count</td>
+</tr>
+<tr>
+<td><a href="#vector-access">vector access</a></td>
+<td></td>
+<td>vec[0]<br />
+vec.at(0)</td>
+<td>[a objectAtIndex:0]</td>
+<td>vec.elementAt(0)</td>
+<td>l[0]</td>
+</tr>
+<tr>
+<td><a href="#vector-out-of-bounds">vector out of bounds result</a></td>
+<td></td>
+<td><span style="color: gray"><em>vec[] has undefined behavior</em></span><br />
+<span style="color: gray"><em>vec.at() raises</em></span> out_of_range</td>
+<td><span style="color: gray"><em>raises</em></span> NSRangeException</td>
+<td><span style="color: gray"><em>throws</em></span> ArrayIndexOutOfBoundsException</td>
+<td><span style="color: gray"><em>throws</em></span> System.ArgumentOutOfRangeException</td>
+</tr>
+<tr>
+<td><a href="#vector-iteration">vector iteration</a></td>
+<td></td>
+<td>int sum = 0;<br />
+vector&lt;int&gt;::iterator vi;<br />
+for (vi = vec.begin(); vi != vec.end(); vi++ ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>sum += *vi;<br />
+}</td>
+<td>NSEnumerator *i = [a objectEnumerator];<br />
+id o;<br />
+while (o = [i nextObject]) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with o</em></span><br />
+}</td>
+<td>for ( String s : vec ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with s</em></span><br />
+}</td>
+<td>foreach ( string s in l ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with s</em></span><br />
+}</td>
+</tr>
+<tr>
+<td><a href="#pair">pair</a></td>
+<td></td>
+<td>pair&lt;int, float&gt; p(7, 3.14);<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> p.first <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;, &quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> p.second <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td></td>
+<td>using System.Collections.Generic;<br />
+KeyValuePair&lt;string,int&gt; pr = new KeyValuePair&lt;string,int&gt;(&quot;hello&quot;,5);<br />
+System.Console.WriteLine(&quot;{0} {1}&quot;, pr.Key, pr.Value);</td>
+</tr>
+<tr>
+<td><a href="#map">map declaration</a></td>
+<td></td>
+<td>#include &lt;map&gt;<br />
+map&lt;string, int&gt; m;</td>
+<td>NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];</td>
+<td>java.util.TreeMap&lt;String, Integer&gt; m = new java.util.TreeMap&lt;String, Integer&gt;();</td>
+<td>using System.Collections.Generic;<br />
+Dictionary&lt;string, int&gt; dict = new Dictionary&lt;string, int&gt;();</td>
+</tr>
+<tr>
+<td><a href="#map-access">map access</a></td>
+<td></td>
+<td>m[&quot;hello&quot;] = 5;<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> m[&quot;hello&quot;]) <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td>[dict setObject:@&quot;5&quot; forKey:@&quot;hello&quot;];<br />
+[dict objectForKey:@&quot;hello&quot;]</td>
+<td>m.put(&quot;hello&quot;, 5);<br />
+m.get(&quot;hello&quot;)</td>
+<td>dict.Add(&quot;hello&quot;, 5);<br />
+dict[&quot;hello&quot;]</td>
+</tr>
+<tr>
+<td><a href="#map-size">map size</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td>m.size()</td>
+<td>[dict count]</td>
+<td>m.size()</td>
+<td>dict.Count</td>
+</tr>
+<tr>
+<td><a href="#map-remove">map remove element</a></td>
+<td></td>
+<td>m.erase(m.find(&quot;hello&quot;));</td>
+<td>[dict removeObjectForKey:@&quot;hello&quot;];</td>
+<td>m.remove(&quot;hello&quot;);</td>
+<td>dict.Remove(&quot;hello&quot;);</td>
+</tr>
+<tr>
+<td><a href="#map-element-not-found">map element not found result</a></td>
+<td></td>
+<td>NULL</td>
+<td>NULL</td>
+<td>null</td>
+<td><span style="color: gray"><em>throws</em></span> KeyNotFoundException<br />
+<span style="color: gray"><em>in</em> System.Collections.Generic</span></td>
+</tr>
+<tr>
+<td><a href="#map-iterator">map iterate</a></td>
+<td></td>
+<td>map&lt;string,int&gt;::iterator mi;<br />
+for (mi = m.begin(); mi != m.end(); mi++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>printf(&quot;%s %d&quot;, mi-&gt;first, mi-&gt;second)<br />
+}</td>
+<td>NSEnumerator *i = [dict keyEnumerator];<br />
+id key;<br />
+while ((key = [i nextObject])) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>do something with key</em></span><br />
+}</td>
+<td>for ( java.util.Map.Entry&lt;String, Integer&gt; e : m.entrySet() ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>use e.getKey() or e.getValue()</em></span><br />
+}</td>
+<td>foreach ( KeyValuePair&lt;string,int&gt; e in dict) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>use e.Key and e.Value</em></span><br />
+}</td>
+</tr>
+<tr>
+<th colspan="6"><a name="func"></a><a href="#func-notes">functions</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#pass-by-value">pass by value</a></td>
+<td>void use_integer(int i) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>function body</em></span><br />
+}<br />
+int i = 7;<br />
+use_integer(i);</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>primitive types are always passed by value</em></span></td>
+<td><span style="color: gray"><em>primitive types are always passed by value</em></span></td>
+</tr>
+<tr>
+<td><a href="#pass-by-address">pass by address</a></td>
+<td>void use_iptr(int *i) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>function body</em></span><br />
+}<br />
+int i = 7;<br />
+use_iptr(&amp;i);</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#pass-by-reference">pass by reference</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>void use_iref(int&amp; i) {<br />
+printf(&quot;using iref: %d&quot;, i);<br />
+}<br />
+int i = 7;<br />
+use_iref(i);</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>objects and arrays are always passed by reference</em></span></td>
+<td><span style="color: gray"><em>objects and arrays are always passed by reference</em></span></td>
+</tr>
+<tr>
+<td><a href="#default-value">default argument value</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>float log(float exp, float base=10.0) {</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>use method overloading</em></span></td>
+<td><span style="color: gray"><em>use method overloading</em></span></td>
+</tr>
+<tr>
+<td><a href="#named-parameters">named parameters</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>+(float)weight: (float) w height: (float) h {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (w * 703) / (h * h);<br />
+}<br />
++(float)height: (float) h weight: (float) w {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return [BMI weight: w height: h];<br />
+}<br />
+[BMI weight:155 height:70];<br />
+[BMI height:70 weight:155];</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>added in C# 4.0:</em></span><br />
+static int BMI(int weight, int height) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (weight * 703) / (height * height);<br />
+}<br />
+BMI(weight: 123, height: 64);<br />
+BMI(height: 64, weight: 123);</td>
+</tr>
+<tr>
+<td><a href="#function-overloading">function overloading</a></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+<td><span style="color: gray"><em>method overloading only</em></span></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+</tr>
+<tr>
+<td><a href="#variable-arguments">variable number of arguments</a></td>
+<td>char* concat(int cnt, &#8230;) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int i, len;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>va_list ap;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>char *retval, *arg;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>va_start(ap, cnt);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>for (i=0, len = 0; i &lt; cnt; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>len += strlen(va_arg(ap, char*));<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>va_end(ap);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>retval = calloc(len+1,sizeof(char));<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>va_start(ap, cnt);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>for (i=0,len=0; i &lt; cnt; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>arg = va_arg(ap, char*);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>strcpy(retval+len, arg);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>len += strlen(arg);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>va_end(ap);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return retval;<br />
+}<br />
+char *s = concat(4, &quot;Hello&quot;, &quot;, &quot;, &quot;World&quot;, &quot;!&quot;);</td>
+<td><span style="color: gray"><em>use C; use default values or function overloading for finite number of arities</em></span></td>
+<td><span style="color: gray"><em>use C; use method overloading for finite arities</em></span></td>
+<td>public static String concat(String first, String&#8230; rest) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>StringBuilder sb = new StringBuilder(first);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>for (String arg: rest) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>sb.append(arg);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return sb.toString();<br />
+}<br />
+String s = Concat.concat(&quot;Hello&quot;, &quot;, &quot;, &quot;World&quot;, &quot;!&quot;);</td>
+<td>public static string concat(params string[] args) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return System.String.Join(&quot;&quot;,args);<br />
+}<br />
+string s = Concat.concat(&quot;Hello&quot;, &quot;, &quot;, &quot;World&quot;, &quot;!&quot;)</td>
+</tr>
+<tr>
+<td><a href="#passing-functions">passing functions</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#anonymous-function">anonymous function</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#operator-overloading">operator overloading</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>Rational Rational::operator+(Rational&amp; o) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return Rational(this-&gt;num*o.denom + o.num*this-&gt;denom, this-&gt;denom * o.denom);<br />
+}</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>public static Rational operator+(Rational a, Rational b) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return new Rational(a.num*b.denom + b.num *a.denom,a.denom*b.denom);<br />
+}</td>
+</tr>
+<tr>
+<th colspan="6"><a name="exec-control"></a><a href="#exec-control-notes">execution control</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#for">for</a></td>
+<td>int i, n;<br />
+for (i=1,n=1; i&lt;=10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>n *= i;<br />
+}</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>int n = 1;<br />
+for (int i=1; i&lt;=10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>n *= i;<br />
+}</td>
+<td>int i, n;<br />
+for (i=1,n=1; i&lt;=10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>n *= i;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#if">if</a></td>
+<td>if (i&gt;0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 1;<br />
+} else if (i==0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 0;<br />
+} else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = -1;<br />
+}</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>if (i&gt;0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 1;<br />
+} else if (i==0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 0;<br />
+} else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = -1;<br />
+}</td>
+<td>if (i&gt;0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 1;<br />
+} else if (i==0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = 0;<br />
+} else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>signum = -1;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#while">while</a></td>
+<td>int i = 0;<br />
+while (i&lt;10) {<br />
+<span style="color: gray">&#8230;</span><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>i++;<br />
+}</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>int i = 0;<br />
+while (i&lt;10) {<br />
+<span style="color: gray">&#8230;</span><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>i++;<br />
+}</td>
+<td>int i = 0;<br />
+while (i&lt;10) {<br />
+<span style="color: gray">&#8230;</span><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>i++;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#switch">switch</a></td>
+<td>switch(i) {<br />
+case 0:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>0;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+case 1:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+default:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>-1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+}</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>switch(i) {<br />
+case 0:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>0;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+case 1:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+default:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>-1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+}</td>
+<td>switch(i) {<br />
+case 0:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>0;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+case 1:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+default:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>-1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>break;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#throw-exception">throw exception</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>throw exception();</td>
+<td>NSException *exc = [NSException exceptionWithName:@&quot;error&quot; reason:@&quot;failed&quot; userInfo:nil];<br />
+@throw exc;</td>
+<td>throw new Exception(&quot;failed&quot;);</td>
+<td>throw new System.Exception(&quot;failed&quot;);</td>
+</tr>
+<tr>
+<td><a href="#catch-exception">catch exception</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw exception();<br />
+} catch (exception&amp; e) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>cout <span style="white-space: pre-wrap;">&lt;&lt;</span> &quot;failed&quot; <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;<br />
+}</td>
+<td>@try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>[NSException raise:@&quot;error&quot; format:@&quot;failed&quot;];<br />
+} @catch (NSException *e) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>printf([[e reason] UTF8String]);<br />
+}</td>
+<td>try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw new Exception(&quot;failed&quot;);<br />
+} catch (Exception e) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>System.out.println(e.getMessage());<br />
+}</td>
+<td>try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw new System.Exception(&quot;failed&quot;);<br />
+} catch (System.Exception e) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>System.Console.WriteLine(e.Message);<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#finally-clause">finally clause</a></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>use local object with destructor</em></span></td>
+<td>@try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>risky code</em></span><br />
+} @finally {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>perform cleanup</em></span><br />
+}</td>
+<td>try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>risky code</em></span><br />
+} finally {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>perform cleanup</em></span><br />
+}</td>
+<td>try {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>risky code</em></span><br />
+} finally {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>perform cleanup</em></span><br />
+}</td>
+</tr>
+<tr>
+<td><a href="#methods-declare-exceptions">methods must declare exceptions</a></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+<td><span style="color: gray"><em>no</em></span></td>
+</tr>
+<tr>
+<th colspan="6"><a name="env-io"></a><a href="#env-io-notes">environment and i/o</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#main">signature of main</a></td>
+<td>int main(int argc, char **argv) {</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>public class <em>Foo</em> {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static void main(String[] args) {</td>
+<td>public class <em>Foo</em> {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static void Main(string[] args) {</td>
+</tr>
+<tr>
+<td><a href="#first-argument">first argument</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td><span style="color: gray"><em>pathname of executable</em></span></td>
+<td><span style="color: gray"><em>pathname of executable</em></span></td>
+<td><span style="color: gray"><em>pathname of executable</em></span></td>
+<td><span style="color: gray"><em>first command line argument</em></span></td>
+<td><span style="color: gray"><em>first command line argument</em></span></td>
+</tr>
+<tr>
+<td><a href="#environment-variable">environment variable</a></td>
+<td>#include &lt;stdlib.h&gt;<br />
+char *home = getenv(&quot;HOME&quot;);<br />
+setenv(&quot;EDITOR&quot;, &quot;emacs&quot;, 1);<br />
+unsetenv(&quot;EDITOR&quot;);</td>
+<td><span style="color: gray"><em>use C</em></span></td>
+<td>NSString *home = [[[NSProcessInfo processInfo] environment] objectForKey:@&quot;HOME&quot;];</td>
+<td>String home = System.getenv(&quot;HOME&quot;);</td>
+<td>using System.Environment;<br />
+string home = GetEnvironmentVariable(&quot;HOME&quot;);<br />
+SetEnvironmentVariable(&quot;EDITOR&quot;, &quot;emacs&quot;);<br />
+SetEnvironmentVariable(&quot;EDITOR&quot;, null);</td>
+</tr>
+<tr>
+<td><a href="#iterate-environment-variable">iterate thru environment variables</a></td>
+<td></td>
+<td></td>
+<td>NSEnumerator *i = [[[NSProcessInfo processInfo] environment] keyEnumerator];<br />
+id key;<br />
+while ((key = [i nextObject])) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>use NSString key</em></span><br />
+}</td>
+<td>import java.util.Map;<br />
+Map&lt;String, String&gt; env = System.getenv();<br />
+for (String name : env.keySet()) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>String value = env.get(name));<br />
+}</td>
+<td>using System.Collections;<br />
+using System.Environment;<br />
+IDictionary env = GetEnvironmentVariables();<br />
+foreach (DictionaryEntry de in env) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>use de.Key or de.Value</em></span><br />
+}</td>
+</tr>
+<tr>
+<td><a href="#read-file">read from file</a></td>
+<td>#include &lt;stdio.h&gt;<br />
+char buf[2000];<br />
+FILE *f;<br />
+if (!(f = fopen(&quot;/etc/passwd&quot;, &quot;r&quot;)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+};<br />
+while (fgets(buf, 2000, f) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>process buf</em></span><br />
+}<br />
+if (ferror(f)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}<br />
+if (fclose(f)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}</td>
+<td>#include &lt;fstream&gt;<br />
+string line;<br />
+ifstream f(&quot;/etc/passwd&quot;);<br />
+if (f.is_open()) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>while (!f.eof()) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>getline(f, line);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>process line</em></span><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>f.close();<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if ( 0 != f.fail() ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}<br />
+else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}</td>
+<td>NSError *error = nil;<br />
+NSString *s = [NSString stringWithContentsOfFile: @&quot;/etc/passwd&quot; encoding:NSUTF8StringEncoding error:&amp;error];<br />
+if ( error != nil ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}<br />
+NSArray *a = [s componentsSeparatedByString:@&quot;\n&quot;];<br />
+id line;<br />
+while (line = [i nextObject]) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>process line</em></span><br />
+}</td>
+<td>import java.io.BufferedReader;<br />
+import java.io.FileReader;<br />
+BufferedReader in = new BufferedReader(new FileReader(&quot;/etc/passwd&quot;));<br />
+String line;<br />
+while ((line = in.readLine()) != null) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>process line</em></span><br />
+}</td>
+<td>using System.IO;<br />
+StreamReader sr = new StreamReader(&quot;/etc/passwd&quot;);<br />
+string line;<br />
+while ((line = sr.ReadLine()) != null) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>use line</em></span><br />
+}</td>
+</tr>
+<tr>
+<td><a href="#write-file">write to file</a></td>
+<td>#include &lt;stdio.h&gt;<br />
+FILE *f;<br />
+if (!(f= fopen(&quot;/tmp/test1&quot;,&quot;w&quot;)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+};<br />
+int i;<br />
+for (i=0; i&lt;10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>fprintf(f, &quot;%d\n&quot;, i);<br />
+}<br />
+if (ferror(f)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}<br />
+if (fclose(f)) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}</td>
+<td>#include &lt;fstream&gt;<br />
+ofstream f(&quot;/tmp/test4&quot;);<br />
+int i;<br />
+for (i=0; i&lt;10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>f <span style="white-space: pre-wrap;">&lt;&lt;</span> i <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;<br />
+}<br />
+f.close();<br />
+if (0 != f.fail()) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>handle error</em></span><br />
+}</td>
+<td></td>
+<td>import java.io.BufferedWriter;<br />
+import java.io.FileWriter;<br />
+BufferedWriter fout = new BufferedWriter(new FileWriter(&quot;/tmp/test2&quot;));<br />
+int i;<br />
+for (i=0; i&lt;10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>fout.write(String.format(&quot;%d&quot;, i));<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>fout.newLine();<br />
+}<br />
+fout.close();</td>
+<td>using System.IO;<br />
+StreamWriter fout = new StreamWriter(&quot;/tmp/test3&quot;);<br />
+int i;<br />
+for (i=0; i&lt;10; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>fout.WriteLine(i.ToString());<br />
+}<br />
+fout.Close();</td>
+</tr>
+<tr>
+<th colspan="6"><a name="lib-namesp"></a><a href="#lib-namesp-notes">libraries and namespaces</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#declare-namespace">declare namespace</a></td>
+<td></td>
+<td>namespace foo {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>namespace bar {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>class Baz {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>static const int ANSWER = 42;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>};<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td></td>
+<td>package foo.bar;<br />
+public class Baz {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static final int ANSWER = 42;<br />
+}</td>
+<td>namespace foo {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>namespace bar {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public class Baz {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public const int ANSWER = 42;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>};<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#namespaces-per-file">multiple namespaces per file</a></td>
+<td></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+<td></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+</tr>
+<tr>
+<td><a href="#namespace-directory-mapping">namespaces map to directories</a></td>
+<td></td>
+<td><span style="color: gray"><em>no</em></span></td>
+<td></td>
+<td><span style="color: gray"><em>yes</em></span></td>
+<td><span style="color: gray"><em>no</em></span></td>
+</tr>
+<tr>
+<td><a href="#import-namespace">import namespace</a></td>
+<td></td>
+<td>using namespace foo::bar;<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> Baz::ANSWER <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td>import foo.bar.*;<br />
+System.out.println(Baz.ANSWER);</td>
+<td>using foo.bar;<br />
+System.Console.WriteLine(Baz.ANSWER);</td>
+</tr>
+<tr>
+<td><a href="#import-part-namespace">import part of namespace</a></td>
+<td></td>
+<td>using namespace foo;<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> bar::Baz::ANSWER <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#import-symbol">import symbol</a></td>
+<td></td>
+<td>using foo::bar::Baz;<br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> Baz::ANSWER <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td>import foo.bar.Baz;<br />
+System.out.println(Baz.ANSWER);</td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#import-static-symbol">import static symbol</a></td>
+<td></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td></td>
+<td>import static foo.bar.Baz.ANSWER;<br />
+System.out.println(ANSWER);</td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#import-position">import position</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td><span style="color: gray"><em>anywhere a statement is legal</em></span></td>
+<td></td>
+<td><span style="color: gray"><em>after package and before type definitions</em></span></td>
+<td><span style="color: gray"><em>outside of class definitions</em></span></td>
+</tr>
+<tr>
+<td><a href="#not-imported-symbol">using a symbol that hasn't been imported</a></td>
+<td></td>
+<td>cout <span style="white-space: pre-wrap;">&lt;&lt;</span> foo::bar::Baz::ANSWER <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td>System.out.println(foo.bar.Baz.ANSWER);</td>
+<td>using System.Console;<br />
+WriteLine(foo.bar.Baz.ANSWER);</td>
+</tr>
+<tr>
+<th colspan="6"><a name="obj"></a><a href="#obj-notes">objects</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#define-class">define class</a></td>
+<td></td>
+<td><span style="color: gray"><em>Rational.hpp:</em></span><br />
+class Rational {<br />
+<span style="white-space: pre-wrap;">&nbsp;</span>public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int num, denom;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Rational(int num, int denom);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>virtual ~Rational();<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Rational operator+(Rational&amp; addend);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>static Rational max(Rational&amp; a, Rational&amp; b);<br />
+};</td>
+<td><span style="color: gray"><em>Rational.h:</em></span><br />
+#import &lt;Foundation/Foundation.h&gt;<br />
+@interface Rational : NSObject {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int num;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int denom;<br />
+}<br />
+@property int num, denom;<br />
+-(Rational*) initWith: (int) n: (int) d;<br />
+-(Rational*) add: (Rational *) o;<br />
+@end<br />
+<span style="color: gray"><em>Rational.m:</em></span><br />
+#include &quot;Rational.h&quot;<br />
+@implementation Rational<br />
+@synthesize num, denom;<br />
+-(Rational*) add: (Rational*) o {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int sum_n = self.num * o.denom + o.num * self.denom;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int sum_d = self.denom * o.denom;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Rational* sum = [[Rational alloc] initWith: sum_n: sum_d];<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return sum;<br />
+}<br />
+@end</td>
+<td>public class Rational {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int num;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int denom;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public Rational add(Rational o) throws Exception {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return new Rational(this.num*o.denom + o.num*this.denom,this.denom*o.denom);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public static Rational max(Rational a, Rational b) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (a.num*b.denom &gt; a.num*b.denom) ? a : b;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td>public class Rational {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int num;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int denom;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#class-definition-location">class definition location</a></td>
+<td></td>
+<td><span style="color: gray"><em>top level, class block, or function block</em></span></td>
+<td><span style="color: gray"><em>top level</em></span></td>
+<td><span style="color: gray"><em>top level, class block, or function block for anonymous classes</em></span></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#constructor">constructor</a></td>
+<td></td>
+<td>Rational::Rational(int n, int d) : num(n), denom(d) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (denom == 0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw &quot;zero denominator&quot;;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int div = gcd(n,d);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>num = num / div;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>denom = denom / div;<br />
+}</td>
+<td>-(Rational*) initWith: (int) n: (int) d {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>self = [super init];<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (self) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>self.num = n;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>self.denom = d;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return self;<br />
+}</td>
+<td>public Rational(int n, int d) throws Exception {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (d == 0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw new Exception(&quot;zero denominator&quot;);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if ( d &lt; 0 ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.num = -1 * n;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.denom = -1 * d;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.num = n;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.denom = d;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td>public Rational(int n, int d) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (0 == d) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>throw new System.Exception(&quot;zero denominator&quot;);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (d &lt; 0) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.num = -1 * n;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.denom = -1 * d;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>else {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.num = n;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.denom = d;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#create-object">create object</a></td>
+<td></td>
+<td>Rational r1(7,3);<br />
+Rational *r2 = new Rational(8,5);</td>
+<td>Rational *r = [[Rational alloc] initWith: 7: 3];</td>
+<td>Rational r = new Rational(7,3);</td>
+<td>Rational r = new Rational(7,3);</td>
+</tr>
+<tr>
+<td><a href="#destructor">destructor</a></td>
+<td></td>
+<td>Rational::~Rational() {};</td>
+<td>-(void) dealloc {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>[super dealloc];<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>printf(&quot;deallocated&#8230;&quot;);<br />
+}</td>
+<td>protected void finalize() throws Throwable {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>super.finalize();<br />
+}</td>
+<td>~Rational() {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="color: gray"><em>perform cleanup</em></span><br />
+}</td>
+</tr>
+<tr>
+<td><a href="#destroy-object">destroy object</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td>delete r2;</td>
+<td>[r release];</td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+</tr>
+<tr>
+<td><a href="#define-method">define method</a></td>
+<td></td>
+<td>int Rational::height() {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (abs(num) &gt; abs(denom)) ? abs(num) : abs(denom);<br />
+}</td>
+<td>-(int) height {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if ( abs(self.num) &gt; abs(self.denom) ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return abs(self.num);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return abs(self.denom);<br />
+}</td>
+<td>public int height() {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (Math.abs(this.num) &gt; this.denom) ? Math.abs(this.num) : this.denom;<br />
+}</td>
+<td>public int Height() {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return (System.Math.Abs(this.num) &gt; this.denom) ? System.Math.Abs(this.num) : this.denom;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#invoke-method">invoke method</a></td>
+<td></td>
+<td>r1.height();<br />
+r2-&gt;height();</td>
+<td>[r1 height];</td>
+<td>r.height();</td>
+<td>r.Height();</td>
+</tr>
+<tr>
+<td><a href="#dynamic-dispatch">dynamic dispatch</a></td>
+<td></td>
+<td><span style="color: gray"><em>declare as virtual in base class</em></span></td>
+<td><span style="color: gray"><em>dispatch always dynamic</em></span></td>
+<td><span style="color: gray"><em>dispatch dynamic by default</em></span></td>
+<td><span style="color: gray"><em>declare as virtual in base class and override in derived class</em></span></td>
+</tr>
+<tr>
+<td><a href="#static-dispatch">static dispatch</a></td>
+<td></td>
+<td><span style="color: gray"><em>dispatch static by default</em></span></td>
+<td><span style="color: gray"><em>dispatch always dynamic</em></span></td>
+<td><span style="color: gray"><em>declare as final, private, or static (i.e. make it a class method)</em></span></td>
+<td><span style="color: gray"><em>dispatch static by default; compiler error if same method defined in base and derived class and not marked virtual in base class</em></span></td>
+</tr>
+<tr>
+<td><a href="#define-class-method">define class method</a></td>
+<td></td>
+<td><span style="color: gray"><em>declare static in class definition</em></span></td>
+<td><span style="color: gray"><em>precede definition with +:</em></span><br />
++(Rational*) max: (Rational*) a: (Rational*) b {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if ( a.num * b.denom &gt; b.num * a.denom ) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return b;<br />
+}</td>
+<td><span style="color: gray"><em>declare static in class definition</em></span></td>
+<td><span style="color: gray"><em>declare static in class definition</em></span></td>
+</tr>
+<tr>
+<td><a href="#invoke-class-method">invoke class method</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#receiver">name of receiver</a></td>
+<td></td>
+<td>this</td>
+<td>self</td>
+<td>this</td>
+<td>this</td>
+</tr>
+<tr>
+<td><a href="#access-control">access control</a></td>
+<td></td>
+<td><span style="color: gray"><em>access keywords define regions:</em></span><br />
+class Foo {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt2;<br />
+public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int publicInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int publicInt2;<br />
+protected:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt2;<br />
+private:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt3;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt4;<br />
+};</td>
+<td><span style="color: gray"><em>access keywords define regions:</em></span><br />
+@interface Foo : NSObject {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt2;<br />
+@public<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int publicInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int publicInt2;<br />
+@protected<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt3;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int protectedInt4;<br />
+@private<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt2;<br />
+}<br />
+@end</td>
+<td><span style="color: gray"><em>access keywords required for methods and members:</em></span><br />
+public class Foo {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>private int privateInt;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>protected int protectedInt;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int publicInt;<br />
+}</td>
+<td><span style="color: gray"><em>access keywords available for methods and members:</em></span><br />
+public class Foo {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>private int privateInt1;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>int privateInt2;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>protected int protectedInt;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public int publicInt;<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#anonymous-class">anonymous class</a></td>
+<td></td>
+<td><span style="color: gray"><em>possible but not useful</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>(new Object() { public void hello() { System.out.println(&quot;hello!&quot;); } }).hello();</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#subclass">subclass</a></td>
+<td></td>
+<td>class Integer : public Rational {<br />
+<span style="white-space: pre-wrap;">&nbsp;</span>public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Integer(int n);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>virtual ~Integer();<br />
+};</td>
+<td></td>
+<td>public class RInteger extends Rational {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public RInteger(int n) throws Throwable {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>super(n, 1);<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#superclass-constructor">invoking superclass constructor</a></td>
+<td></td>
+<td>Integer::Integer(int n) : Rational(n, 1) {<br />
+}</td>
+<td></td>
+<td>super(n, 1);</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#underivable-class">mark class underivable or method unoverrideable</a></td>
+<td></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>final</td>
+<td>sealed</td>
+</tr>
+<tr>
+<td><a href="#root-class">root class</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>NSObject</td>
+<td>java.lang.Object</td>
+<td>System.Object</td>
+</tr>
+<tr>
+<td><a href="#root-class-methods">root class methods</a></td>
+<td></td>
+<td><span style="color: gray"><em>none</em></span></td>
+<td>autorelease<br />
+class<br />
+conformsToProtocol:<br />
+hash<br />
+isEqual:<br />
+isKindOfClass:<br />
+isProxy<br />
+performSelector:<br />
+performSelector:withObject:<br />
+performSelector:withObject:withObject:<br />
+release<br />
+respondsToSelector:<br />
+retain<br />
+retainCount<br />
+self<br />
+superclass</td>
+<td>clone()<br />
+equals()<br />
+finalize()<br />
+getClass()<br />
+hashCode()<br />
+toString()</td>
+<td>Equals()<br />
+Finalize()<br />
+GetHashCode()<br />
+GetType()<br />
+MemberwiseClone()<br />
+ReferenceEquals()<br />
+ToString()</td>
+</tr>
+<tr>
+<th colspan="6"><a name="generics"></a><a href="#generics-notes">generic types</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#define-generic">define generic type</a></td>
+<td></td>
+<td>template &lt;class A&gt;<br />
+class Foo {<br />
+public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>A a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Foo(A a);<br />
+};<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+template &lt;class A&gt;<br />
+Foo&lt;A&gt;::Foo(A a) : a(a) {<br />
+}</td>
+<td></td>
+<td>public class Foo&lt;A&gt; {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public A a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public Foo(A a) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.a = a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td>public class Foo&lt;A&gt; {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public A a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public Foo(A a) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.a = a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#instantiate-generic">instatiate generic type</a></td>
+<td></td>
+<td>Foo&lt;string&gt; f = Foo&lt;string&gt;(&quot;foo&quot;);</td>
+<td></td>
+<td>Foo&lt;String&gt; f = new Foo&lt;String&gt;(&quot;foo&quot;);</td>
+<td>Foo&lt;string&gt; f = new Foo&lt;string&gt;(&quot;foo&quot;);</td>
+</tr>
+<tr>
+<td><a href="#generic-function">generic function</a></td>
+<td></td>
+<td>template &lt;class C&gt;<br />
+C add(C a, C b) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return a + b;<br />
+}</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#generic-array">generic array</a></td>
+<td></td>
+<td>template &lt;class C&gt;<br />
+class Foo {<br />
+public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>C a[10];<br />
+};</td>
+<td></td>
+<td><span style="color: gray"><em>not permitted. Use</em> Object <em>as the element type for the array or use an</em> ArrayList.</span></td>
+<td>public class Bar&lt;C&gt; {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public C[] a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>public Bar(C c) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>this.a = new C[10];<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+</tr>
+<tr>
+<td><a href="#value-parameter">value parameter</a></td>
+<td></td>
+<td>template &lt;int N&gt;<br />
+int add(int i) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>return N+i;<br />
+}<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+cout <span style="white-space: pre-wrap;">&lt;&lt;</span> add&lt;7&gt;(3) <span style="white-space: pre-wrap;">&lt;&lt;</span> endl;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#template-parameter">template parameter</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#template-specialization">template specialization</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#multiple-type-parameters">multiple type parameters</a></td>
+<td></td>
+<td>template &lt;class A, class B&gt;<br />
+class Pair {<br />
+public:<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>A a;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>B b;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Pair(A a, B b);<br />
+};<br />
+<span style="white-space: pre-wrap;">&nbsp;</span><br />
+template &lt;class A, class B&gt;<br />
+Pair&lt;A, B&gt;::Pair(A a, B b) :<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>a(a), b(b) { }<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><br />
+Pair&lt;int, string&gt; p =<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Pair&lt;int, string&gt;(7, &quot;foo&quot;);</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#generic-type-parameters">generic type parameters</a></td>
+<td></td>
+<td>Pair&lt;int, Foo&lt;string&gt; &gt; p =<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>Pair&lt;int, Foo&lt;string&gt; &gt;(<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>7, Foo&lt;string&gt;(&quot;foo&quot;));</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#template-parameters">template parameters</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="6"><a name="reflection"></a><a href="#reflection-notes">reflection</a></th>
+</tr>
+<tr>
+<th></th>
+<th>c</th>
+<th>c++</th>
+<th>objective c</th>
+<th>java</th>
+<th>c#</th>
+</tr>
+<tr>
+<td><a href="#type-class">get type class of object</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>o = new Object();<br />
+Class c = o.getClass();</td>
+<td>object o = new object();<br />
+System.Type t = o.GetType();<br />
+or<br />
+System.type t = typeof(o);</td>
+</tr>
+<tr>
+<td><a href="#get-type-class-string">get type class from string</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Class c = Class.forName(&quot;java.io.File&quot;);</td>
+<td>using System;<br />
+Type t = Type.GetType(&quot;object&quot;);</td>
+</tr>
+<tr>
+<td><a href="#get-type-class-identifier">get type class from type identifier</a></td>
+<td></td>
+<td>typeid(Foo)</td>
+<td></td>
+<td></td>
+<td>System.Type t = typeof(object);</td>
+</tr>
+<tr>
+<td><a href="#class-name">class name</a><br />
+<span style="white-space: pre-wrap;">&nbsp;</span></td>
+<td></td>
+<td>typeid(Foo).name()</td>
+<td></td>
+<td>String name = c.getName();</td>
+<td>t.ToString();</td>
+</tr>
+<tr>
+<td><a href="#get-methods">get methods</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>import java.lang.reflect.*;<br />
+Method[] m = c.getMethods();</td>
+<td>using System.Reflection;<br />
+System.Type t = typeof(object);<br />
+MethodInfo[] a = t.GetMethods();</td>
+</tr>
+<tr>
+<td><a href="#has-method">has method</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>import java.lang.reflect.*;<br />
+Class c = Class.forName(&quot;java.io.File&quot;);<br />
+Method[] a = c.getMethods();<br />
+boolean hasMethod = false;<br />
+for (int i=0; i &lt; a.length; i++) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>if (a[i].getName() == &quot;toString&quot;) {<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span><span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>hasMethod = true;<br />
+<span style="white-space: pre-wrap;">&nbsp;&nbsp;</span>}<br />
+}</td>
+<td>null if method not found://<br />
+MethodInfo m = t.GetMethod(&quot;ToString&quot;);</td>
+</tr>
+<tr>
+<td><a href="#invoke-method-object">invoke method object</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>import java.lang.reflect.*;<br />
+Class c = Class.forName(&quot;java.io.File&quot;);<br />
+Method m = c.getMethod(&quot;toString&quot;);<br />
+Object o = new Object();<br />
+m.invoke(o);</td>
+<td>m.Invoke(o);</td>
+</tr>
+<tr>
+<th></th>
+<th><span style="color: #efefef"><span style="white-space: pre-wrap;">________________________________________________</span></span></th>
+<th><span style="color: #efefef"><span style="white-space: pre-wrap;">________________________________________________</span></span></th>
+<th><span style="color: #efefef"><span style="white-space: pre-wrap;">________________________________________________</span></span></th>
+<th><span style="color: #efefef"><span style="white-space: pre-wrap;">________________________________________________</span></span></th>
+<th><span style="color: #efefef"><span style="white-space: pre-wrap;">________________________________________________</span></span></th>
+</tr>
+</table>
+<p><a name="general-footnotes"></a></p>
+<h2 id="toc0"><span><a href="#general">General Footnotes</a></span></h2>
+<p><a name="hello-world-notes"></a></p>
+<h2 id="toc1"><span><a href="#hello-world">hello world</a></span></h2>
+<p>How to write, compile, and run a &quot;Hello, World!&quot; program.</p>
+<p><a name="version-used-notes"></a></p>
+<h2 id="toc2"><span><a href="#version-used">version used</a></span></h2>
+<p>The compiler version used for this cheatsheat.</p>
+<p><a name="version-notes"></a></p>
+<h2 id="toc3"><span><a href="#version">version</a></span></h2>
+<p>How to get the compiler version.</p>
+<p><a name="lib-used-notes"></a></p>
+<h2 id="toc4"><span><a href="#lib-used">libraries used</a></span></h2>
+<p>The libraries used for this reference sheet.</p>
+<p><strong>C</strong></p>
+<p><a href="http://en.wikipedia.org/wiki/C_standard_library">C Standard Library</a><br />
+<a href="http://www.gnu.org/software/libc/manual/html_mono/libc.html">GNU C Library</a></p>
+<p>The C standard library evolved with Unix and was first standardized by POSIX in 1988. It is a collection of header files and compiled library objects, and it is available on most systems including Windows. The headers must be specified in the source files, but it is not necessary to explicitly link to the library, at least when using gcc.</p>
+<p><strong>C++</strong></p>
+<p><a href="http://www.sgi.com/tech/stl/">Standard Template Library (STL)</a><br />
+<a href="http://www.boost.org/doc/libs/1_42_0">Boost 1.42.0</a></p>
+<p>The STL provides a string class, streams, and a good selection of generic container classes. Most systems provide it, though it may not be installed by default. The Boost library fills out the C++ development environment, providing a lot of functionality that is available to java via the Java API. Boost generally has to be downloaded and installed separately.</p>
+<p><strong>Objective C</strong></p>
+<p><a href="http://developer.apple.com/mac/library/documentation/cocoa/reference/foundation/objc_classic/index.html">Foundation Framework</a></p>
+<p>The Foundation Framework is the core of Cocoa, a set of libraries for Objective C development on Mac OS X and the iPhone. The Foundation Framework descends from NextStep, hence the NS prefix in the class names. NextStep was made available to operating systems other than Next as OpenStep and the GNU implementation is called GNUStep.</p>
+<p><strong>Java</strong></p>
+<p><a href="http://java.sun.com/javase/6/docs/api/">Java 1.6 API</a></p>
+<p>Java comes with a large standard library called the Java API.</p>
+<p><strong>C#</strong></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms229335(v=VS.100).aspx">.NET Framework 4 Class Library</a><br />
+<a href="http://www.go-mono.com/docs/">Mono Documentation</a></p>
+<p>The core of the .NET framework is called the Base Class Library. Mono implements the BCL, but does not implement all of the .NET framework.</p>
+<p><a name="file-suffix-notes"></a></p>
+<h2 id="toc5"><span><a href="#file-suffix">source, header, and object file suffix</a></span></h2>
+<p><strong>c++</strong></p>
+<p>The gcc compiler will treat a file with any of the following suffixes as C++ source:</p>
+<div class="code">
+<pre>
+<code> .cc .cp .cxx .cpp .CPP .c++ .C</code>
+</pre></div>
+<p><a name="null-notes"></a></p>
+<h2 id="toc6"><span><a href="#null">null</a></span></h2>
+<p><strong>C</strong></p>
+<p>A typical definition:</p>
+<div class="code">
+<pre>
+<code>#define NULL (void *)0</code>
+</pre></div>
+<p><strong>C++</strong></p>
+<p>A typical definition:</p>
+<div class="code">
+<pre>
+<code>const int NULL = 0;</code>
+</pre></div>
+<p><a name="printf-notes"></a></p>
+<h2 id="toc7"><span><a href="#printf">printf</a></span></h2>
+<p>How to print a formatted string to standard out.</p>
+<p><a name="case-underscore-name-notes"></a></p>
+<h2 id="toc8"><span><a href="#case-underscore-name">case and underscores in names</a></span></h2>
+<p>Conventions typically observed for use of case and underscores in names. These conventions are not enforced by the compiler.</p>
+<p><strong>C++</strong></p>
+<p>C++ naming conventions vary widely. The naming conventions cited here are taken from the <a href="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml">Google C++ Style Guide</a>.</p>
+<p><a name="coalesce-notes"></a></p>
+<h2 id="toc9"><span><a href="#coalesce">coalesce</a></span></h2>
+<p>The equivalent of the COALESCE function from SQL.</p>
+<p><strong>C, C++, Objective C++:</strong></p>
+<p>The short circuit or operator <span style="white-space: pre-wrap;">||</span> can be used as a coalesce operator. However, in C, C++, and Objective C, NULL is identical to zero, whereas in databases they are two distinct values.</p>
+<p><strong>Java:</strong></p>
+<p>The ternary operator provides the closest approximation to COALESCE, but it does not have the same behavior if the tested value has a side effect.</p>
+<p><a name="primitive-types-notes"></a></p>
+<h1 id="toc10"><span><a href="#primitive-types">Primitive Types Footnotes</a></span></h1>
+<p><a name="primitive-type-stack-notes"></a></p>
+<h2 id="toc11"><span><a href="#primitive-type-stack">declare primitive type on stack</a></span></h2>
+<p>How to declare a primitive type on the stack.</p>
+<p><a name="allocate-notes"></a></p>
+<h2 id="toc12"><span><a href="#allocate">allocate primitive type on heap</a></span></h2>
+<p>How to allocate memory for a primitive type on the heap.</p>
+<p><strong>c++</strong></p>
+<p><em>new</em> and <em>delete</em> can be used to manage the memory of both primitive types and objects.</p>
+<p><strong>objective c</strong></p>
+<p>Object C has a different memory management schemes for primitive types and objects. Objects are allocated with <em>alloc</em> and freed by means of <em>NSAutoreleasePool</em>. For primitive types the same techniques are used as for C. However, idiomatic Objective C will declare primitive types as local variables or as part of the state of an object and avoid explicit calls to <em>malloc</em>.</p>
+<p>Arrays of objects can be created with <em>NSArray</em> and <em>NSMutableArray</em>.</p>
+<p><strong>java</strong></p>
+<p>In Java, arrays are always stored on the heap and the JVM is responsible for garbage collection. The primitive types are stored (1) on the local frame, (2) as part of the state of an object, or (3) as part of the state of a class. The primitive types are never stored in the heap directly and when they are part of object state they are garbage collected with the object. Primitive types are passed by value unless they are encapsulated in an object.</p>
+<p>Each of the primitive types has a wrapper class, and instantiating this class is the best approximation in Java to allocating the primitive type on the heap:</p>
+<div class="code">
+<pre>
+<code>Integer i = new Integer(0);</code>
+</pre></div>
+<p>The compiler may instantiate the wrapper class implicitly; this is called boxing. The compiler also permits use of a wrapper class in the place of the primitive type, or unboxing.</p>
+<p><strong>C#</strong></p>
+<p>C# behavior is like Java. Note that C# lacks specific wrapper classes for each primitive data type.</p>
+<p><a name="free-notes"></a></p>
+<h2 id="toc13"><span><a href="#free">free primitive type on heap</a></span></h2>
+<p>How to free the memory for a primitive type that was allocated on the heap.</p>
+<p><a name="unitialized-val-notes"></a></p>
+<h2 id="toc14"><span><a href="#unitialized-val">value of uninitialized types</a></span></h2>
+<p>The value assigned to primitive types that are not explicitly initialized.</p>
+<p><strong>C++</strong></p>
+<p>The default constructors for primitive types will be called in <a href="http://en.wikipedia.org/wiki/Default_constructor#C.2B.2B">some circumstances</a>.</p>
+<p><strong>C#</strong></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/aa691173(v=vs.71).aspx">Section 5.3.1</a> of ECMA-334 describes when variables are zero-initialized.</p>
+<p><a name="boolean-notes"></a></p>
+<h2 id="toc15"><span><a href="#boolean">boolean types</a></span></h2>
+<p><strong>C</strong></p>
+<p>The following definitions are common:</p>
+<div class="code">
+<pre>
+<code>typedef int BOOL;
+#define TRUE 1
+#define FALSE 0</code>
+</pre></div>
+<p><strong>Objective C</strong></p>
+<p>From objc.h:</p>
+<div class="code">
+<pre>
+<code>typedef signed char BOOL;
+#define YES (BOOL)1
+#define NO (BOOL)0</code>
+</pre></div>
+<p><strong>C#</strong></p>
+<p>bool is an alias for System.Boolean</p>
+<p><a name="signed-int-notes"></a></p>
+<h2 id="toc16"><span><a href="#signed-int">signed integer types</a></span></h2>
+<p><strong>C</strong></p>
+<p>Whether <em>char</em> is a signed or unsigned type depends on the implementation.</p>
+<p><strong>C#</strong></p>
+<p>C# has the following aliases:</p>
+<p>sbyte: System.SByte<br />
+short: System.Int16<br />
+int: System.Int32<br />
+long: System.Int64</p>
+<p><a name="unsigned-int-notes"></a></p>
+<h2 id="toc17"><span><a href="#unsigned-int">unsigned integer types</a></span></h2>
+<p><strong>C</strong></p>
+<p>Whether <em>char</em> is a signed or unsigned type depends on the implmentation.</p>
+<p><strong>C#</strong></p>
+<p>C# has the following aliases:</p>
+<p>byte: System.Byte<br />
+ushort: System.UInt16<br />
+uint: System.UInt32<br />
+ulong: System.UInt64</p>
+<p><a name="floats-notes"></a></p>
+<h2 id="toc18"><span><a href="#floats">floating point and decimal types</a></span></h2>
+<p><strong>C#</strong></p>
+<p>C# has the following aliases:</p>
+<p>float: System.Single<br />
+double: System.Double<br />
+decimal: System.Decimal</p>
+<p><a name="typedef-notes"></a></p>
+<h2 id="toc19"><span><a href="#typedef">typedef</a></span></h2>
+<p><strong>C</strong></p>
+<p>Because C integer types don't have well defined sizes, <em>typedef</em> is sometimes employed to as an aid to writing portable code. One might include the following in a header file:</p>
+<div class="code">
+<pre>
+<code>typedef int int32_t;</code>
+</pre></div>
+<p>The rest of the code would declare integers that need to be 32 bits in size using <em>int32_t</em> and if the code needed to be ported to a platform with a 16 bit <em>int</em>, only a single place in the code requires change. In practice the <em>typedef</em> abstraction is leaky because functions in the standard library such as <em>atoi</em>, <em>strtol</em>, or the format strings used by <em>printf</em> depend on the underlying type used.</p>
+<p><strong>Java</strong></p>
+<p>Java has well defined integer sizes so <em>typedef</em> is not needed as a portability aid. In other situations where a C programmer would use a <em>typedef</em> for data abstraction, a Java programmer must either define a class or retain the raw primitive type throughout the code.</p>
+<p><a name="enum-notes"></a></p>
+<h2 id="toc20"><span><a href="#enum">enum</a></span></h2>
+<p><strong>C</strong></p>
+<p>Enums were added to the C standard when the language was standardized by ANSI in 1989.</p>
+<p>An enum defines a family of integer constants. If an integer value is not explicitly provided for a constant, it is given a value one greater than the previous constant in the list. If the first constant in the list is not given an explicit value, it is assigned a value of zero. it is possible for constants in a list to share values. For example, in the following enum, <em>a</em> and <em>c</em> are both zero and <em>b</em> and <em>d</em> are both one.</p>
+<div class="code">
+<pre>
+<code>enum { a=0, b, c=0, d };</code>
+</pre></div>
+<p>A <em>typedef</em> can be used to make the <em>enum</em> keyword unnecessary in variable declarations:</p>
+<div class="code">
+<pre>
+<code>typedef enum { mon, tue, wed, thu, fri, sat, sun } day_of_week;
+day_of_week d = tue;</code>
+</pre></div>
+<p>From the point of view of the C compiler, an enum is an <em>int</em>. The C compiler does not prevent assigning values to an enum type that are not in the enumerated list. Thus, the following code compiles:</p>
+<div class="code">
+<pre>
+<code>enum day_of_week { mon, tue, wed, thu, fri, sat, sun };
+day_of_week d = 10;
+
+typedef enum { mon, tue, wed, thu, fri, sat, sun } day_of_week2;
+day_of_week2 d2 = 10;</code>
+</pre></div>
+<p><strong>C++</strong></p>
+<p>C++ enums are more strongly typed the C enums. The compiler rejects attempts to assign a value to an enum variable that is not in the enumerated list. The following code:</p>
+<div class="code">
+<pre>
+<code>enum day_of_week { mon, tue, wed, thu, fri, sat, sun };
+day_of_week d = 10;</code>
+</pre></div>
+<p>produces an error like the following:</p>
+<div class="code">
+<pre>
+<code>main.cpp: In function ‘int main()’:
+main.cpp:21: error: invalid conversion from ‘int’ to ‘main()::day_of_week’</code>
+</pre></div>
+<p><strong>Java</strong></p>
+<p>Java added enums in 1.5.</p>
+<p>Java enums are strongly typed like C++ enums. Unlike C++ enums, it is an error to use an enum value in an integer context. The value has a method <em>ordinal()</em> which returns the integer value, however.</p>
+<p>When used in a string context, an enum will evaluate as the string corresponding to its identifier: i.e. &quot;TUE&quot; for DayOfWeek.TUE. This string can be accessed explicitly with DayOfWeek.TUE.toString(). Conversely, DayOfWeek.valueOf(&quot;TUE&quot;) returns DayofWeek.TUE.</p>
+<p>Java enums are subclasses of java.lang.Enum. In particular, an enum is a class, and if the last value if the enum definition is followed by a semicolon, what follows is a class body which can contain methods and constructors. An enum class is final and cannot be subclassed, but an enum can implement an interface.</p>
+<p><strong>C#</strong></p>
+<p>Like Java enums, C# enums will return the string corresponding to their identifier. Unlike Java enums, C# enums will evaluate as integers in a numeric context.</p>
+<p>When used as an argument in a C# style format string, an enum value returns the string corresponding to its identifier.</p>
+<p><a name="arith-notes"></a></p>
+<h1 id="toc21"><span><a href="#arith">Arithmetic and Logic Footnotes</a></span></h1>
+<p><a name="true-false"></a></p>
+<h2 id="toc22"><span>true and false</span></h2>
+<p>Literals for the boolean values true and false.</p>
+<p><strong>C</strong></p>
+<p>The following definitions are common:</p>
+<div class="code">
+<pre>
+<code>typedef int BOOL;
+#define TRUE 1
+#define FALSE 0</code>
+</pre></div>
+<p><strong>Objective C</strong></p>
+<p>From objc.h:</p>
+<div class="code">
+<pre>
+<code>typedef signed char BOOL;
+#define YES (BOOL)1
+#define NO (BOOL)0</code>
+</pre></div>
+<p><a name="falsehoods"></a></p>
+<h2 id="toc23"><span>falsehoods</span></h2>
+<p>Values which evaluate as false in the conditional expression of an <tt>if</tt> statement.</p>
+<p><a name="logical-operators"></a></p>
+<h2 id="toc24"><span>logical operators</span></h2>
+<p>The logical operators.</p>
+<p>In all languages on this sheet the &amp;&amp; and <span style="white-space: pre-wrap;">||</span> operators short circuit: i.e. &amp;&amp; will not evaluate the 2nd argument if the 1st argument is false, and <span style="white-space: pre-wrap;">||</span> will not evaluate the 2nd argument if the 1st argument is true. If the 2nd argument is not evaluated, side-effects that it contains are not executed.</p>
+<p><strong>C++</strong></p>
+<p>C++ defines <em>and</em>, <em>or</em>, and <em>not</em> to be synonyms of &amp;&amp;, <span style="white-space: pre-wrap;">||</span>, and !, with the same semantics and precedence.</p>
+<p><strong>Java</strong></p>
+<p>The arguments of the logical operators must be of type <em>boolean</em>.</p>
+<p><strong>C#</strong></p>
+<p>The arguments of the logical operators must be of type <em>bool</em>.</p>
+<p><a name="relational-operators"></a></p>
+<h2 id="toc25"><span>relational operators</span></h2>
+<p>Binary operators which return boolean values.</p>
+<p><a name="arithmetic-operators"></a></p>
+<h2 id="toc26"><span>operators</span></h2>
+<p>The arithmetic binary operators.</p>
+<p><a name="power"></a></p>
+<h2 id="toc27"><span>power</span></h2>
+<p>How to perform exponentiation.</p>
+<p><strong>C++</strong></p>
+<p><em>powm1</em> is an abbreviation for &quot;power minus one&quot;. Hence the need to add one to get the answer.</p>
+<p><a name="absolute-value"></a></p>
+<h2 id="toc28"><span>absolute value</span></h2>
+<p>The absolute value of a numeric quantity.</p>
+<p><a name="transcendental-functions"></a></p>
+<h2 id="toc29"><span>transcendental functions</span></h2>
+<p>The square root function and the transcendental functions.</p>
+<p><a name="arithmetic-truncation"></a></p>
+<h2 id="toc30"><span>arithmetic truncation</span></h2>
+<p>Functions for converting a float to a nearby integer value.</p>
+<p><strong>C:</strong></p>
+<p>The <tt>math.h</tt> library also provides <tt>floor</tt> and <tt>ceil</tt> which return <tt>double</tt> values.</p>
+<p><strong>Java:</strong></p>
+<p><tt>Math.floor</tt> and <tt>Math.ceil</tt> return <tt>double</tt> values.</p>
+<p><a name="closure-integers-division"></a></p>
+<h2 id="toc31"><span>closure of integers under division</span></h2>
+<p><a name="division-by-zero"></a></p>
+<h2 id="toc32"><span>division by zero</span></h2>
+<p><strong>C, C++, Objective C</strong></p>
+<p>The behavior for division by zero is actually system dependent, though the behavior described is nearly universal on Unix.</p>
+<p><strong>C#</strong></p>
+<p>It is a compilation error to divide by a zero constant. Division by a variable set to zero results in a runtime exception.</p>
+<p><a name="random-integer"></a></p>
+<h2 id="toc33"><span>random integer</span></h2>
+<p><a name="bit-operators"></a></p>
+<h2 id="toc34"><span>bit operators</span></h2>
+<p><strong>C++</strong></p>
+<p><em>bitand</em>, <em>bitor</em>, and <em>compl</em> are synonyms of &amp;, |, and ~ with identical precedence and semantics.</p>
+<p><a name="str-notes"></a></p>
+<h1 id="toc35"><span><a href="#str">String Footnotes</a></span></h1>
+<p><a name="string-type"></a></p>
+<h2 id="toc36"><span>string type</span></h2>
+<p><a name="string-literal"></a></p>
+<h2 id="toc37"><span>string literal</span></h2>
+<p><a name="allocate-string"></a></p>
+<h2 id="toc38"><span>allocate string</span></h2>
+<p><strong>Java</strong></p>
+<p>The following code</p>
+<div class="code">
+<pre>
+<code>String t = new String(s);</code>
+</pre></div>
+<p>creates a copy of the string <em>s</em>. However, because Java strings are immutable, it would be safe to store the same string object it <em>t</em> as follows:</p>
+<div class="code">
+<pre>
+<code>String t = s;</code>
+</pre></div>
+<p><a name="string-length"></a></p>
+<h2 id="toc39"><span>string length</span></h2>
+<p><a name="string-comparison"></a></p>
+<h2 id="toc40"><span>string comparison</span></h2>
+<p><strong>C</strong></p>
+<p>Returns 1, 0, or -1 depending upon whether the first string is lexicographically greater, equal, or less than the second. The variants <em>strncmp</em>, <em>strcasecmp</em>, and <em>strncasecmp</em> can perform comparisons on the first <em>n</em> characters of the strings or case insensitive comparisons.</p>
+<p>**C++</p>
+<p><em>string::compare</em> returns a positive value, 0, or a negative value depending upon whether the receiver is lexicographically greater, equal, or less than the argument. C++ overload the comparison operators (&lt;, &gt;, ==, !=, &lt;=, &gt;=) so that they can be used for string comparison.</p>
+<p><strong>Objective C</strong><br />
+<em>compare</em> will return -1, 0, or 1.</p>
+<p><strong>Java</strong></p>
+<p><em>compareTo</em> will return a negative value, 0, or a positive value.</p>
+<p><strong>C#</strong></p>
+<p><em>CompareTo</em> will return -1, 0, or 1.</p>
+<p><a name="to-c-string"></a></p>
+<h2 id="toc41"><span>to C string</span></h2>
+<p><a name="string-to-number"></a></p>
+<h2 id="toc42"><span>numeric conversion</span></h2>
+<p><strong>C</strong></p>
+<p><em>strtoimax</em>, <em>strtol</em>, <em>strtoll</em>, <em>strtoumax</em>, <em>strtoul</em>, and <em>strtoull</em> take three arguments:</p>
+<div class="code">
+<pre>
+<code>intmax_t
+strtoimax(const char *str, char **endp, int base);</code>
+</pre></div>
+<p>The 2nd argument, if not NULL, will be set to first character in the string that is not part of the number. The 3rd argument can specify a base between 2 and 36.</p>
+<p><em>strtof</em>, <em>strtod</em>, and <em>strtold</em> take three arguments:</p>
+<div class="code">
+<pre>
+<code>double
+strtod(const char *str, char **endp);</code>
+</pre></div>
+<p><strong>Java</strong></p>
+<p><em>parseInt</em> has an optional second argument for the base.</p>
+<p><a name="split"></a></p>
+<h2 id="toc43"><span>split</span></h2>
+<p><a name="join"></a></p>
+<h2 id="toc44"><span>join</span></h2>
+<p><a name="string-concatenate"></a></p>
+<h2 id="toc45"><span>concatenate</span></h2>
+<p><a name="substring"></a></p>
+<h2 id="toc46"><span>substring</span></h2>
+<p><a name="index"></a></p>
+<h2 id="toc47"><span>index</span></h2>
+<p><a name="sprintf"></a></p>
+<h2 id="toc48"><span>sprintf</span></h2>
+<p><a name="uppercase"></a></p>
+<h2 id="toc49"><span>uppercase</span></h2>
+<p><a name="lowercase"></a></p>
+<h2 id="toc50"><span>lowercase</span></h2>
+<p><a name="trim"></a></p>
+<h2 id="toc51"><span>trim</span></h2>
+<p><a name="pad"></a></p>
+<h2 id="toc52"><span>pad</span></h2>
+<p><a name="regex-match"></a></p>
+<h2 id="toc53"><span>regex match</span></h2>
+<p><strong>C</strong></p>
+<p><em>regcomp</em> returns a non-zero value if it fails. The value can be inspected for a precise error reason; see the <em>regcomp</em> man page.</p>
+<p>REG_EXTENDED is a bit flag which indicates that modern regular expressions are being used. Other useful flags are</p>
+<ul>
+<li>REG_NOSUB: don't save string matched by regular expression</li>
+<li>REG_NEWLINE: make ^ and $ match newlines in string</li>
+<li>REG_ICASE: perform case insensitive matching</li>
+</ul>
+<p><a name="regex-substitute"></a></p>
+<h2 id="toc54"><span>regex substitute</span></h2>
+<p><a name="containers-notes"></a></p>
+<h1 id="toc55"><span><a href="#containers">Container Footnotes</a></span></h1>
+<p><a name="array-stack"></a></p>
+<h2 id="toc56"><span>allocate array on stack</span></h2>
+<p>How to allocate an array on the stack.</p>
+<p><a name="array-heap"></a></p>
+<h2 id="toc57"><span>allocate array on heap</span></h2>
+<p>How to allocate an array on the heap.</p>
+<p><a name="free-array-heap"></a></p>
+<h2 id="toc58"><span>free array on heap</span></h2>
+<p>How to free an array that was allocated on the heap.</p>
+<p><a name="array-literal"></a></p>
+<h2 id="toc59"><span>array literal</span></h2>
+<p><strong>Objective C</strong></p>
+<p>NSArray can only store instances of NSObject. For primitive types, use C arrays.</p>
+<p><strong>Java</strong></p>
+<p>Java permits arrays to be declared with C-style syntax:</p>
+<div class="code">
+<pre>
+<code>int a[] = {1,2,3}</code>
+</pre></div>
+<p><a name="array-element-access"></a></p>
+<h2 id="toc60"><span>array element access</span></h2>
+<p><strong>C</strong></p>
+<p>Arrays can be manipulated with pointer syntax. The following sets <em>x</em> and <em>y</em> to the same value:</p>
+<div class="code">
+<pre>
+<code>int a[] = {3,7,4,8,5,9,6,10};
+int x = a[4];
+int y = *(a+4);</code>
+</pre></div>
+<p><a name="array-out-of-bounds-result"></a></p>
+<h2 id="toc61"><span>array out-of-bounds result</span></h2>
+<p><a name="array-iteration"></a></p>
+<h2 id="toc62"><span>array iteration</span></h2>
+<p><strong>C</strong></p>
+<p>C arrays do not store their size, so C developers normally store this information in a separate variable. Another option is to use a special value to mark the end of the array:</p>
+<div class="code">
+<pre>
+<code>char *a[] = { &quot;Bob&quot;, &quot;Ned&quot;, &quot;Amy&quot;, NULL };
+int i;
+for (i=0; a[i]; i++) {
+  printf(&quot;%s\n&quot;, a[i]);
+}</code>
+</pre></div>
+<p><a name="struct-definition"></a></p>
+<h2 id="toc63"><span>struct definition</span></h2>
+<p>A struct provides names for elements in a predefined set of data and permits the data to be accessed directly without the intermediation of getters and setters. C++, Java, and C# classes can be used to define structs by making the data members public. However, public data members violates the <a href="http://en.wikipedia.org/wiki/Uniform_access_principle">uniform access principle</a>.</p>
+<p><strong>C++:</strong></p>
+<p>From <em>The C++ Programming Language: 3rd Edition</em>:</p>
+<div class="code">
+<pre>
+<code>by definition, a struct is a class in which members are by default public; that is,
+
+    struct s { ...
+
+is simply shorthand for
+
+    class s { public: ...</code>
+</pre></div>
+<p><a name="struct-declaration"></a></p>
+<h2 id="toc64"><span>struct declaration</span></h2>
+<p><a name="struct-initialization"></a></p>
+<h2 id="toc65"><span>struct initialization</span></h2>
+<p><strong>C</strong></p>
+<p>The literal format for a struct can only be used during initialization. If the member names are not provided, the values must occur in the order used in the definition.</p>
+<p><a name="struct-member-assignment"></a></p>
+<h2 id="toc66"><span>struct member assignment</span></h2>
+<p><a name="struct-member-access"></a></p>
+<h2 id="toc67"><span>struct member access</span></h2>
+<p><strong>C</strong></p>
+<p>The period operator used for member access has higher precedence than the pointer operator. Thus parens must be used<br />
+to get at the member of a struct referenced by a pointer:</p>
+<div class="code">
+<pre>
+<code>struct medal_count {
+char* country;
+int gold;
+int silver;
+int bronze;
+}
+
+struct medal_count spain = { &quot;Spain&quot;, 3, 7 4 };
+struct medal_count *winner = &amp;spain;
+printf(&quot;The winner is %s with %d gold medals&quot;, (*winner).country, (*winner).gold);</code>
+</pre></div>
+<p><em>ptr-&gt;mem</em> is a shortcut for <em>(*ptr).mem</em>:</p>
+<div class="code">
+<pre>
+<code>printf(&quot;The winner (%s) earned %d silver medals&quot;, winner-&gt;country, winner-&gt;silver);</code>
+</pre></div>
+<p><a name="union-definition"></a></p>
+<h2 id="toc68"><span>union definition</span></h2>
+<p><a name="union-access"></a></p>
+<h2 id="toc69"><span>union access</span></h2>
+<p><a name="vector"></a></p>
+<h2 id="toc70"><span>vector declaration</span></h2>
+<p><a name="vector-push"></a></p>
+<h2 id="toc71"><span>vector push</span></h2>
+<p><a name="vector-pop"></a></p>
+<h2 id="toc72"><span>vector pop</span></h2>
+<p><a name="vector-size"></a></p>
+<h2 id="toc73"><span>vector size</span></h2>
+<p><a name="vector-access"></a></p>
+<h2 id="toc74"><span>vector access</span></h2>
+<p><a name="vector-out-of-bounds"></a></p>
+<h2 id="toc75"><span>vector out of bounds</span></h2>
+<p><a name="vector-iteration"></a></p>
+<h2 id="toc76"><span>vector iteration</span></h2>
+<p><a name="pair"></a></p>
+<h2 id="toc77"><span>pair</span></h2>
+<p><a name="map"></a></p>
+<h2 id="toc78"><span>map declaration</span></h2>
+<p><strong>C:</strong></p>
+<p>For those interested in an industrial strength hashtable implementation for C, here is the <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/include/ruby/st.h?revision=26401&amp;view=markup">header file</a> and the <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/st.c?revision=26672&amp;view=markup">source file</a> for the hashtable used by Ruby.<br />
+For those interested in a &quot;Computer Science 101&quot; implementation of a hashtable, here is a simpler <a href="http://gist.github.com/400762">source file</a> and <a href="http://gist.github.com/400764">header file</a>.</p>
+<p><a name="map-access"></a></p>
+<h2 id="toc79"><span>map access</span></h2>
+<p><a name="map-size"></a></p>
+<h2 id="toc80"><span>map size</span></h2>
+<p><a name="map-remove"></a></p>
+<h2 id="toc81"><span>map remove</span></h2>
+<p><a name="map-element-not-found"></a></p>
+<h2 id="toc82"><span>map element not found result</span></h2>
+<p><a name="map-iterator"></a></p>
+<h2 id="toc83"><span>map iterator</span></h2>
+<p><a name="func-notes"></a></p>
+<h1 id="toc84"><span><a href="#func">Function Footnotes</a></span></h1>
+<p><a name="pass-by-value"></a></p>
+<h2 id="toc85"><span>pass by value</span></h2>
+<p><a name="pass-by-address"></a></p>
+<h2 id="toc86"><span>pass by address</span></h2>
+<p><a name="pass-by-reference"></a></p>
+<h2 id="toc87"><span>pass by reference</span></h2>
+<p><a name="default-value"></a></p>
+<h2 id="toc88"><span>default argument value</span></h2>
+<p><a name="named-parameters"></a></p>
+<h2 id="toc89"><span>named parameters</span></h2>
+<p><strong>objective C:</strong></p>
+<p>Named parameters must be invoked in the order in which they are defined in the method signature.</p>
+<p><strong>C#:</strong></p>
+<p>Named parameter do not need to be invoked in the order in which they are defined in the method signature. Additionally, their use in<br />
+invocation is optional: the arguments can be provided without names in which case the definition order must be used.</p>
+<p><a name="function-overloading"></a></p>
+<h2 id="toc90"><span>function overloading</span></h2>
+<p><a name="variable-arguments"></a></p>
+<h2 id="toc91"><span>variable number of arguments</span></h2>
+<p><strong>C</strong></p>
+<p>The stdarg.h library supports variable length functions, but provides no means for the callee to determine how many arguments were provided. Two techniques for communicating the number of arguments to the caller are (1) devote one of the non-variable arguments for the purpose as illustrated in the table above, or (2) set the last argument to a sentinel value as illustrated below. Both techniques permit the caller to make a mistake that can cause the program to segfault. <em>printf</em> uses<br />
+the first technique, because it infers the number of arguments from the number of format specifiers in the format string.</p>
+<div class="code">
+<pre>
+<code>char* concat(char* first,  ...) {
+  int len;
+  va_list ap;
+  char *retval, *arg;
+  va_start(ap, first);
+  len = strlen(first);
+  while (1) {
+    arg = va_arg(ap, char*);
+    if (!arg) {
+      break;
+    }
+    len += strlen(arg);
+  }
+  va_end(ap);
+  retval = calloc(len+1,sizeof(char));
+  va_start(ap, first);
+  strcpy(retval, first);
+  len = strlen(first);
+  while (1) {
+    arg = va_arg(ap, char*);
+    if (!arg) {
+      break;
+    }
+    printf(&quot;copying %s\n&quot;, arg);
+    strcpy(retval+len, arg);
+    len += strlen(arg);
+  }
+  va_end(ap);
+  return retval;
+}</code>
+</pre></div>
+<p>An example of use:</p>
+<div class="code">
+<pre>
+<code>string *s = concat(&quot;Hello&quot;, &quot;, &quot;, &quot;World&quot;, &quot;!&quot;, NULL);</code>
+</pre></div>
+<p><a name="passing-functions"></a></p>
+<h2 id="toc92"><span>passing functions</span></h2>
+<p><a name="anonymous-function"></a></p>
+<h2 id="toc93"><span>anonymous function</span></h2>
+<p><a name="operator-overloading"></a></p>
+<h2 id="toc94"><span>operator overloading</span></h2>
+<p><a name="exec-control-notes"></a></p>
+<h1 id="toc95"><span><a href="#exec-control">Execution Control Footnotes</a></span></h1>
+<p><a name="for"></a></p>
+<h2 id="toc96"><span>for</span></h2>
+<p><a name="if"></a></p>
+<h2 id="toc97"><span>if</span></h2>
+<p>For all five languages, the curly braces surrounding an <em>if</em> or <em>else</em> clause are optional if the clause contains a single statement. All five languages resolve resulting <a href="http://en.wikipedia.org/wiki/Dangling_else">dangling else</a> ambiguity by setting the value of <em>c</em> to 2 in the following code:</p>
+<div class="code">
+<pre>
+<code>int a = 1;
+int b = -1;
+int c = 0;
+if (a &gt; 0)
+if (b &gt; 0)
+  c=1;
+else
+  c= 2;</code>
+</pre></div>
+<p><a name="while"></a></p>
+<h2 id="toc98"><span>while</span></h2>
+<p>If the body of a while loop consists of a single statement the curly braces are optional:</p>
+<div class="code">
+<pre>
+<code>int i = 0;
+while (i&lt;10)
+  printf(&quot;%d\n&quot;, ++i);</code>
+</pre></div>
+<p><a name="switch"></a></p>
+<h2 id="toc99"><span>switch</span></h2>
+<p>A switch statement branches based on the value of an integer or an integer expression. Each clause must be terminated by a <em>break</em> statement or execution will continue into the following clause.</p>
+<p><a name="throw-exception"></a></p>
+<h2 id="toc100"><span>throw exception</span></h2>
+<p><strong>C++</strong></p>
+<p>C++ code can throw or catch any type of object or primitive data type. The C++ standard library throws subclasses of std::exception, which does not have a message member.</p>
+<p><strong>Objective C</strong></p>
+<p>Objective C can only throw an instance of NSException or one of its subclasses.</p>
+<p><strong>Java</strong></p>
+<p>Java can only throw an implementation of java.lang.Throwable.</p>
+<p><strong>C#</strong></p>
+<p>C# can only throw an instance of System.Exception of one of its subclasses.</p>
+<p><a name="catch-exception"></a></p>
+<h2 id="toc101"><span>catch exception</span></h2>
+<p><strong>C++</strong></p>
+<p>Exceptions can be caught by value or by reference. If the exception is an object and it is caught by value, the copy constructor and the desctructor will be invoked.</p>
+<p><strong>Objective C</strong></p>
+<p>Exceptions are thrown and caught by pointer value.</p>
+<p><a name="finally-clause"></a></p>
+<h2 id="toc102"><span>finally clause</span></h2>
+<p><strong>C++</strong></p>
+<div class="code">
+<pre>
+<code>Class Finally {
+
+  void (*finally)();
+
+  Finally(void (*f)()) : finally(f) {
+
+  }
+
+  ~Finally() {
+    do_cleanup();
+  }
+};
+
+{
+  Cleanup c();
+
+  risky();
+}</code>
+</pre></div>
+<p><a name="methods-declare-exceptions"></a></p>
+<h2 id="toc103"><span>methods must declare exceptions</span></h2>
+<p><strong>Java</strong></p>
+<p>If a method throws a subclass of java.lang.Exception, it must declare the exception in its throws clause. This includes exceptions originating in code called by the method. On the other hand, if the method throws a subclass of java.lang.Error, no declaration in the throws clause is necessary.</p>
+<p><a name="env-io-notes"></a></p>
+<h1 id="toc104"><span><a href="#env-io">Environment and I/O Footnotes</a></span></h1>
+<p><a name="main"></a></p>
+<h2 id="toc105"><span>signature of main</span></h2>
+<p><a name="first-argument"></a></p>
+<h2 id="toc106"><span>first argument</span></h2>
+<p><strong>C</strong></p>
+<p>The first argument is the pathname to the executable. Whether the pathname is absolute or relative depends on how the executable was invoked. If the executable was invoked via a symlink, then the first argument is the pathname of the symlink, not the executable the symlink points to.</p>
+<p><a name="environment-variable"></a></p>
+<h2 id="toc107"><span>environment variable</span></h2>
+<p><a name="iterate-thru-environment-variables"></a></p>
+<h2 id="toc108"><span>iterate thru environment variables</span></h2>
+<p><a name="read-file"></a></p>
+<h2 id="toc109"><span>read from file</span></h2>
+<p><strong>C</strong></p>
+<p>If there is an error, the global variable <em>errno</em> will be set to a nonzero value, and <em>strerror(errno)</em> will return an error message for the error.</p>
+<p><a name="write-file"></a></p>
+<h2 id="toc110"><span>write to file</span></h2>
+<p><a name="lib-namesp-notes"></a></p>
+<h1 id="toc111"><span><a href="#lib-namesp">Library and Namespace Footnotes</a></span></h1>
+<p><a name="obj-notes"></a></p>
+<h1 id="toc112"><span><a href="#obj">Object Footnotes</a></span></h1>
+<p><a name="define-class"></a></p>
+<h2 id="toc113"><span>define class</span></h2>
+<p><a name="constructor"></a></p>
+<h2 id="toc114"><span>constructor</span></h2>
+<p><a name="create-object"></a></p>
+<h2 id="toc115"><span>create object</span></h2>
+<p><a name="destructor"></a></p>
+<h2 id="toc116"><span>destructor</span></h2>
+<p><strong>C++</strong></p>
+<p>The C++ compiler will normally see to it that the destructor for a class and all its superclasses is called. The compiler may not be aware of the true class of the object if it was upcast to one of its base class. If the destructor was not declared virtual, then the derived class destructor and any other base class constructors will not get called. Thus many developers declare all destructors virtual.</p>
+<p><strong>Java</strong></p>
+<p>Java does not chain finalize() methods, so the derived class should explicitly call the parent.</p>
+<p><a name="destroy-object"></a></p>
+<h2 id="toc117"><span>destroy object</span></h2>
+<p><strong>Java</strong></p>
+<p>finalize() is called by the Java garbage collector.</p>
+<p><a name="define-method"></a></p>
+<h2 id="toc118"><span>define method</span></h2>
+<p><a name="invoke-method"></a></p>
+<h2 id="toc119"><span>invoke method</span></h2>
+<p><a name="dynamic-dispatch"></a></p>
+<h2 id="toc120"><span>dynamic dispatch</span></h2>
+<p><a name="static-dispatch"></a></p>
+<h2 id="toc121"><span>static dispatch</span></h2>
+<p>Method dispatch is <em>static</em> if the method is determined by the variable type, and <em>dynamic</em> if it is determined by the value type. These techniques of method dispatch yield different results when both the base class and the derived class have implementations for a method, and an instance of the derived class is being stored in a variable with type of the base class.</p>
+<p>When dispatch is static, the compiler can determine the code that will be executed for the method call. When dispatch is dynamic, the code that will be executed is a runtime decision. C++ implementations usually achieve this by storing function pointers in the object: qv <a href="http://en.wikipedia.org/wiki/Virtual_method_table">virtual method table</a>.</p>
+<p>The use of the keyword <em>static</em> in the declaration of a class method in C++, Java, and C# is perhaps unfortunate. Class methods are always statically dispatched, so the concepts are not unrelated.</p>
+<p><a name="define-class-method"></a></p>
+<h2 id="toc122"><span>define class method</span></h2>
+<p><a name="invoke-class-method"></a></p>
+<h2 id="toc123"><span>invoke class method</span></h2>
+<p><a name="receiver"></a></p>
+<h2 id="toc124"><span>name of receiver</span></h2>
+<p><a name="access-control"></a></p>
+<h2 id="toc125"><span>access control</span></h2>
+<p><strong>objective c:</strong></p>
+<p>Access control only applies to members; all methods are public. gcc 4.0 does not enforce the access restrictions; it merely gives warnings.</p>
+<p><a name="anonymous-class"></a></p>
+<h2 id="toc126"><span>anonymous class</span></h2>
+<p><a name="subclass"></a></p>
+<h2 id="toc127"><span>subclass</span></h2>
+<p><a name="superclass-constructor"></a></p>
+<h2 id="toc128"><span>superclass constructor</span></h2>
+<p><a name="underivable-class"></a></p>
+<h2 id="toc129"><span>mark class underivable or method overrideable</span></h2>
+<p><a name="root-class"></a></p>
+<h2 id="toc130"><span>root class</span></h2>
+<p>Name of the root class, if there is one.</p>
+<p><strong>objective c:</strong></p>
+<p>It is possible to define a root class other than NSObject.</p>
+<p><a name="root-class-methods"></a></p>
+<h2 id="toc131"><span>root class methods</span></h2>
+<p>A selection of methods available on the root class.</p>
+<p><a name="generics-notes"></a></p>
+<h1 id="toc132"><span><a href="#generics">Generic Type Footnotes</a></span></h1>
+<p><a name="define-generic"></a></p>
+<h2 id="toc133"><span>define generic type</span></h2>
+<p><a name="instantiate-generic"></a></p>
+<h2 id="toc134"><span>instantiate generic type</span></h2>
+<p><a name="reflection-notes"></a></p>
+<h1 id="toc135"><span><a href="#reflection">Reflection Footnotes</a></span></h1>
+<p><a name="type-class"></a></p>
+<h2 id="toc136"><span>get type class of object</span></h2>
+<p><a name="get-type-class-string"></a></p>
+<h2 id="toc137"><span>get type class from string</span></h2>
+<p><a name="get-type-class-identifier"></a></p>
+<h2 id="toc138"><span>get type class from type identifier</span></h2>
+<p><strong>c++:</strong></p>
+<p><em>typeid</em> returns a value of type <em>type_info</em>. The assignment method and copy constructor of <em>type_info</em> are private.</p>
+<p><a name="class-name"></a></p>
+<h2 id="toc139"><span>class name</span></h2>
+<p>*c++:**</p>
+<p>The string returned by <em>type_info.name()</em> contains more than the class name. The code below displayed the string &quot;Z4mainE3Foo&quot; when run on my system.</p>
+<div class="code">
+<pre>
+<code>class Foo {
+  int i;
+};
+puts(typeid(Foo).name());</code>
+</pre></div>
+<p><a name="get-methods"></a></p>
+<h2 id="toc140"><span>get methods</span></h2>
+<p><a name="has-method"></a></p>
+<h2 id="toc141"><span>has method</span></h2>
+<p><a name="invoke-method-object"></a></p>
+<h2 id="toc142"><span>invoke method object</span></h2>
+<p><a name="c"></a></p>
+<h1 id="toc143"><span><a href="#top">C</a></span></h1>
+<p><a href="http://flash-gordon.me.uk/ansi.c.txt">ANSI C Standard</a> 1990<br />
+<a href="http://www.open-std.org/jtc1/sc22/WG14/www/docs/n1256.pdf">ANSI C Standard (pdf)</a> 1999<br />
+<a href="http://www.utas.edu.au/infosys/info/documentation/C/CStdLib.html">C Standard Library</a><br />
+<a href="http://www.opengroup.org/onlinepubs/9699919799/idx/head.html">POSIX Library C Headers</a><br />
+<a href="http://linuxmanpages.com/man2/">Linux System Call Man Pages</a><br />
+<a href="http://linuxmanpages.com/man3/">Linux Subroutine Man Pages</a></p>
+<p><a name="c-plus-plus"></a></p>
+<h1 id="toc144"><span><a href="#top">C++</a></span></h1>
+<p><a href="http://www.kuzbass.ru:8086/docs/isocpp/">ISO C++ Standard</a> 1998<br />
+<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3035.pdf">C++0x (pdf)</a> proposed standard as of 2010<br />
+<a href="http://www.sgi.com/tech/stl/">STL</a><br />
+<a href="http://www.boost.org/doc/libs/1_42_0">Boost 1.42</a></p>
+<p><a name="objective-c"></a></p>
+<h1 id="toc145"><span><a href="#top">Objective C</a></span></h1>
+<p><a href="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/ObjC.pdf">Objective C 2.0 (pdf)</a> Apple<br />
+<a href="http://www.gnu.org/software/gnustep/resources/documentation/Developer/Base/ProgrammingManual/manual_toc.html">GNUstep</a><br />
+<a href="http://developer.apple.com/mac/library/documentation/cocoa/reference/foundation/objc_classic/index.html">Mac OS X Foundation Framework</a></p>
+<p><a name="java"></a></p>
+<h1 id="toc146"><span><a href="#top">Java</a></span></h1>
+<p><a href="http://java.sun.com/javase/6/docs/api/">Java 1.6 API</a><br />
+<a href="https://jdk7.dev.java.net/">Java 1.7 Project</a><br />
+<a href="http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html">JVM Specification 2nd Ed</a><br />
+<a href="http://java.sun.com/docs/books/jls/">The Java Language Specification 3rd Ed</a></p>
+<p><a name="c-sharp"></a></p>
+<h1 id="toc147"><span><a href="#top">C#</a></span></h1>
+<p><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c042926_ISO_IEC_23270_2006(E).zip">C# Standard: ECMA-334</a><br />
+<a href="http://www.go-mono.com/docs/">Mono API</a><br />
+<a href="http://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">C# Programming Guide</a> Microsoft</p>
+<p><a name="history"></a></p>
+<h1 id="toc148"><span>History</span></h1>
+<ul>
+<li><a href="#c-family-languages">The C Family of Programming Languages</a></li>
+<li><a href="#early-history-high-level">High Level Languages</a></li>
+<li><a href="#early-history-structured">Structured Languages</a></li>
+<li><a href="#c-history">C</a></li>
+<li><a href="#c-plus-plus-history">C++</a></li>
+<li><a href="#objective-c-history">Objective C</a></li>
+<li><a href="#java-history">Java</a></li>
+<li><a href="#c-sharp-history">C#</a></li>
+</ul>
+<p><a name="c-family-languages"></a></p>
+<h1 id="toc149"><span>The C Family of Programming Languages</span></h1>
+<img src="http://farm5.static.flickr.com/4062/4466727659_d7f571c2ce.jpg" alt="" class="image" />
+<p><a name="early-history-high-level"></a></p>
+<h1 id="toc150"><span>Early History of High Level Languages</span></h1>
+<p><a href="http://en.wikipedia.org/wiki/Short_Code_(computer_language)">Short Code</a><br />
+<a href="http://en.wikipedia.org/wiki/Fortran">Fortran</a></p>
+<p>Programming in the native machine language of a computer generally involves moving data into specific registers so that an arithmetic operation can be performed on it. Short Code was the first language which hid register details from the programmer; implemented in 1950 on the Univac I, it was an interpreted language which ran about 1/50th the speed of machine code.</p>
+<p>John Backus proposed development of a compiled, high level language at IBM in 1953. The group which formed to implement the compiler had the ambition of making the generated code comparable in performance to machine code created by hand. The language was known as <em>The IBM Mathematical Formula Translating System</em> by 1954, and as <em>Fortran</em> by 1956. The compiler was available on the IBM 704 by 1957. Its speed relative to hand crafted machine code could be debated, but because it reduced the size of the source code by a factor of 20 it was an immediate success.</p>
+<p><a name="early-history-structured"></a></p>
+<h1 id="toc151"><span>Early History of Structured Languages</span></h1>
+<p><a href="http://home.comcast.net/~jhorning4/backus-proposed-ial.pdf">The Syntax and Semantics of the Proposed International Algebraic Language of the Zurich ACM-GAMM Conference</a> Backus 1959<br />
+<a href="http://www.masswerk.at/algol60/report.htm">Revised Report on the Algorithm Language Algol 60</a> Naur 1960<br />
+<a href="http://comjnl.oxfordjournals.org/cgi/reprint/6/2/134.pdf">The Main Features of CPL</a> Strachey 1963</p>
+<p>Backus met with a group computer scientists in Zürich in 1958 to design a new language which would make it easier to write large programs. Large Fortran programs were intractable, in part because all variables were global in scope. Backus introduced a notation to describe the grammar of the new language that would eventually be known as <a href="http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">Backus-Naur form</a>.</p>
+<p>Features of Algol that are relevant to C are: procedures with local scope, <em>if</em> and <em>else</em> with the <a href="http://www.parsifalsoft.com/ifelse.html">dangling else ambiguity</a>, <em>for</em> loops, the numeric types <em>integer</em> and <em>real</em>, and a <em>pointer</em> keyword.</p>
+<p>Christopher Strachey and others in the UK designed the language <a href="http://en.wikipedia.org/wiki/Combined_Programming_Language">CPL</a> in 1963, which is a heavyweight extension to Algol 60. Because of the complexity of the language, it was not implemented until 1970 and it was never widely used.</p>
+<p><a name="c-history"></a></p>
+<h1 id="toc152"><span>C History</span></h1>
+<p><a href="http://www.fh-jena.de/~kleine/history/languages/Richards-BCPL-ReferenceManual.pdf">BCPL Reference Manual (pdf)</a> 1967<br />
+<a href="http://cm.bell-labs.com/cm/cs/who/dmr/chist.html">The Development of the C Language</a></p>
+<p>A stripped down language called Basic CPL or <a href="http://en.wikipedia.org/wiki/BCPL">BCPL</a> was implemented by Martin Richards in 1967 on the IBM 7094. Instead of the <em>begin</em> and <em>end</em> keywords of Algol, BCPL uses curly brackets {} to delimit blocks; $( and $) were substituted when those characters were unavailable. BCPL has a single type called <em>word</em>. It used the <span style="white-space: pre-wrap;">//</span> style comments that would re-appear in C++. Local variables were declared with <em>let</em>.</p>
+<p>Ken Thompson stripped even more features from BCPL to fit the language onto a PDP-7 with 8k of memory and called the result <a href="http://en.wikipedia.org/wiki/B_(programming_language)">B</a>. After the PDP-7 implementation in 1969 the language was ported to the PDP-11 in 1970. It was used to implement an early version of Unix, which was originally written in PDP-7 assembler. B did not support nested procedures like its predecessor. Also it switched to = instead of := for assignment. Variables could be declared <em>auto</em> or <em>static</em>. B also introduced the ++ and <span style="white-space: pre-wrap;">--</span> incrementor and decrementor, which could be used in prefix and postfix position with correspondingly different semantics. Lastly, B introduced semicolons as statement terminators.</p>
+<p>Dennis Ritchie took over maintenance of the B compiler in 1970 and the outcome of his work was the language C in 1972. C introduced the types <em>int</em> and <em>char</em>, which were considered necessary on the PDP-11. In 1973 the <em>struct</em> was added, which was like the <em>record</em> of Algol-W and Pascal. The /* */ style comment was derived from PL/I. The &amp;&amp; and || operators were introduced with short-cut semantics.</p>
+<p>The goal of both B and C was a language suitable for the implementation of Unix. Unix was a less ambitious operating system than its predecessor Multics, but it still delivered on many of the novel ideas of Multics. In particular Unix had processes, a file system which organized files in a directory tree, a command interpreter for the user, simple text files, and generic device access. Multics was implemented in the higher level language PL/I. Thompson and Ritchie wanted to stay above the level of assembler when implementing Unix, but they needed a simpler language than PL/I or even BCPL.</p>
+<p>After 1973&#160;C evolved by adding types. In 1977 changes were made in the interest of portability. In 1978 Kernighan and Ritchie published <em>The C Programming Language</em>, which became the standard for the language, though it did not mention additions such as <em>void</em> and <em>enum</em> that were soon added to the language. The language was standardized by ANSI in 1989, and this became an ISO standard in 1990. The 2nd edition of <em>The C Programming Language</em> published in 1988 describes ANSI C.</p>
+<p>C spread in popularity during the 1980s with Unix. Pascal is a comparable language to C with what some regard as a cleaner design. However, the reasons for the eventual success of C over Pascal were already foreseen in a <a href="http://www.lysator.liu.se/c/bwk-on-pascal.html">article by Kernighan</a> in 1981. Lattice C produced a C compiler for DOS in 1982, and Microsoft licensed and distributed this product. The Windows API introduced in 1985 was written in C.</p>
+<p><a name="c-plus-plus-history"></a></p>
+<h1 id="toc153"><span>C++ History</span></h1>
+<p><a href="http://www.research.att.com/~bs/hopl2.pdf">A History of C++: 1979-1991 (pdf)</a> Stroustrup</p>
+<p>The core concepts of object oriented languages first appeared in Simula, a language developed by Kristen Nygaard and Ole-Johan Dahl. It was described in the 1962 paper <em>'SIMULA' An Extension of ALGOL to the Description of Discrete-Event Networks</em>, and it was intended to be an environment for solving queuing problems via simulation. Simula as originally implemented (Simula I) was a preprocessor to Algol 60 on the UNIVAC 1107, and this version was ported to the Burroughs B5500 in 1968. The manual for Simula I appeared in 1965.</p>
+<p>Dahl and Nygaard were not satisfied with the original version of Simula and decided to extend it to a general purpose language. They drew inspiration from Algol W (1965) by Wirth and Hoare, who introduced the user-defined record data type which would become the foundation of a class.</p>
+<p>Simula 67 was formally defined and presented at a conference that year. The language introduced objects, classes, subclasses, virtual methods, dynamic binding, and coroutines. Like its predecessor it is a superset of Algol 60. Simula 67 implementations compiled directly to machine code, and became commercially available in the early 1970s.</p>
+<p>As C became widespread in the 1980s, the idea of creating an object-oriented extension of it presented itself. C++ is a Simula inspired extension of C; the methods that an object will respond to are known at compile time. Type safety is a design goal of C++, and the language replaces C features such as macros and casts with type-safe alternatives.</p>
+<p>Stroustrup started working on C with classes in 1979, and the language was renamed C++ in 1983. Stroustrup's book The C++ Language was published in 1985, and it was effectively the language definition. The 2nd edition of the book in 1989 introduced templates, namespaces, and exceptions. Borland introduced a C++ compiler for MS-DOS in 1991, and the Microsoft C compiler and gcc added support for C++ in 1992. C++ became an ISO standard in 1998.</p>
+<p>Alexander Stepanov started working on what he called generic programming in 1979. An Ada library for generic list processing was available in 1987. A draft proposal for the Standard Template Library (STL), a generic programming library for C++, was made in 1994, and HP made an implementation freely available that year.</p>
+<p>The Boost library was started around 1998. Version 1.10.3 was available in 1999.</p>
+<p>As of March 2010 work is underway for a new version of C++ called C++0x.</p>
+<p><a name="objective-c-history"></a></p>
+<h1 id="toc154"><span>Objective C History</span></h1>
+<p>Objective C is an object oriented extension of C based on Smalltalk instead of Simula: unlike C++ the methods—in Smalltalk and Objective C parlance the messages—an object will respond to are not known at compile time.</p>
+<p>Smalltalk was designed by Alan Kay, with early versions implemented by Dan Ingalls. Smalltalk-71 was a simple implementation that introduced message passing. Smalltalk-72 introduced the Actor model. Smalltalk-76 borrowed the notion of classes from Simula and introduced a development environment with a GUI class/code browser. Smalltalk-80 introduced metaclasses (i.e. made classes themselves objects). Smalltalk-80 was also the first version of the language publicly available outside of PARC.</p>
+<p>Objective C was developed by Brad Cox and Tom Love, and they published a description in 1986. NeXT licensed the language in 1988, and it became the primary language of the NeXT platform. The NeXT development tools, including Objective C, were made available to other platforms as OpenSTEP in 1993. Also, GNU versions of Objective C became available around that time.</p>
+<p>With Mac OS X (2002) Apple provided two APIs, the Objective-C based Cocoa API which drew heavily on OpenSTEP and the C based Carbon API. The latter existed to make it easier to port older applications to Mac OS X. Apple came out with Objective C 2.0 in 2007 with Mac OS X 10.5. The iPhone also relies heavily on Objective C for development; its success has increased adoption of the language.</p>
+<p><a name="java-history"></a></p>
+<h1 id="toc155"><span>Java History</span></h1>
+<p><a href="http://en.wikipedia.org/wiki/Java_version_history">Java Version History</a></p>
+<p>Java was developed by James Gosling at Sun and made publicly available in 1996. It is a compiled, objected oriented language with syntax similar to C++. It is perhaps best understood by how it differs from C++:</p>
+<ul>
+<li>usually compiled to bytecode that runs on a VM</li>
+<li>no separate source and header files; javadoc tool can extract method signatures from source</li>
+<li>garbage collection</li>
+<li>interfaces instead of multiple inheritance</li>
+<li>no operator overloading</li>
+</ul>
+<p>Compared to C++, the language is easier to use and easier to port. Applets that ran in the browser were an early use of the language that helped popularize it.</p>
+<p>Version 1.1 (1997) added RMI and several types of nested classes including anonymous classes. Version 1.2 (1998) added the ability to reflect on the methods of a class or object at runtime. Version 1.4 (2002) added Perl style regular expressions. Version 1.5 (2004) added generics, which are roughly similar to C++ templates, and autoboxing, in which the compiler automatically wraps a primitive type with an instance of a wrapper class when needed.</p>
+<p>Over the years Java has developed an extensive standard library; as of version 1.5 the standard library contains 3000 classes. Third parties are encouraged to use their internet domain name to determine the location of their code in the Java code namespace, a technique which makes it easy to integrate code from non-standard sources.</p>
+<p>Other languages have targeted the JVM: Jython since 1997, Scala and Groovy since 2003, and Clojure since 2007. JVM languages include interpreters written in Java and languages which can be compiled to bytecode.</p>
+<p><a name="c-sharp-history"></a></p>
+<h1 id="toc156"><span>C# History</span></h1>
+<p>Soon after its release Java was licensed by Microsoft which released its own JVM and an associated IDE called Visual J++. Sun sued Microsoft for introducing incompatibilities in their implementation and Microsoft ultimately abandoned Java, opting instead to develop a new, Java-like language called C#. Anders Hejlsberg, known for his work on Delphi at Borland, was a lead architect for the new language.</p>
+<table class="wiki-content-table">
+<tr>
+<th>Java Terminology</th>
+<th>C#/.NET Terminology</th>
+</tr>
+<tr>
+<td>Java</td>
+<td>C#</td>
+</tr>
+<tr>
+<td>Java bytecode</td>
+<td>Common Intermediate Language (CIL)</td>
+</tr>
+<tr>
+<td>JVM</td>
+<td>Virtual Execution System (VES)</td>
+</tr>
+<tr>
+<td>Java API</td>
+<td>.NET Framework</td>
+</tr>
+<tr>
+<td>Java VM Specification</td>
+<td>Common Language Infrastructure (CLI)</td>
+</tr>
+</table>
+<p>The CLI was standardized as ECMA-335 in 2003. Microsoft's own VES is called the Common Language Runtime (CLR), though sometimes CLR is used as a generic term for any VES. The Microsoft CLR only runs on Windows but Mono is an open source VES available on Linux and Mac.</p>
+
+    						<!--INFOLINKS_OFF-->
+    					</div>
+					
+    					    					
+
+    										
+    										
+    					<!-- google_ad_section_end -->
+					
+    					<!-- google_ad_section_start(weight=ignore) -->
+					
+    					<div id="page-info-break"></div>
+    					    					  <div id="page-options-container">
+    						    						<div id="page-info">page revision: 1071, last edited: <span class="odate">1314718124|%e %b %Y, %H:%M %Z (%O ago)</span></div>
+            <div id="page-options-bottom"  class="page-options-bottom">
+            <a href="javascript:;" id="edit-button">Edit</a><a href="javascript:;" id="tags-button">Tags</a>
+    <a href="javascript:;" id="history-button">History</a> 
+    <a href="javascript:;" id="files-button">Files</a> <a href="javascript:;" id="print-button">Print</a> <a href="javascript:;" id="site-tools-button">Site tools</a><a href="javascript:;" id="more-options-button">+&nbsp;Options</a> 
+</div>
+<div id="page-options-bottom-2" class="page-options-bottom" style="display:none">
+    <a href="javascript:;" id="edit-sections-button">Edit Sections</a>
+    <a href="javascript:;" id="edit-append-button">Append</a>
+    <a href="javascript:;" id="edit-meta-button">Edit Meta</a>
+    <a href="javascript:;" id="watchers-button">Watchers</a> 
+    <a href="javascript:;" id="backlinks-button">Backlinks</a> 
+    <a href="javascript:;" id="view-source-button">Page Source</a> 
+    <a href="javascript:;" id="parent-page-button">Parent</a> 
+    <a href="javascript:;" id="page-block-button">Lock Page</a>    
+    <a href="javascript:;" id="rename-move-button">Rename</a> 
+    <a href="javascript:;" id="delete-button">Delete</a> 
+</div>
+<div id="page-options-area-bottom">
+</div>
+
+    						</div>
+    															<div id="action-area" style="display: none"></div>
+				</div>
+			</div>
+			
+			
+			
+	 		<div id="footer" style="display: block; visibility: visible;">
+	 					 			<div class="options" style="display: block; visibility: visible;">
+			 			<a href="http://www.wikidot.com/doc" id="wikidot-help-button">Help</a>
+			 			&nbsp;|
+				 		<a href="http://www.wikidot.com/legal:terms-of-service"   id="wikidot-tos-button">Terms of Service</a>
+			 			&nbsp;|
+				 		<a href="http://www.wikidot.com/legal:privacy-policy"   id="wikidot-privacy-button">Privacy</a>
+			 			&nbsp;|
+				 		<a href="javascript:;" id="bug-report-button"	onclick="WIKIDOT.page.listeners.pageBugReport(event)">Report a bug</a>
+			 			&nbsp;|
+				 		<a href="javascript:;" id="abuse-report-button" onclick="WIKIDOT.page.listeners.flagPageObjectionable(event)">Flag as objectionable</a>
+		 			</div>
+			 		Powered by <a href="http://www.wikidot.com">Wikidot.com</a> 
+		 			 		</div>
+                            <div id="license-area" class="license-area">
+                                            Unless otherwise stated, the content of this page is licensed under                                         <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>
+                </div>
+                        
+							
+
+						
+			
+			<div id="extrac-div-1"><span></span></div><div id="extrac-div-2"><span></span></div><div id="extrac-div-3"><span></span></div>
+			
+									  				
+  				 	</div>
+	 	
+	</div>
+	<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+	<div id="extra-div-1"><span></span></div><div id="extra-div-2"><span></span></div><div id="extra-div-3"><span></span></div>
+	<div id="extra-div-4"><span></span></div><div id="extra-div-5"><span></span></div><div id="extra-div-6"><span></span></div>
+	</div>
+ 	
+ 	 	
+ 	<div id="page-options-bottom-tips" style="display: none">
+ 		<div id="edit-button-hovertip">
+ 			Click here to edit contents of this page. 		</div>
+ 	</div>
+ 	<div id="page-options-bottom-2-tips"  style="display: none">
+ 		<div id="edit-sections-button-hovertip">
+	 		Click here to toggle editing of individual sections of the page (if possible).     Watch headings for an &quot;edit&quot; link when available. 		</div>
+ 		<div id="edit-append-button-hovertip">
+ 			Append content without editing the whole page source. 		</div>
+ 		<div id="history-button-hovertip">
+ 			Check out how this page has evolved in the past. 		</div>
+ 		<div id="discuss-button-hovertip">
+ 			If you want to discuss contents of this page - this is the easiest way to do it. 		</div>
+ 		<div id="files-button-hovertip">
+ 			View and manage file attachments for this page. 		</div>
+ 		<div id="site-tools-button-hovertip">
+ 			A few useful tools to manage this Site. 		</div>
+ 		<div id="backlinks-button-hovertip">
+ 			See pages that link to and include this page. 		</div>
+ 		<div id="rename-move-button-hovertip">
+ 			Change the name (also URL address, possibly the category) of the page. 		</div>
+ 		<div id="view-source-button-hovertip">
+ 			View wiki source for this page without editing. 		</div>
+ 		<div id="parent-page-button-hovertip">	
+ 			View/set parent page (used for creating breadcrumbs and structured layout). 		</div>
+ 			 		<div id="abuse-report-button-hovertip">
+	 			Notify administrators if there is objectionable content in this page.	 		</div>
+	 		<div id="bug-report-button-hovertip">
+				Something does not work as expected? Find out what you can do.	 		</div>
+	 		<div id="wikidot-help-button-hovertip">
+	 			General Wikidot.com documentation and help section.	 		</div>
+	 		<div id="wikidot-tos-button-hovertip">
+	 			Wikidot.com Terms of Service - what you can, what you should not etc.	 		</div>
+	 		<div id="wikidot-privacy-button-hovertip">
+	 			Wikidot.com Privacy Policy. 			
+	 		</div>
+ 		 	</div>
+ 	
+ 	<!-- google_ad_section_end -->
+ 	
+ 	<div id="account-notifications-dummy" style="display:none"></div>
+ 	
+ 	<div style="display:none" id="dummy-ondomready-block"></div>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18234656-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['old._setAccount', 'UA-68540-5']);
+  _gaq.push(['old._setDomainName', 'none']);
+  _gaq.push(['old._setAllowLinker', true]);
+  _gaq.push(['old._trackPageview']);
+  
+    _gaq.push(['userTracker._setAccount', 'UA-17129977-2']);
+  _gaq.push(['userTracker._trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+    qacct:"p-edL3gsnUjJzw-"
+};
+(function() {
+    var qc = document.createElement('script'); qc.type = 'text/javascript'; qc.async = true;
+    qc.src = ('https:' == document.location.protocol ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(qc, s);
+})();
+</script>
+<noscript>
+    <img src="http://pixel.quantserve.com/pixel/p-edL3gsnUjJzw-.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End Quantcast tag -->
+
+
+       
+  
+  </body>
+
+</html>
