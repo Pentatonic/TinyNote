@@ -59,7 +59,7 @@ git commit -a
 
 // delete branch
 git branch -d b1 // use "-D" to discard unmerged changed
-git push origin :b1 // delete branch on server
+git push origin :b1 // also delete branch on server
 
 // switch branch
 git checkout branchX
