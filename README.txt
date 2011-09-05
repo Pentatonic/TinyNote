@@ -88,6 +88,7 @@ git checkout --ours SQL.txt
 git checkout --theirs SQL.txt
 
 ================================================================================
+// Example of solving conflict in git
 // You're going to pull some changes, but oops, you're not up to date:
 
 git fetch origin
@@ -123,9 +124,14 @@ git pull origin master
 // Ta-da!
 
 ================================================================================
+/* git mergetool */
 // Use mergetool to resolve all conflicts
 git mergetool
 
 // Merge is done
 git commit
 
+================================================================================
+/* git diff */
+// diff two commit id on file Def.h
+git diff 2c8c..1f42 Def.h
