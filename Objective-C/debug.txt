@@ -1,0 +1,5 @@
+
+/* cocos2d */
+
+//#define LOGTHIS {};
+#define LOGTHIS {(CCLOG(@"\t\t[%@ - %@]", self, NSStringFromSelector(_cmd)));}
