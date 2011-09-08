@@ -7,4 +7,5 @@ Reasons to use alloc-int:
     - "new" doesn't support custom initializers (like initWithString)
     - alloc-init is more explicit than new
 --------------------------------------------------------------------------------
-
+// Judge class type
+[NSMutableArray array] isKindOfClass:[NSMutableArray class]]
