@@ -87,10 +87,11 @@ git checkout 29ace11c900ae8ea1504fbbcd7af24ba379668a6 SQL.txt
 git checkout --ours SQL.txt
 git checkout --theirs SQL.txt
 
+// 將遠端的 branch checkout 回來並建立一個新的 local branch，
+// 加上 --track 表示你之後還要pull、push回去，
+// 所以請 Git 記住對應關係。
 git checkout --track -b foobar origin/foobar 
-將遠端的 branch checkout 回來並建立一個新的 local branch，
-加上 --track 表示你之後還要pull、push回去，
-所以請 Git 記住對應關係。
+
 ================================================================================
 // Example of solving conflict in git
 // You're going to pull some changes, but oops, you're not up to date:
