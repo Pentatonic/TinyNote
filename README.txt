@@ -49,8 +49,7 @@ git config --global core.editor "vim"
 // create branch
 git branch b1
 // push all changes to server, including unmodified new branches.
-git push --all 
-
+git push origin b1 // or "git push --all "
 
 // merge branch
 git merge b1 // if conflict, resolve conflict in files
@@ -165,3 +164,10 @@ git stash
 git stash list
 git stash show
 git stash pop
+
+================================================================================
+/* rebase */
+// Merge without generating tree branch in commit log
+// Might need to solve more conflicts than regular pull
+git pull --rebase
+
