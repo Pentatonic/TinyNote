@@ -1,4 +1,4 @@
-Global setup:
+﻿Global setup:
  Download and install Git
   git config --global user.name "Your Name"
   git config --global user.email jxxxxxxx@gmail.com
@@ -87,6 +87,10 @@ git checkout 29ace11c900ae8ea1504fbbcd7af24ba379668a6 SQL.txt
 git checkout --ours SQL.txt
 git checkout --theirs SQL.txt
 
+git checkout --track -b foobar origin/foobar 
+將遠端的 branch checkout 回來並建立一個新的 local branch，
+加上 --track 表示你之後還要pull、push回去，
+所以請 Git 記住對應關係。
 ================================================================================
 // Example of solving conflict in git
 // You're going to pull some changes, but oops, you're not up to date:
@@ -135,3 +139,28 @@ git commit
 /* git diff */
 // diff two commit id on file Def.h
 git diff 2c8c..1f42 Def.h
+
+================================================================================
+/* show log tree */
+git log --graph --oneline --all
+git log --graph --pretty=oneline --abbrev-commit
+
+================================================================================
+/* git merge */
+
+// Straight merge (into current active branch)
+git merge <branch_name>
+
+// Squashed commit, only one commit will be generated
+git merge --squash <branch_name>
+
+// cherry-pick, merge a certain commit
+git cherry-pick 321d76f
+
+================================================================================
+/* git stash*/
+// temporarily save uncommited files
+git stash
+git stash list
+git stash show
+git stash pop
