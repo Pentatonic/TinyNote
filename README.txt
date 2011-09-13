@@ -177,3 +177,9 @@ git remote show origin // will list all remote branches
 git remote prune origin --dry-run // test run
 git remote prune origin           // run prune, remove stale trackings
 
+================================================================================
+/* move git repository to new server */
+git remote add new_repo_name new_repo_url
+git push new_repo_name master
+git remote rm origin
+git remote rename new_repo_name origin
