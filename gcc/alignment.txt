@@ -1,0 +1,4 @@
+// alignment to byte level
+#pragma pack(1)
+// alignment to short level
+#pragma pack(2)
