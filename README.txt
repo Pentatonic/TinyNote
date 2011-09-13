@@ -171,3 +171,9 @@ git stash pop
 // Might need to solve more conflicts than regular pull
 git pull --rebase
 
+================================================================================
+/* clean stale remote trackings */
+git remote show origin // will list all remote branches
+git remote prune origin --dry-run // test run
+git remote prune origin           // run prune
+
