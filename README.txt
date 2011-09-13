@@ -159,7 +159,7 @@ git cherry-pick 321d76f
 
 ================================================================================
 /* git stash*/
-// temporarily save uncommited files
+// temporarily save uncommited files (in case you want to switch to another branch)
 git stash
 git stash list
 git stash show
