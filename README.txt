@@ -183,3 +183,12 @@ git remote add new_repo_name new_repo_url
 git push new_repo_name master
 git remote rm origin
 git remote rename new_repo_name origin
+
+================================================================================
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+[branch "reward"]
+	remote = origin
+	merge = refs/heads/reward
