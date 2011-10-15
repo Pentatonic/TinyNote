@@ -77,6 +77,8 @@ git log
 // show all commit history of a file
 git log SQL.txt
 
+// show the file commited in the laste commits.
+git log --name-status HEAD^..HEAD
 ================================================================================
 /* git checkout */
 
