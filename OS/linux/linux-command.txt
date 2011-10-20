@@ -26,3 +26,11 @@ crontab -e // edit all crontab jobs
 
 [mail]
 echo "The mail content" | mail -s "Mail subject" receiver@gmail.com -c cc@gmail.com -b bcc@gmai.com
+
+[Backup Server]
+// Use authentication, need not to input password when rsync
+ssh-keygen -t dsa
+scp ~/.ssh/id_dsa.pub ec2-user@riserver.utopia-tech.co:.ssh/authorized_keys
+
+// when using crontab, remvoe "-v" to avoid output
+rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/ /home/ec2-user/uangel-backup
