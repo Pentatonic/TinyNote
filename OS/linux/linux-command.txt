@@ -9,3 +9,11 @@ sudo pppoeconf
 plog  // history
 pon dsl-provider // connect by config dsl-provider
 poff
+
+[netstat]
+// see connections to port 80
+netstat -plan |grep :80
+
+[service]
+//restart httpd (apache)
+sudo service httpd restart
