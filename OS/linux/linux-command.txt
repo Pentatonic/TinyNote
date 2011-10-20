@@ -17,3 +17,12 @@ netstat -plan |grep :80
 [service]
 //restart httpd (apache)
 sudo service httpd restart
+
+[crontab]
+crontab -l // list all crontab jobs
+crontab -e // edit all crontab jobs
+// execute python 00:00 everyday
+0 0 * * * /usr/bin/python /home/ec2-user/backupServerData.py
+
+[mail]
+echo "The mail content" | mail -s "Mail subject" receiver@gmail.com -c cc@gmail.com -b bcc@gmai.com
