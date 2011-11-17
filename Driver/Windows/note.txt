@@ -40,11 +40,14 @@ Thread priority
 Spinlock will raise IRQL to Dispatch Level, which stops the scheduler preempt
 
 --------------------------------------------------------------------------------
-
+MPIO
+--------------------------------------------------------------------------------
 
 FailOverGroup
     Contains only one path now, like a wrapper.
 
 DsmSendDeviceIoControlSynchronous()
     Register DSM to MPIO
+
+
 
