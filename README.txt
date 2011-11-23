@@ -42,8 +42,11 @@ xclip -sel clip < ~/.ssh/id_rsa.pub // copy file content
 	editor = vim
 //or 
 git config --global core.editor "vim"
+================================================================================
+/* git add */
 
-
+// add all .bat files in current folder recursively
+git add "./*.bat"
 ================================================================================
 /* git branch */
 // create branch
