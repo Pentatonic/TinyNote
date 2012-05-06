@@ -34,3 +34,14 @@ scp ~/.ssh/id_dsa.pub ec2-user@riserver.utopia-tech.co:.ssh/authorized_keys
 
 // when using crontab, remvoe "-v" to avoid output
 rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/ /home/ec2-user/uangel-backup
+
+
+- nfs
+    mount -t nfs -o nolock -o rw -o tcp 172.16.31.25:/home/mook/nfs /tmp
+
+    
+- ulimit: modify coredump setting
+    ulimit -c 0 // maximum core file created
+    
+- truncate
+    truncate -s 10G mycache // create a dummy 10GB file
