@@ -45,3 +45,68 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
     
 - truncate
     truncate -s 10G mycache // create a dummy 10GB file
+-chown
+   chown jessie:users file1.txt
+
+- Curl
+	curl -v -H "Content-Type: application/json" -X POST -d '{"screencast":{"subject":"tools"}}' http://jan:jan@172.16.41.17/remote/remote.cgi?123
+	curl -v -H "Content-Type: application/json" -X GET  http://jan:jan@172.16.41.17/remote/remote.cgi
+
+- route
+	route add default gw 172.16.40.254
+
+- file
+	file xxx // show the file type of xxx
+
+- ifconfig
+	// MAC address
+	ifconfig eth0 hw ether 006271000001
+	ifconfig eth0 172.16.41.17 netmask 255.255.254.0
+
+- ntp, sync time with ntp server
+	sudo ntpdate mst.sirim.my sg.pool.ntp.org
+	ntpdate -t1 0.jp.pool.ntp.org
+
+- compress
+	// to gz
+	tar -zcvf -f /root/etc.tar.gz /etc
+	// to bz2
+	tar -cjf /root/etc.tar.bz2 /etc
+	// untar
+	tar zvf ert.tar.gz
+	// untar bz2 file
+	tar -jxvf filename.tar.bz2
+	
+- symbolic link
+	ln -s a b // Symbolic link. a: source, b: target
+
+- remote sync
+	rsync -avz -e ssh john.liu@swhcsvr23:/home/john.liu/parasoft/UTProject/* .
+	rsync -avz swhcsvr54:/home/simon.song/PERFORCE/MPL/Diablo/ .
+- create empty file with size 8G
+	truncate -s 8G memory
+
+- find and execute command
+	find . -name tmp* -exec cat {} \;
+
+
+- gdb (mips)
+	gunzip Coredump.636.gz
+	cd xxxxx/projects
+	mips-linux-gnu-gdb symbols/applications/bin/dvbt_board
+	set solib-absolute-prefix symbols/
+	core Coredump.636
+	bt
+
+- scp
+	scp -r [login name@ip address]:[/path/filename] .
+
+
+- hwclock // hardware clock
+	-r      Show hardware clock time
+    -s      Set system time from hardware clock
+    -w      Set hardware clock to system time
+    
+- memory info
+	cat /proc/meminfo
+	
