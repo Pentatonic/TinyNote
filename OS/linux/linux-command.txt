@@ -109,4 +109,17 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
     
 - memory info
 	cat /proc/meminfo
-	
+
+- insert usb modules
+	cd /lib/modules/usb/
+	insmod usbcore.ko 
+	insmod ehci-hcd.ko 
+	insmod usb-storage.ko
+	cd -
+- Check system memory
+	1. dmesg
+	2. cat /proc/zoninfo
+
+
+- cp
+	cp --parents // copy the whole path include directories
