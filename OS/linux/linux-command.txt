@@ -123,3 +123,19 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - cp
 	cp --parents // copy the whole path include directories
+
+
+- diff
+	diff -ruN '--exclude=factory' '--exclude=*\.html' '--exclude=release.sh' '--exclude=autotest' '--exclude=*\.cpp' '--exclude=obj.a5' '--exclude=lib.a5' xx.old/ xx.new/ > FileName
+
+- add samba user
+	pdbedit -a -u johnliu
+
+- extract kernel config
+	scripts/extract-ikconfig
+
+- objdump
+	mips-linux-gnu-objdump -S libAPM.so
+
+- samba
+	/etc/samba/smb.conf
