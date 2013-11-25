@@ -88,7 +88,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - find and execute command
 	find . -name tmp* -exec cat {} \;
-
+	find . -name *.java | xargs grep -irn --color "jesus"
 
 - gdb (mips)
 	gunzip Coredump.636.gz
@@ -135,7 +135,9 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	scripts/extract-ikconfig
 
 - objdump
-	mips-linux-gnu-objdump -S libAPM.so
+	mips-linux-gnu-objdump -S libXXX.so
 
 - samba
 	/etc/samba/smb.conf
+
+
