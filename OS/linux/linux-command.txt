@@ -82,7 +82,10 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - remote sync
 	rsync -avz -e ssh john.liu@swhcsvr23:/home/john.liu/parasoft/UTProject/* .
-	rsync -avz swhcsvr54:/home/simon.song/PERFORCE/MPL/Diablo/ .
+	rsync -avz swhcsvr54:/asdf/zzz .
+	- ignore SVN folder, -C
+		rsync -avzC swhcsvr54:/asdf/zzz .
+
 - create empty file with size 8G
 	truncate -s 8G memory
 
@@ -140,4 +143,22 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 - samba
 	/etc/samba/smb.conf
 
+- screen
+	^A ^D - detach screen
+	^A ^W - window list, where am I
+	^A ^C - create new window
+	^A space - next window
+	^A p - previous window
+	^A ^A - switch to previous screen (toggle)
+	^A [0-9] - go to window [0-9]
+	^A esc - copy mode, which I use for scrollback
+
+- list all listening ports
+	netstat -lntu
+
+- vimdiff
+	[c  // prev diff
+	]c  // next diff
+	dp  // diff "put"
+	do  // diff "obtain"
 

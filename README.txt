@@ -47,6 +47,9 @@ git config --global core.editor "vim"
 
 // add all .bat files in current folder recursively
 git add "./*.bat"
+
+// add only tracked file
+git add -a -u
 ================================================================================
 /* git branch */
 // create branch
@@ -66,6 +69,10 @@ git push origin :b1 // also delete branch on server
 // switch branch
 git checkout branchX
 
+
+//  Change name of current branch
+git branch -m "NewName"
+
 ================================================================================
 /* git grep */
 
@@ -82,6 +89,16 @@ git log SQL.txt
 
 // show the file commited in the laste commits.
 git log --name-status HEAD^..HEAD
+
+// show previous 5 log with detail
+git log -5 -p
+
+// View repository HEAD and origin/master's differences
+git log HEAD..origin/master
+
+// Show modified files
+git log --stat // with line count
+git log --name-status // with status
 ================================================================================
 /* git checkout */
 
@@ -145,6 +162,8 @@ git commit
 // diff two commit id on file Def.h
 git diff 2c8c..1f42 Def.h
 
+// Swap two inputs, but will show white spaces and newline!
+git diff -R
 ================================================================================
 /* show log tree */
 git log --graph --oneline --all
@@ -198,3 +217,33 @@ git remote rename new_repo_name origin
 	remote = origin
 	merge = refs/heads/reward
     
+================================================================================
+// Show status without untacked files, speed up
+git status -uno
+
+// Commit without checking untracked files, speed up
+git commit -uno
+
+================================================================================
+// Delete the most recent commit:
+git reset --hard HEAD~1
+
+// Delete the most recent commit, without destroying the work you've done:
+git reset --soft HEAD~1
+
+// Unstage a file wihtout losing changes
+git reset HEAD aaa/bbb.txt
+================================================================================
+// Revert a file, discard changes in working directory
+git checkout -- <file>...
+================================================================================
+// git fetch instead of git pull
+"git pull" = "git fetch" + "git merge origin/master"
+// can also use this to rebase and remove the extra merge log
+git rebase origin/master
+================================================================================
+// Show a commit detail
+git show <commit id>
+
+// Will open vimdiff on every modified file
+git difftool
