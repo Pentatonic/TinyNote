@@ -156,7 +156,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 - list all listening ports
 	netstat -lntu
 
-- vimdiff
+- vimdiff (http://my.oschina.net/alphajay/blog/108834)
 	[c  // prev diff
 	]c  // next diff
 	dp  // diff "put"

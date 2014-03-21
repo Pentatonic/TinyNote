@@ -69,9 +69,13 @@ git push origin :b1 // also delete branch on server
 // switch branch
 git checkout branchX
 
-
-//  Change name of current branch
+// Change name of current branch
 git branch -m "NewName"
+// Change name of a branch
+git branch -m "OldName" "NewName"
+
+// You can create the branch via hash
+git branch branchname <sha1-of-commit>
 
 ================================================================================
 /* git grep */
@@ -99,6 +103,21 @@ git log HEAD..origin/master
 // Show modified files
 git log --stat // with line count
 git log --name-status // with status
+
+/* show log tree */
+git log --graph --oneline --all
+git log --graph --pretty=oneline --abbrev-commit
+
+// View commit log of a remote branch
+git log origin/master
+
+// add custome log command
+git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --decorate"
+
+// Show log of specific author
+git log --author=Andy
+git log --grep="Something in the message"
+
 ================================================================================
 /* git checkout */
 
@@ -112,6 +131,9 @@ git checkout --theirs SQL.txt
 // 加上 --track 表示你之後還要pull、push回去，
 // 所以請 Git 記住對應關係。
 git checkout --track -b foobar origin/foobar 
+
+// Revert all local unstaged changes
+git checkout .
 
 ================================================================================
 // Example of solving conflict in git
@@ -164,10 +186,9 @@ git diff 2c8c..1f42 Def.h
 
 // Swap two inputs, but will show white spaces and newline!
 git diff -R
-================================================================================
-/* show log tree */
-git log --graph --oneline --all
-git log --graph --pretty=oneline --abbrev-commit
+
+// Show changes of the staged files
+git diff --cached
 
 ================================================================================
 /* git merge */
@@ -187,7 +208,11 @@ git cherry-pick 321d76f
 git stash
 git stash list
 git stash show
+git stash show -p stash@{0} // show detail of specific commit in list
 git stash pop
+git stash pop stash@{0}
+git stash apply // 取出最新的一筆 stash 暫存資料. 但是 stash 資料不移除
+git stash clear // 把 stash 都清掉
 
 ================================================================================
 /* rebase */
@@ -233,17 +258,23 @@ git reset --soft HEAD~1
 
 // Unstage a file wihtout losing changes
 git reset HEAD aaa/bbb.txt
+
 ================================================================================
 // Revert a file, discard changes in working directory
 git checkout -- <file>...
 ================================================================================
 // git fetch instead of git pull
 "git pull" = "git fetch" + "git merge origin/master"
+
 // can also use this to rebase and remove the extra merge log
 git rebase origin/master
+
 ================================================================================
 // Show a commit detail
 git show <commit id>
+git show // show the commit detail of the lastest commit
+git show --name-only 138e7daf8554e6596fdd4c0a4e46f2d209e57cc2 // show files only
 
 // Will open vimdiff on every modified file
 git difftool
+================================================================================
