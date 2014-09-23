@@ -179,6 +179,10 @@ git mergetool
 // Merge is done
 git commit
 
+// config merge tool in .git/config
+[merge]
+    tool = vimdiff
+
 ================================================================================
 /* git diff */
 // diff two commit id on file Def.h
@@ -277,4 +281,10 @@ git show --name-only 138e7daf8554e6596fdd4c0a4e46f2d209e57cc2 // show files only
 
 // Will open vimdiff on every modified file
 git difftool
+
+================================================================================
+// Create patch, apply patch
+git diff --binary HEAD~1 HEAD > my_patch
+git apply my_patch
+
 ================================================================================

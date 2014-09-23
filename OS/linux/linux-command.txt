@@ -85,7 +85,9 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	rsync -avz swhcsvr54:/asdf/zzz .
 	- ignore SVN folder, -C
 		rsync -avzC swhcsvr54:/asdf/zzz .
-
+	- ignore git dir
+		--exclude='.git/'
+		
 - create empty file with size 8G
 	truncate -s 8G memory
 
@@ -162,3 +164,4 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	dp  // diff "put"
 	do  // diff "obtain"
 
+mount -t ext4 dev_node dir_node
