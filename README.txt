@@ -107,6 +107,7 @@ git log --name-status // with status
 /* show log tree */
 git log --graph --oneline --all
 git log --graph --pretty=oneline --abbrev-commit
+git log --graph --all --decorate
 
 // View commit log of a remote branch
 git log origin/master
@@ -272,7 +273,8 @@ git checkout -- <file>...
 
 // can also use this to rebase and remove the extra merge log
 git rebase origin/master
-
+// change the dates of the rebased commits
+git rebase --ignore-date
 ================================================================================
 // Show a commit detail
 git show <commit id>
@@ -281,7 +283,7 @@ git show --name-only 138e7daf8554e6596fdd4c0a4e46f2d209e57cc2 // show files only
 
 // Will open vimdiff on every modified file
 git difftool
-
+git difftool e7ea6  file_name
 ================================================================================
 // Create patch, apply patch
 git diff --binary HEAD~1 HEAD > my_patch

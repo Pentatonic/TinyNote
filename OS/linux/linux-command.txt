@@ -81,7 +81,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	ln -s a b // Symbolic link. a: source, b: target
 
 - remote sync
-	rsync -avz -e ssh john.liu@swhcsvr23:/home/john.liu/parasoft/UTProject/* .
+	rsync -avz -e ssh john.liu@xxxxsvr23:/asdf/zzz/* .
 	rsync -avz swhcsvr54:/asdf/zzz .
 	- ignore SVN folder, -C
 		rsync -avzC swhcsvr54:/asdf/zzz .
@@ -98,7 +98,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 - gdb (mips)
 	gunzip Coredump.636.gz
 	cd xxxxx/projects
-	mips-linux-gnu-gdb symbols/applications/bin/dvbt_board
+	mips-linux-gnu-gdb symbols/applications/bin/xxx_binary
 	set solib-absolute-prefix symbols/
 	core Coredump.636
 	bt
