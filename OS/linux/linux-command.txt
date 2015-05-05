@@ -165,3 +165,10 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	do  // diff "obtain"
 
 mount -t ext4 dev_node dir_node
+
+- svn add new files
+	svn st | grep ^? | sed 's/?    //' | xargs svn add
+- svn revert all deleted files	
+	svn st | grep ^! | sed 's/!    //' | xargs svn revert
+
+svn merge -r N+1:N path/filename.txt
