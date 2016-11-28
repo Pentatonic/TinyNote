@@ -119,6 +119,8 @@ git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --de
 git log --author=Andy
 git log --grep="Something in the message"
 
+
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ================================================================================
 /* git checkout */
 
@@ -290,3 +292,8 @@ git diff --binary HEAD~1 HEAD > my_patch
 git apply my_patch
 
 ================================================================================
+// Remove deleted files
+git ls-files --deleted -z | xargs -0 git rm 
+
+================================================================================
+git log --author="eddie.chen" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -

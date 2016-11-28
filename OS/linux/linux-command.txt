@@ -60,7 +60,9 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - ifconfig
 	// MAC address
-	ifconfig eth0 hw ether 006271000001
+	ifconfig eth0 hw ether 005049000001
+	busybox ifconfig eth0 hw ether 005049000001
+	busybox ifconfig eth0 hw ether 9C443D392342
 	ifconfig eth0 172.16.41.17 netmask 255.255.254.0
 
 - ntp, sync time with ntp server
