@@ -174,3 +174,41 @@ mount -t ext4 dev_node dir_node
 	svn st | grep ^! | sed 's/!    //' | xargs svn revert
 
 svn merge -r N+1:N path/filename.txt
+
+
+- vim
+	- insert mode
+		i // before
+		a // after cursor
+		I // Line head
+		A // Line end
+
+	- replace aaa with bbb
+		:%s/aaa/bbb/g
+
+	- session
+		- create
+			:mksession! ~/today.ses
+			:mks! ~/today.ses
+		- open
+			vim -S ~/today.ses
+			:source session.vim
+	- navigation
+		ctrl + u, ctrl + d // page up/down
+		ctrl + e, ctrl + y // one line up/down
+		Ctrl + b Moves screen up one page, cursor to last line
+		Ctrl + f Moves screen down one page, cursor to first line
+		ctrl + o previous cursor position
+		ctrl + i next cursor position
+
+
+		zz // move current line to the middle of the screen
+		zt // move current line to the top of the screen
+		zb // move current line to the bottom of the screen
+
+	- easymotion plugin
+		w // word
+		b // back
+		s // search
+		j // line down
+		k // line up

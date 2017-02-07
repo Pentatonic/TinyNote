@@ -296,4 +296,13 @@ git apply my_patch
 git ls-files --deleted -z | xargs -0 git rm 
 
 ================================================================================
-git log --author="eddie.chen" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+git log --author="john.liu" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+
+
+================================================================================
+// Remove all git folders and related configuration files
+(find . -type d -name ".repo" && find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs rm -rf
+================================================================================
+// git list tags
+git tag -l
+git log --tags --simplify-by-decoration --pretty="format:%ci %d"
