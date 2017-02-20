@@ -306,3 +306,10 @@ git log --author="john.liu" --pretty=tformat: --numstat | gawk '{ add += $1 ; su
 // git list tags
 git tag -l
 git log --tags --simplify-by-decoration --pretty="format:%ci %d"
+================================================================================
+// check all untracked files
+git clean -n
+// remove all untracked files
+git clean -f
+// remove all untracked files and dir
+git clean -fd
