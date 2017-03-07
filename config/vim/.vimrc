@@ -1,4 +1,5 @@
-filetype on
+filetype plugin on
+syntax on
 :set nu
 :set ignorecase
 :set smartcase
@@ -18,7 +19,13 @@ filetype on
 :set wildmenu
 :set wildmode=list:longest,full
 ":set mouse=a
-
+"autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+:colorscheme torte
+if has("gui_running")
+  if has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 " auto load all plugins in vim bundle
 execute pathogen#infect()
 
