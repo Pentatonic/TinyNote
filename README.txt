@@ -209,6 +209,26 @@ git merge --squash <branch_name>
 // cherry-pick, merge a certain commit
 git cherry-pick 321d76f
 
+// cherry pick without commit
+git cherry-pick -n <HASH>
+
+// pick from remote
+git fetch ssh://john.liu@git_svr:8888/kernel/mmm refs/changes/09/12345/8 && git cherry-pick FETCH_HEAD
+
+// pick partial of a commit
+cd first-repo
+git diff HEAD^ -- hello.test > ~/patch_file
+(git diff db19dc~1 db19dc chip_arch.c > ~/patch_file)
+
+cd ../second-repo
+patch -p1 blue/red/chip_arch.c ~/patch_file
+
+// FETCH_HEAD, is in
+cat .git/FETCH_HEAD
+
+//
+git fetch ssh://john.liu@hcgit03:29418/mstar/supernova/projects/msrv/control refs/changes/32/136932/4
+git diff -w FETCH_HEAD~1 FETCH_HEAD | patch -p1 -l --merge
 ================================================================================
 /* git stash*/
 // temporarily save uncommited files (in case you want to switch to another branch)
@@ -307,7 +327,7 @@ git log --author="john.liu" --pretty=tformat: --numstat | gawk '{ add += $1 ; su
 git tag -l
 git log --tags --simplify-by-decoration --pretty="format:%ci %d"
 ================================================================================
-// check all untracked files
+// check all untracked files, dry run
 git clean -n
 // remove all untracked files
 git clean -f

@@ -54,6 +54,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - route
 	route add default gw 172.16.40.254
+	route del -net 169.254.0.0 gw  0.0.0.0 netmask  255.255.0.0 dev eth0
 
 - file
 	file xxx // show the file type of xxx
@@ -95,6 +96,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 
 - find and execute command
 	find . -name tmp* -exec cat {} \;
+	find . -name *.ini -exec pathc -p1 {} patch.diff \;
 	find . -name *.java | xargs grep -irn --color "jesus"
 
 - gdb (mips)
