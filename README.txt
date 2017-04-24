@@ -77,6 +77,10 @@ git branch -m "OldName" "NewName"
 // You can create the branch via hash
 git branch branchname <sha1-of-commit>
 
+// Find commit in local branch
+git branch --contains <commit>
+// Find commit in remote branch
+git branch -r --contains <commit>
 ================================================================================
 /* git grep */
 
