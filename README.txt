@@ -230,7 +230,7 @@ patch -p1 blue/red/chip_arch.c ~/patch_file
 // FETCH_HEAD, is in
 cat .git/FETCH_HEAD
 
-//
+// First fetch, then diff FETCH_HEAD~1 FETCH_HEAD to apply patch
 git fetch ssh://john.liu@hcgit03:29418/mstar/supernova/projects/msrv/control refs/changes/32/136932/4
 git diff -w FETCH_HEAD~1 FETCH_HEAD | patch -p1 -l --merge
 ================================================================================
@@ -293,6 +293,15 @@ git reset HEAD aaa/bbb.txt
 ================================================================================
 // Revert a file, discard changes in working directory
 git checkout -- <file>...
+
+
+// Revert a commit and staging
+git revert -n
+git revert --no-commit
+
+
+// Revert a commit without staging
+git show <rev> | git apply -R
 ================================================================================
 // git fetch instead of git pull
 "git pull" = "git fetch" + "git merge origin/master"
