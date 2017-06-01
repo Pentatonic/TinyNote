@@ -79,6 +79,8 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	tar zvf ert.tar.gz
 	// untar bz2 file
 	tar -jxvf filename.tar.bz2
+	// compress into xz format
+	tar cfJ <archive.tar.xz> <files>
 	
 - symbolic link
 	ln -s a b // Symbolic link. a: source, b: target
@@ -214,3 +216,8 @@ svn merge -r N+1:N path/filename.txt
 		s // search
 		j // line down
 		k // line up
+
+	- increase/decrease number
+		In normal mode,
+		Ctrl-A: increment the next number
+		Ctrl-X: decrement the next number.
