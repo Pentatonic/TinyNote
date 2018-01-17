@@ -221,3 +221,6 @@ svn merge -r N+1:N path/filename.txt
 		In normal mode,
 		Ctrl-A: increment the next number
 		Ctrl-X: decrement the next number.
+
+- compiler
+	g++ -std=c++11 a.cpp
