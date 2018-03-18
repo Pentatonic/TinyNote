@@ -1,6 +1,6 @@
-﻿Global setup: 
+Global setup:
  Download and install Git
-  git config --global user.name "Your Name"
+  git config --global user.name "john.liu"
   git config --global user.email jxxxxxxx@gmail.com
   (add ssh key)
         
@@ -310,6 +310,10 @@ git show <rev> | git apply -R
 git rebase origin/master
 // change the dates of the rebased commits
 git rebase --ignore-date
+
+
+// rebase the last two commit, re-commit
+git rebase -i HEAD~2
 ================================================================================
 // Show a commit detail
 git show <commit id>
