@@ -214,3 +214,6 @@ svn merge -r N+1:N path/filename.txt
 		s // search
 		j // line down
 		k // line up
+    - tab/space
+        :set noet (to switch from spaces to TAB)
+        :set et (to switch back)
