@@ -9,7 +9,8 @@ ips = [{'status': 'unplumb', 'ip': '000.000.000.000',
         'mask': '255.255.254.000', 'name': 'yge0', 'broad': '172.018.009.255'}]
 
 # sort list according to the key - 'name' - of each item
-sorted(ips, key=itemgetter('name'))
+out = sorted(ips, key=itemgetter('name'))
+print str(out)
 
 
 # ------------------------------------------------------------------------------
