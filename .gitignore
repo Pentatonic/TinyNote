@@ -3,4 +3,6 @@
 *.pyc
 src/django
 .settings/
+*.swp
+*.out
 
