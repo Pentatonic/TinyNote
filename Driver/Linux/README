@@ -1,0 +1,34 @@
+# Simple Character Device Driver
+
+make clean && ./build.sh
+
+sudo insmod sim_module.ko
+
+lsmod |grep sim_module
+
+// list driver
+cat /proc/devices
+
+// mknode [-m permission] [name] [chr device] [maj] [min]
+sudo mknod -m 666 /dev/simple_char_device c 240 0
+
+# open, read, close device
+cat /dev/simple_char_device 
+
+# open, write, close device
+echo "hi" > /dev/simple_char_device
+
+
+
+sudo rmmod sim_module
+
+
+Using module_param, you can pass parameter to module ko:
+    insmod sim_module.ko count=10
+
+Last arg is permission.
+
+Or modify parameter dynamically:
+    $ cat /sys/module/sim_module/parameters/count
+    10
+    $ echo 5 | sudo tee /sys/module/sim_module/parameters/count
