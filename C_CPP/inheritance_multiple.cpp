@@ -44,6 +44,7 @@ int main(int argc, char **argv)
     bear.talk();
     bBear.talk();
     wBear.talk();
+    // Diamond inheritance
     // Ambiguos, cannot compile.
     Panda panda;
     panda.talk();

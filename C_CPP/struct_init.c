@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 struct medal_count {
 	const char *country;
