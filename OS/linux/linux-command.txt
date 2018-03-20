@@ -205,12 +205,11 @@ svn merge -r N+1:N path/filename.txt
 		ctrl + o previous cursor position
 		ctrl + i next cursor position
 
-
 		zz // move current line to the middle of the screen
 		zt // move current line to the top of the screen
 		zb // move current line to the bottom of the screen
 
-	- easymotion plugin
+	- easymotion plugin, "," to trigger
 		w // word
 		b // back
 		s // search
@@ -226,3 +225,5 @@ svn merge -r N+1:N path/filename.txt
 
 - compiler
 	g++ -std=c++11 a.cpp
+	g++ -m32 a.cpp // 32-bit
+	
