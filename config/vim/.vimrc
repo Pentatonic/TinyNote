@@ -31,6 +31,8 @@ execute pathogen#infect()
 
 map <f7>    :tabp<cr>
 map <f8>    :tabn<cr>
+map gT    :tabp<cr>
+map gt    :tabn<cr>
 map <space> zz
 
 " Easymotion setting
