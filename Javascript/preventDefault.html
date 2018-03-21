@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>preventDefault example</title>
+</head>
+
+<body onload="Init()">
+    <p>Please click on the checkbox control.</p>
+    <form>
+        <label for="id-checkbox">Checkbox</label>
+        <input type="checkbox" id="id-checkbox" />
+    </form>
+    <script>
+        document.querySelector("#id-checkbox").addEventListener("click", function (event) {
+            alert("preventDefault will stop you from checking this checkbox!")
+            event.preventDefault();
+        }, false);
+    </script>
+
+    <p>Please enter your name using lowercase letters only.</p>
+    <form>
+        <input type="text" id="my-textbox" />
+    </form>
+    <script>
+        function Init() {
+            var myTextbox = document.getElementById('my-textbox');
+            myTextbox.addEventListener('keypress', checkName, false);
+        }
+
+        function checkName(evt) {
+            var charCode = evt.charCode;
+            if (charCode != 0) {
+                if (charCode < 97 || charCode > 122) {
+                    evt.preventDefault();
+                    alert(
+                        "Please use lowercase letters only."
+                        + "\n" + "charCode: " + charCode + "\n"
+                    );
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
