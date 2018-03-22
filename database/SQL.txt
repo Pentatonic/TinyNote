@@ -6,7 +6,7 @@
 		FOREIGN KEY(customer_id) REFERENCES customers(id),
 		FOREIGN KEY(salesperson_id) REFERENCES salespeople(id)
 	);
-    
+
 - Delete table
     DROP TABLE orders
 
@@ -14,20 +14,20 @@
 	DELETE FROM InvitationKeyPool WHERE Key >= '111'
 - Insert Entry
 	INSERT INTO InvitationKeyPool ('Key', 'Date') VALUES ('123', '20110808')
-	
-	// Avoid dupliacte entry inserted, EventTypName should be unique
+
+	// Avoid duplicate entry inserted, EventTypName should be unique
 	INSERT OR IGNORE INTO EVENTTYPE (EventTypeName) VALUES 'ANI Received'
-	
+
 	- INSERT INTO EVENTTYPE (EventTypeName)
 	  SELECT 'ANI Received'
 	  WHERE NOT EXISTS (SELECT 1 FROM EVENTTYPE WHERE EventTypeName = 'ANI Received');
-	
+
 - Get result row count, where key equals to "sunny day"
 	SELECT COUNT(*) FROM InvitationKeyPool WHERE Key = "sunny day"
 
 - Add a "clolumn" to table "UserData"
 	ALTER TABLE UserData ADD PlayerSN VARCHAR
-- Default to 'QQ'
+- Add a "clolumn" to table "UserData", default to 'QQ'
 	ALTER TABLE UserData ADD PlayerSN2 VARCHAR DEFAULT 'QQ' NOT NULL
 
 - Delete column
@@ -40,7 +40,7 @@
 	DROP TABLE t1_backup;
 	COMMIT;
 
-- select rows with some column equals to null
+- Count rows with some column equals to null
 	SELECT COUNT(*) FROM UserData WHERE PlaySN is null OR PlaySN = ''
 - Select null columns:
     where some_column is null or some_column = ''
@@ -54,8 +54,13 @@
 - show table column names
 	PRAGMA table_info(table_name);
 
-	
+
 	SELECT UserData.UNumber, UserData.NickName
 	FROM Friends LEFT JOIN UserData ON Friends.GuestUNumber = UserData.UNumber
-	WHERE Friends.UNumber='123' AND UserData.UNumber != ''	
-	
+	WHERE Friends.UNumber='123' AND UserData.UNumber != ''
+- JOIN of sqlite
+sqlite> SELECT EMP_ID, NAME, DEPT FROM COMPANY CROSS JOIN DEPARTMENT;
+sqlite> SELECT EMP_ID, NAME, DEPT FROM COMPANY INNER JOIN DEPARTMENT
+        ON COMPANY.ID = DEPARTMENT.EMP_ID;
+sqlite> SELECT EMP_ID, NAME, DEPT FROM COMPANY LEFT OUTER JOIN DEPARTMENT
+        ON COMPANY.ID = DEPARTMENT.EMP_ID;
