@@ -21,7 +21,7 @@ int main() {
         cout << i << " ";
     }
     cout << endl;
-    
+
     auto l = lower_bound(vec.begin(), vec.end(), 2);
     cout << "lower_bound binary search 2 and insert -1 before 2, found " << *l << endl;
     vec.insert(l, -1);
