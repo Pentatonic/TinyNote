@@ -69,6 +69,7 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 - ntp, sync time with ntp server
 	sudo ntpdate mst.sirim.my sg.pool.ntp.org
 	ntpdate -t1 0.jp.pool.ntp.org
+	ntpd -dnqp sg.pool.ntp.org
 
 - compress
 	// to gz
