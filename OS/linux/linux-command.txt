@@ -71,6 +71,9 @@ rsync -avz -e ssh ec2-user@riserver.utopia-tech.co:/home/ec2-user/uangel-backup/
 	ntpdate -t1 0.jp.pool.ntp.org
 	ntpd -dnqp sg.pool.ntp.org
 
+- date
+	date -s 2018.9.4-18:00
+
 - compress
 	// to gz
 	tar -zcvf -f /root/etc.tar.gz /etc
@@ -228,3 +231,5 @@ svn merge -r N+1:N path/filename.txt
 	g++ -std=c++11 a.cpp
 	g++ -m32 a.cpp // 32-bit
 	
+- tcpdump
+	tcpdump -i <interface> -s 65535 -w <some-file>
