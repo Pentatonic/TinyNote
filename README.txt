@@ -280,6 +280,7 @@ git status -uno
 // Commit without checking untracked files, speed up
 git commit -uno
 
+git commit --amend --date="$(date -R)"
 ================================================================================
 // Delete the most recent commit:
 git reset --hard HEAD~1
