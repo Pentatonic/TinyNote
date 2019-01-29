@@ -234,3 +234,7 @@ svn merge -r N+1:N path/filename.txt
 - tcpdump
 	tcpdump -i <interface> -s 65535 -w <some-file>
 	tcpdump -i wlan0 -w /media/usb0/airplay.pcap
+
+
+ - zip
+ 	cat diff-files.txt | zip -@ diffedfiles.zip
